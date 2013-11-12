@@ -10,7 +10,7 @@
 
 #import "MenuHeaderView.h"
 
-@interface MenuHeaderController : UIViewController
+@interface MenuHeaderController : UIViewController <MenuHeaderViewDelegate>
 
 @property (strong, nonatomic) MenuHeaderView * headerView;
 

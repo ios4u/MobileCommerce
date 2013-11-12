@@ -28,7 +28,7 @@
 - (void)loadView
 {
     _headerView = [[MenuHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH, 80.)];
-    
+    _headerView.delegate = self;
     self.view = _headerView;
 }
 
@@ -42,6 +42,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - MenuHeaderView Delegate
+- (void)TapSignInOrUp:(id)sender
+{
+    DLOG(@"sign in or up");
+}
+
+- (void)gotoUserProfileView:(id)sender
+{
+    DLOG(@"go to");
 }
 
 @end

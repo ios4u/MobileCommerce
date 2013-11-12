@@ -53,7 +53,7 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 - (BOOL)isLogin
 {
-    return NO;
+    return YES;
 }
 
 @end

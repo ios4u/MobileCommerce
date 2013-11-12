@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MenuHeaderViewDelegate <NSObject>
+- (void)TapSignInOrUp:(id)sender;
+- (void)gotoUserProfileView:(id)sender;
+@end
+
 @interface MenuHeaderView : UIView
 
-@property (strong, nonatomic) UIButton * SignInOrUpBtn;
+
+@property (weak, nonatomic) id <MenuHeaderViewDelegate> delegate;
+@property (strong, nonatomic) UILabel * SignInOrUpL;
+@property (strong, nonatomic) UIImageView * avatarView;
+@property (strong, nonatomic) UILabel * usernameL;
 
 @end
