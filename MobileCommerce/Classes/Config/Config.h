@@ -43,6 +43,8 @@ return shared##className; \
 #define HEIGHT  [[UIScreen mainScreen] bounds].size.height
 
 
+#define kLocalization @"MC"
+
 static BOOL OSVersionIsAtLeastiOS7() {
     return (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1);
 }

@@ -20,7 +20,7 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     if (self) {
         [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSigningIn"];
         [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSigningUp"];
-        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSigningOut"];
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSignOut"];
     }
     
     return self;

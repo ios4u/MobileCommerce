@@ -24,13 +24,16 @@
 - (void)load
 {
     [self setValue:[NSNumber numberWithBool:YES] forKey:@"isLoading"];
-    NSArray * array;
-    array = [NSArray arrayWithObjects:
-                       [NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedStringFromTable(@"entity", @"MC", nil), @"title", @"EntityController", @"class", nil],
-                       [NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedStringFromTable(@"nearby", @"MC", nil), @"title", @"ShopController", @"class", nil],
-                        [NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedStringFromTable(@"my store", @"MC", nil), @"title", @"MyStoreController", @"class", nil],
+//    NSArray * array;
+    NSMutableArray * array = [NSMutableArray arrayWithObjects:
+                       [NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedStringFromTable(@"entity", kLocalization, nil), @"title", @"EntityController", @"class", nil],
+                       [NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedStringFromTable(@"nearby", kLocalization, nil), @"title", @"ShopController", @"class", nil],
+                        [NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedStringFromTable(@"my store", kLocalization, nil), @"title", @"MyStoreController", @"class", nil],
                        nil];
-    
+    if([[UserCenter sharedUserCenter] isLogin]) {
+        NSDictionary * dict = [NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedStringFromTable(@"signout", kLocalization, nil), @"title", @"EntityController", @"class", nil];
+        [array addObject:dict];
+    }
     for (NSDictionary * attributes in array) {
         Menu * _menu = [[Menu alloc] initWithAttributes:attributes];
         [self.dataList addObject:_menu];
