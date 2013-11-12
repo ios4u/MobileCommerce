@@ -25,13 +25,13 @@
     UINavigationController * navCenter = [[UINavigationController alloc] initWithRootViewController:centerController];
     
     UIViewController * menuController = [[MenuController alloc] initWithNibName:nil bundle:nil];
-    UINavigationController * navMenu = [[UINavigationController alloc] initWithRootViewController:menuController];
+//    UINavigationController * navMenu = [[UINavigationController alloc] initWithRootViewController:menuController];
     
     static RootController * controller = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         controller = [[RootController alloc] initWithCenterViewController:navCenter
-                                                 leftDrawerViewController:navMenu];
+                                                 leftDrawerViewController:menuController];
     });
     [controller setShowsShadow:NO];
     [controller setMaximumLeftDrawerWidth:240.];
@@ -41,15 +41,6 @@
     
     return controller;
 }
-
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
 
 - (void)viewDidLoad
 {

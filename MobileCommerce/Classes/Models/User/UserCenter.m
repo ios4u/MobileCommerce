@@ -46,4 +46,14 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 }
 
+- (BOOL)isSeller
+{
+    return NO;
+}
+
+- (BOOL)isLogin
+{
+    return NO;
+}
+
 @end

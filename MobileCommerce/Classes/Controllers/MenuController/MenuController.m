@@ -12,6 +12,7 @@
 #import "MMSideDrawerTableViewCell.h"
 #import "UIViewController+MMDrawerController.h"
 
+
 @interface MenuController ()
 
 @end
@@ -20,6 +21,7 @@
 
 @synthesize data = _data;
 @synthesize tableView = _tableView;
+@synthesize headerController = _headerController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,6 +59,7 @@
     self.view = _tableView;
     
     
+    
     UIColor * barColor = [UIColor colorWithRed:161.0/255.0
                                          green:164.0/255.0
                                           blue:166.0/255.0
@@ -76,11 +79,15 @@
                                            alpha:1.0];
     navBarTitleDict = @{NSForegroundColorAttributeName:titleColor};
     [self.navigationController.navigationBar setTitleTextAttributes:navBarTitleDict];
+    
+    _headerController = [[MenuHeaderController alloc] initWithNibName:nil bundle:nil];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _tableView.tableHeaderView = _headerController.view;
 	// Do any additional setup after loading the view.
     [_data load];
 }
@@ -94,34 +101,13 @@
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    switch (section) {
-        case 1:
-            return [_data ShopCount];
-            break;
-            
-        default:
-            return [_data UserCount];
-            break;
-    }
-//    return 1;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    switch (section) {
-        case 1:
-            return NSLocalizedStringFromTable(@"seller", @"MC", nil);
-            break;
-        default:
-            return nil;
-            break;
-    }
+    return [_data count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -133,42 +119,25 @@
         cell = [[MMSideDrawerTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.backgroundColor = [UIColor clearColor];
     }
-    
-    switch (indexPath.section) {
-        case 1:
-        {
-            Menu * menu = [_data objectAtShopLAtIndex:indexPath.row];
-//            DLOG(@"menu %@", menu.title);
-            cell.textLabel.text = menu.title;
-            return cell;
-        }
-            break;
-            
-        default:
-        {
-            Menu * menu = [_data objectAtUserLAtIndex:indexPath.row];
-//            DLOG(@"menu %@", menu.title);
-            cell.textLabel.text = menu.title;
-            return cell;
-        }
-            break;
-    }
+    Menu * menu = [_data objectAtIndex:indexPath.row];
+    cell.textLabel.text = menu.title;
+    return cell;
 
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    MMSideDrawerSectionHeaderView * headerView;
-    if(OSVersionIsAtLeastiOS7()){
-        headerView =  [[MMSideDrawerSectionHeaderView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(tableView.bounds), 56.0)];
-    }
-    else {
-        headerView =  [[MMSideDrawerSectionHeaderView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(tableView.bounds), 23.0)];
-    }
-    [headerView setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
-    [headerView setTitle:[tableView.dataSource tableView:tableView titleForHeaderInSection:section]];
-    return headerView;
-}
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    MMSideDrawerSectionHeaderView * headerView;
+//    if(OSVersionIsAtLeastiOS7()){
+//        headerView =  [[MMSideDrawerSectionHeaderView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(tableView.bounds), 56.0)];
+//    }
+//    else {
+//        headerView =  [[MMSideDrawerSectionHeaderView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(tableView.bounds), 23.0)];
+//    }
+//    [headerView setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
+//    [headerView setTitle:[tableView.dataSource tableView:tableView titleForHeaderInSection:section]];
+//    return headerView;
+//}
 
 //-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
 //    if(OSVersionIsAtLeastiOS7()){
@@ -191,21 +160,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Menu * menu;
-    switch (indexPath.section) {
-        case 1:
-        {
-             menu = [_data objectAtShopLAtIndex:indexPath.row];
-        }
-            break;
-            
-        default:
-        {
-             menu = [_data objectAtUserLAtIndex:indexPath.row];
-        }
-            break;
-    }
-    
+//    Menu * menu;
+//    switch (indexPath.section) {
+//        case 1:
+//        {
+//             menu = [_data objectAtShopLAtIndex:indexPath.row];
+//        }
+//            break;
+//            
+//        default:
+//        {
+//             menu = [_data objectAtUserLAtIndex:indexPath.row];
+//        }
+//            break;
+//    }
+    Menu * menu = [_data objectAtIndex:indexPath.row];
     if ([menu.title isEqualToString:self.mm_drawerController.centerViewController.title]) {
         [self.mm_drawerController  toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
     } else {

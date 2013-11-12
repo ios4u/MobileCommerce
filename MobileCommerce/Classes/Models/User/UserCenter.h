@@ -25,5 +25,6 @@ DEFINE_SINGLETON_FOR_HEADER(UserCenter);
 - (void)siginup;
 - (void)signin;
 - (void)signout;
-
+- (BOOL)isSeller;
+- (BOOL)isLogin;
 @end

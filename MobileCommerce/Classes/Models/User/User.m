@@ -14,7 +14,8 @@
 @synthesize username = _username;
 @synthesize mobile = _mobile;
 @synthesize emial = _emial;
-@synthesize store_id = _store_id;
+//@synthesize store_id = _store_id;
+@synthesize isSeller = _isSeller;
 
 - (id)initWithAttributes:(NSDictionary *)attributes
 {
@@ -24,7 +25,7 @@
         _username = [attributes valueForKeyPath:@"username"];
         _mobile = [attributes valueForKeyPath:@"mobile"];
         _emial = [attributes valueForKeyPath:@"email"];
-        _store_id = [[attributes valueForKeyPath:@"store_id"] integerValue];
+        _isSeller = [[attributes valueForKeyPath:@"isSeller"] boolValue];
     }
     
     return self;

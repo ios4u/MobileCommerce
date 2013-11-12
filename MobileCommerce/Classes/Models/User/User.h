@@ -14,7 +14,9 @@
 @property (strong, nonatomic) NSString * username;
 @property (strong, nonatomic) NSString * mobile;
 @property (strong, nonatomic) NSString * emial;
-@property (readonly) NSUInteger store_id;
+//@property (readonly) NSUInteger store_id;
+@property (readwrite) BOOL isSeller;
+
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 

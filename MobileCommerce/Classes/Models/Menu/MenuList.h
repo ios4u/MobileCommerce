@@ -7,17 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DataList.h"
 #import "Menu.h"
 
-@interface MenuList : NSObject
+@interface MenuList : DataList
 
-@property (strong, nonatomic) NSMutableArray * userL;
-@property (strong, nonatomic) NSMutableArray * shopL;
-
-- (NSInteger)UserCount;
-- (NSInteger)ShopCount;
 - (void)load;
 
-- (id)objectAtUserLAtIndex:(NSUInteger)index;
-- (id)objectAtShopLAtIndex:(NSInteger)index;
 @end

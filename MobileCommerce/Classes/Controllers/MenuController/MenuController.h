@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 //#import "ListController.h"
+#import "MenuHeaderController.h"
 @class MenuList;
 
 @interface MenuController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) MenuList * data;
 @property (strong, nonatomic) UITableView * tableView;
+@property (strong, nonatomic) MenuHeaderController * headerController;
 
 @end
