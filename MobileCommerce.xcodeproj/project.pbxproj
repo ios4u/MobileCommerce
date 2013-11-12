@@ -25,9 +25,9 @@
 		B77D462C18307F370051DCB4 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = B77D462B18307F370051DCB4 /* Menu.m */; };
 		B77F41741830D385009A9A57 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F41731830D385009A9A57 /* User.m */; };
 		B77F41771830D76C009A9A57 /* UserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F41761830D76C009A9A57 /* UserCenter.m */; };
+		B7861DC518325D9600A04002 /* MenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7861DC418325D9600A04002 /* MenuHeaderView.m */; };
 		B7A734A318320A58007EC29A /* OpenCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A734A218320A58007EC29A /* OpenCenterController.m */; };
 		B7A734A618320B10007EC29A /* MenuHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A734A518320B10007EC29A /* MenuHeaderController.m */; };
-		B7A734AB18320B48007EC29A /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A734AA18320B48007EC29A /* HeaderView.m */; };
 		B7CF0F9B182D214500A796E5 /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9A182D214500A796E5 /* RootController.m */; };
 		B7CF0F9E182D226400A796E5 /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9D182D226400A796E5 /* ListController.m */; };
 		B7CF0FA2182D229E00A796E5 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0FA1182D229E00A796E5 /* MenuController.m */; };
@@ -126,12 +126,12 @@
 		B77F41731830D385009A9A57 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Classes/Models/User/User.m; sourceTree = "<group>"; };
 		B77F41751830D76C009A9A57 /* UserCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserCenter.h; path = Classes/Models/User/UserCenter.h; sourceTree = "<group>"; };
 		B77F41761830D76C009A9A57 /* UserCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCenter.m; path = Classes/Models/User/UserCenter.m; sourceTree = "<group>"; };
+		B7861DC318325D9600A04002 /* MenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuHeaderView.h; path = Classes/Views/MenuView/HeaderView/MenuHeaderView.h; sourceTree = "<group>"; };
+		B7861DC418325D9600A04002 /* MenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuHeaderView.m; path = Classes/Views/MenuView/HeaderView/MenuHeaderView.m; sourceTree = "<group>"; };
 		B7A734A118320A58007EC29A /* OpenCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenCenterController.h; path = Classes/Controllers/OpenCenterController/OpenCenterController.h; sourceTree = "<group>"; };
 		B7A734A218320A58007EC29A /* OpenCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenCenterController.m; path = Classes/Controllers/OpenCenterController/OpenCenterController.m; sourceTree = "<group>"; };
 		B7A734A418320B10007EC29A /* MenuHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuHeaderController.h; path = Classes/Controllers/MenuController/MenuHeaderController.h; sourceTree = "<group>"; };
 		B7A734A518320B10007EC29A /* MenuHeaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuHeaderController.m; path = Classes/Controllers/MenuController/MenuHeaderController.m; sourceTree = "<group>"; };
-		B7A734A918320B48007EC29A /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderView.h; path = Classes/Views/MenuView/HeaderView/HeaderView.h; sourceTree = "<group>"; };
-		B7A734AA18320B48007EC29A /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderView.m; path = Classes/Views/MenuView/HeaderView/HeaderView.m; sourceTree = "<group>"; };
 		B7CF0F99182D214500A796E5 /* RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootController.h; path = Classes/Controllers/RootController/RootController.h; sourceTree = "<group>"; };
 		B7CF0F9A182D214500A796E5 /* RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootController.m; path = Classes/Controllers/RootController/RootController.m; sourceTree = "<group>"; };
 		B7CF0F9C182D226400A796E5 /* ListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListController.h; path = Classes/Controllers/ListController/ListController.h; sourceTree = "<group>"; };
@@ -383,8 +383,8 @@
 		B7A734A818320B29007EC29A /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
-				B7A734A918320B48007EC29A /* HeaderView.h */,
-				B7A734AA18320B48007EC29A /* HeaderView.m */,
+				B7861DC318325D9600A04002 /* MenuHeaderView.h */,
+				B7861DC418325D9600A04002 /* MenuHeaderView.m */,
 			);
 			name = HeaderView;
 			sourceTree = "<group>";
@@ -778,6 +778,7 @@
 				B70C2F941830B64D003A72AF /* StoreHeaderView.m in Sources */,
 				B70C2F821830A5E9003A72AF /* MMSideDrawerSectionHeaderView.m in Sources */,
 				B7F8B2EC182CD01D00C7668A /* UIViewController+MMDrawerController.m in Sources */,
+				B7861DC518325D9600A04002 /* MenuHeaderView.m in Sources */,
 				B7F8B282182CCC5B00C7668A /* SDWebImageDecoder.m in Sources */,
 				B7F8B239182CCAA500C7668A /* main.m in Sources */,
 				B7F8B2A4182CCC6700C7668A /* AFSecurityPolicy.m in Sources */,
@@ -797,7 +798,6 @@
 				B7F8B28B182CCC5B00C7668A /* UIImageView+WebCache.m in Sources */,
 				B70C2F8A1830ADE8003A72AF /* MyStoreController.m in Sources */,
 				B7CF0FA2182D229E00A796E5 /* MenuController.m in Sources */,
-				B7A734AB18320B48007EC29A /* HeaderView.m in Sources */,
 				B7CF0F9E182D226400A796E5 /* ListController.m in Sources */,
 				B77D462C18307F370051DCB4 /* Menu.m in Sources */,
 				B7F8B285182CCC5B00C7668A /* SDWebImageManager.m in Sources */,

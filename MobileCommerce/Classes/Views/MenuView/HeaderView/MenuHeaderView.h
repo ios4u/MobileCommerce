@@ -1,5 +1,5 @@
 //
-//  HeaderView.h
+//  MenuHeaderView.h
 //  MobileCommerce
 //
 //  Created by 谢家欣 on 13-11-12.
@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HeaderView : UIView
+@interface MenuHeaderView : UIView
 
-//@property (strong, nonatomic) UIImageView * avatar;
-
+@property (strong, nonatomic) UIButton * SignInOrUpBtn;
 
 @end

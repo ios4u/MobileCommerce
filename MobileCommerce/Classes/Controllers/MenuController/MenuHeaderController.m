@@ -27,7 +27,7 @@
 
 - (void)loadView
 {
-    _headerView = [[HeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH, 60.)];
+    _headerView = [[MenuHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, WIDTH, 80.)];
     
     self.view = _headerView;
 }

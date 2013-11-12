@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "HeaderView.h"
+#import "MenuHeaderView.h"
 
 @interface MenuHeaderController : UIViewController
 
-@property (strong, nonatomic) HeaderView * headerView;
+@property (strong, nonatomic) MenuHeaderView * headerView;
 
 @end
