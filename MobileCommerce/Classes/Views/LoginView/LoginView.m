@@ -27,7 +27,23 @@
         // Initialization code
         self.backgroundColor = [UIColor lightGrayColor];
         
+        _usernameL = [[UILabel alloc] initWithFrame:CGRectZero];
         
+        
+        _signInBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        [_signInBtn addTarget:self action:@selector(signInBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        _signUpBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_signUpBtn addTarget:self action:@selector(signUpBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self addSubview:_usernameL];
+        [self addSubview:_passwdL];
+        [self addSubview:_usernameTF];
+        [self addSubview:_passwdTF];
+        
+        [self addSubview:_signInBtn];
+        [self addSubview:_signUpBtn];
     }
     return self;
 }
@@ -40,5 +56,19 @@
     // Drawing code
 }
 */
+
+- (void)signInBtnAction:(id)sender
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(TapSignInWithUsername:Passwd:)]) {
+        [_delegate TapSignInWithUsername:_usernameTF.text Passwd:_passwdTF.text];
+    }
+}
+
+- (void)signUpBtnAction:(id)sender
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(TapSignUp)]) {
+        [_delegate TapSignUp];
+    }
+}
 
 @end

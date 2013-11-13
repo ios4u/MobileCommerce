@@ -10,8 +10,8 @@
 
 @protocol LoginViewDelegate <NSObject>
 
-
-
+- (void)TapSignInWithUsername:(NSString *)username Passwd:(NSString *)passwd;
+- (void)TapSignUp;
 @end
 
 @interface LoginView : UIView

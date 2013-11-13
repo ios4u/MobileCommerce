@@ -27,12 +27,26 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     return self;
 }
 
+- (void)addTheObserverWithObject:(id)obj
+{
+    [self addObserver:obj forKeyPath:@"isSigningIn" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:obj forKeyPath:@"isSigningUp" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:obj forKeyPath:@"isSignOut" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)removeTheObserverWithObject:(id)obj
+{
+    [self removeObserver:obj forKeyPath:@"isSigningIn"];
+    [self removeObserver:obj forKeyPath:@"isSigningUp"];
+    [self removeObserver:obj forKeyPath:@"isSignOut"];
+}
+
 - (void)siginup
 {
 
 }
 
-- (void)signin
+- (void)signInWithUsername:(NSString *)username Passwd:(NSString *)passwd
 {
 
 }

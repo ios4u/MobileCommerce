@@ -650,8 +650,8 @@
 		B7F8B25E182CCC2900C7668A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				39F4BA6A183373A700312B7E /* LoginController */,
 				B7A734A018320A25007EC29A /* OpenCenterController */,
+				39F4BA6A183373A700312B7E /* LoginController */,
 				B70C2F871830ADCD003A72AF /* MyStoreController */,
 				B70C2F831830AC65003A72AF /* EntityDetailController */,
 				B70C2F6D18309704003A72AF /* ShopController */,

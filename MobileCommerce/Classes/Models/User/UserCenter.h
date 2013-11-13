@@ -24,8 +24,12 @@
 DEFINE_SINGLETON_FOR_HEADER(UserCenter);
 
 - (void)siginup;
-- (void)signin;
+//- (void)signin;
+- (void)signInWithUsername:(NSString *)username Passwd:(NSString *)passwd;
 - (void)signout;
 - (BOOL)isSeller;
 - (BOOL)isLogin;
+
+- (void)addTheObserverWithObject:(id)obj;
+- (void)removeTheObserverWithObject:(id)obj;
 @end

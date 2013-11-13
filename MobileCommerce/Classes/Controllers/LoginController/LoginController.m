@@ -26,6 +26,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [[UserCenter sharedUserCenter] removeTheObserverWithObject:self];
+}
+
 - (void)loadView
 {
     _loginView = [[LoginView alloc] initWithFrame:CGRectMake(0., 0., WIDTH, HEIGHT)];
@@ -40,6 +45,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [[UserCenter sharedUserCenter] addTheObserverWithObject:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +58,17 @@
 - (void)dismissBarBtnAction:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Login View Delegate
+- (void)TapSignInWithUsername:(NSString *)username Passwd:(NSString *)passwd
+{
+    [[UserCenter sharedUserCenter] signInWithUsername:username Passwd:passwd];
+}
+
+- (void)TapSignUp
+{
+
 }
 
 @end
