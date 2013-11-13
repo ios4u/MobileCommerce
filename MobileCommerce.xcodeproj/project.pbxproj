@@ -13,6 +13,8 @@
 		39F4BA6518336C0600312B7E /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = 39F4BA6018336C0600312B7E /* zbar-helpicons.png */; };
 		39F4BA6618336C0600312B7E /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 39F4BA6118336C0600312B7E /* zbar-samples.png */; };
 		39F4BA6918336D5B00312B7E /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4BA6818336D5B00312B7E /* SSKeychain.m */; };
+		39F4BA6D183373D000312B7E /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4BA6C183373D000312B7E /* LoginController.m */; };
+		39F4BA7418337A3700312B7E /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4BA7318337A3700312B7E /* LoginView.m */; };
 		B70C2F6C183092B5003A72AF /* EntityController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F6B183092B5003A72AF /* EntityController.m */; };
 		B70C2F701830972F003A72AF /* ShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F6F1830972F003A72AF /* ShopController.m */; };
 		B70C2F75183097F8003A72AF /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F74183097F8003A72AF /* Entity.m */; };
@@ -121,6 +123,10 @@
 		39F4BA6118336C0600312B7E /* zbar-samples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-samples.png"; sourceTree = "<group>"; };
 		39F4BA6718336D5B00312B7E /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		39F4BA6818336D5B00312B7E /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		39F4BA6B183373D000312B7E /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = Classes/Controllers/LoginController/LoginController.h; sourceTree = "<group>"; };
+		39F4BA6C183373D000312B7E /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = Classes/Controllers/LoginController/LoginController.m; sourceTree = "<group>"; };
+		39F4BA7218337A3700312B7E /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginView.h; path = Classes/Views/LoginView/LoginView.h; sourceTree = "<group>"; };
+		39F4BA7318337A3700312B7E /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginView.m; path = Classes/Views/LoginView/LoginView.m; sourceTree = "<group>"; };
 		B70C2F68183090C3003A72AF /* ColorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorConfig.h; path = Classes/Config/ColorConfig.h; sourceTree = "<group>"; };
 		B70C2F6A183092B5003A72AF /* EntityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityController.h; path = Classes/Controllers/EntityController/EntityController.h; sourceTree = "<group>"; };
 		B70C2F6B183092B5003A72AF /* EntityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntityController.m; path = Classes/Controllers/EntityController/EntityController.m; sourceTree = "<group>"; };
@@ -345,6 +351,24 @@
 				39F4BA6118336C0600312B7E /* zbar-samples.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		39F4BA6A183373A700312B7E /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				39F4BA6B183373D000312B7E /* LoginController.h */,
+				39F4BA6C183373D000312B7E /* LoginController.m */,
+			);
+			name = LoginController;
+			sourceTree = "<group>";
+		};
+		39F4BA6E1833771B00312B7E /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				39F4BA7218337A3700312B7E /* LoginView.h */,
+				39F4BA7318337A3700312B7E /* LoginView.m */,
+			);
+			name = LoginView;
 			sourceTree = "<group>";
 		};
 		B70C2F6918309291003A72AF /* EntityController */ = {
@@ -615,6 +639,7 @@
 		B7F8B25D182CCC2400C7668A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				39F4BA6E1833771B00312B7E /* LoginView */,
 				B7A734A718320B22007EC29A /* MenuView */,
 				B70C2F911830B62D003A72AF /* StoreHeaderView */,
 				B70C2F7F1830A5B1003A72AF /* TableViewHelps */,
@@ -625,6 +650,7 @@
 		B7F8B25E182CCC2900C7668A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				39F4BA6A183373A700312B7E /* LoginController */,
 				B7A734A018320A25007EC29A /* OpenCenterController */,
 				B70C2F871830ADCD003A72AF /* MyStoreController */,
 				B70C2F831830AC65003A72AF /* EntityDetailController */,
@@ -862,6 +888,7 @@
 			files = (
 				B77F41741830D385009A9A57 /* User.m in Sources */,
 				B7F8B2A8182CCC6700C7668A /* AFURLSessionManager.m in Sources */,
+				39F4BA7418337A3700312B7E /* LoginView.m in Sources */,
 				B7F8B2A5182CCC6700C7668A /* AFURLConnectionOperation.m in Sources */,
 				B7F8B2E9182CD01D00C7668A /* MMDrawerBarButtonItem.m in Sources */,
 				B70C2F75183097F8003A72AF /* Entity.m in Sources */,
@@ -905,6 +932,7 @@
 				B7F8B286182CCC5B00C7668A /* SDWebImagePrefetcher.m in Sources */,
 				B70C2F6C183092B5003A72AF /* EntityController.m in Sources */,
 				B70C2F861830AC8A003A72AF /* EntityDetailController.m in Sources */,
+				39F4BA6D183373D000312B7E /* LoginController.m in Sources */,
 				B70C2F7818309992003A72AF /* EntityList.m in Sources */,
 				B70C2F701830972F003A72AF /* ShopController.m in Sources */,
 				B77D462618307D890051DCB4 /* MenuList.m in Sources */,

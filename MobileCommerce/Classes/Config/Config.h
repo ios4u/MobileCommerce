@@ -45,6 +45,9 @@ return shared##className; \
 
 #define kLocalization @"MC"
 
+
+#define kLoginController @"LoginController"
+
 static BOOL OSVersionIsAtLeastiOS7() {
     return (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1);
 }

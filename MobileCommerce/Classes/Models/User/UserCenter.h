@@ -17,6 +17,7 @@
     BOOL isSignOut;
 }
 
+@property (strong, nonatomic) NSString * access_token;
 @property (strong, nonatomic) User * user;
 
 

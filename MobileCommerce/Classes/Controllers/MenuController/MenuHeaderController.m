@@ -48,6 +48,7 @@
 - (void)TapSignInOrUp:(id)sender
 {
     DLOG(@"sign in or up");
+    [[OpenCenterController sharedOpenCenterController] openLoginController];
 }
 
 - (void)gotoUserProfileView:(id)sender

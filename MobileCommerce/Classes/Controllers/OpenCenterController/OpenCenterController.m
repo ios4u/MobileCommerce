@@ -7,6 +7,7 @@
 //
 
 #import "OpenCenterController.h"
+//#import "LoginController.h"
 
 @implementation OpenCenterController
 
@@ -27,6 +28,10 @@ DEFINE_SINGLETON_FOR_CLASS(OpenCenterController);
 - (void)openLoginController
 {
 //    [self.controller pres]
+    Class loginClass = NSClassFromString(kLoginController);
+    UIViewController * controller = [[loginClass alloc] init];
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self.controller presentViewController:nav animated:YES completion:nil];
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "SSKeychain.h"
 
 @implementation UserCenter
+@synthesize access_token = _access_token;
 @synthesize user = _user;
 
 DEFINE_SINGLETON_FOR_CLASS(UserCenter);
@@ -53,7 +54,12 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 - (BOOL)isLogin
 {
-    return YES;
+    _access_token = [SSKeychain passwordForService:@"" account:@"access_token"];
+    if (_access_token) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end
