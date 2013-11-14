@@ -48,7 +48,7 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 - (void)signInWithUsername:(NSString *)username Passwd:(NSString *)passwd
 {
-
+    DLOG(@"login login");
 }
 
 - (void)signout

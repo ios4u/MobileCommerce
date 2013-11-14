@@ -46,6 +46,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [[UserCenter sharedUserCenter] addTheObserverWithObject:self];
+    self.title = NSLocalizedStringFromTable(@"sign in or up", kLocalization, nil);
 }
 
 - (void)didReceiveMemoryWarning

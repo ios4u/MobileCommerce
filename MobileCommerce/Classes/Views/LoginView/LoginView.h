@@ -12,9 +12,10 @@
 
 - (void)TapSignInWithUsername:(NSString *)username Passwd:(NSString *)passwd;
 - (void)TapSignUp;
+
 @end
 
-@interface LoginView : UIView
+@interface LoginView : UIView <UITextFieldDelegate>
 
 @property (weak, nonatomic) id<LoginViewDelegate> delegate;
 
@@ -26,5 +27,5 @@
 @property (strong, nonatomic) UIButton * signInBtn;
 @property (strong, nonatomic) UIButton * signUpBtn;
 
-
+- (void)hidenkeyboard;
 @end

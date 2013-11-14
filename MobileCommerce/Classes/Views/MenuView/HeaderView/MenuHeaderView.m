@@ -63,7 +63,7 @@
         _avatarView.hidden = NO;
         
         _avatarView.frame = CGRectMake(20, 30, 40, 40);
-        _usernameL.frame = CGRectMake(70., 50, 160, 20);
+        _usernameL.frame = CGRectMake(70., 45, 160, 20);
         
     } else {
         _SignInOrUpL.hidden = NO;
