@@ -10,10 +10,11 @@
 #import "ListController.h"
 
 
-@class StoreHeaderView;
+//@class StoreHeaderView;
 
 @interface MyStoreController : ListController
 
-@property (strong, nonatomic) StoreHeaderView * headerView;
+//@property (strong, nonatomic) StoreHeaderView * headerView;
+@property (strong, nonatomic) UIBarButtonItem * rightBarBtn;
 
 @end

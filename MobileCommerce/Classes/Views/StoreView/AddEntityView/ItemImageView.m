@@ -1,22 +1,33 @@
 //
-//  StoreHeaderView.m
+//  ItemImageView.m
 //  MobileCommerce
 //
-//  Created by 谢家欣 on 13-11-11.
+//  Created by 谢家欣 on 13-11-14.
 //  Copyright (c) 2013年 谢家欣. All rights reserved.
 //
 
-#import "StoreHeaderView.h"
+#import "ItemImageView.h"
 
-@implementation StoreHeaderView
+@implementation ItemImageView
+
+@synthesize delegate = _delegate;
+
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.userInteractionEnabled = YES;
     }
     return self;
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(TapImageView:)]) {
+        [_delegate TapImageView:self];
+    }
 }
 
 /*

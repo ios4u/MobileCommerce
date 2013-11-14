@@ -16,4 +16,5 @@ DEFINE_SINGLETON_FOR_HEADER(OpenCenterController);
 
 
 - (void)openLoginController;
+- (void)openAddItemController;
 @end

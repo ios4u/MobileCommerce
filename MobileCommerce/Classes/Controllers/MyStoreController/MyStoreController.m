@@ -7,7 +7,8 @@
 //
 
 #import "MyStoreController.h"
-#import "StoreHeaderView.h"
+//#import "StoreHeaderView.h"
+//#import "AddEntityController.h"
 
 @interface MyStoreController ()
 
@@ -15,7 +16,8 @@
 
 @implementation MyStoreController
 
-@synthesize headerView = _headerView;
+//@synthesize headerView = _headerView;
+@synthesize rightBarBtn = _rightBarBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,6 +26,15 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)loadView
+{
+    [super loadView];
+    
+    _rightBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightBarBtnAction:)];
+    
+    self.navigationItem.rightBarButtonItem = _rightBarBtn;
 }
 
 - (void)viewDidLoad
@@ -37,6 +48,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)rightBarBtnAction:(id)sender
+{
+    [[OpenCenterController sharedOpenCenterController] openAddItemController];
 }
 
 @end

@@ -25,7 +25,6 @@
 		B70C2F8A1830ADE8003A72AF /* MyStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F891830ADE8003A72AF /* MyStoreController.m */; };
 		B70C2F8F1830B147003A72AF /* MMSideDrawerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F8C1830B147003A72AF /* MMSideDrawerTableViewCell.m */; };
 		B70C2F901830B147003A72AF /* MMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F8E1830B147003A72AF /* MMTableViewCell.m */; };
-		B70C2F941830B64D003A72AF /* StoreHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F931830B64D003A72AF /* StoreHeaderView.m */; };
 		B70C2F9B1830B8A9003A72AF /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F9A1830B8A9003A72AF /* Store.m */; };
 		B70C2F9F1830B9B6003A72AF /* DataList.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F9E1830B9B6003A72AF /* DataList.m */; };
 		B70C2FA21830BC90003A72AF /* StoreList.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2FA11830BC90003A72AF /* StoreList.m */; };
@@ -39,6 +38,8 @@
 		B7CF0F9B182D214500A796E5 /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9A182D214500A796E5 /* RootController.m */; };
 		B7CF0F9E182D226400A796E5 /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9D182D226400A796E5 /* ListController.m */; };
 		B7CF0FA2182D229E00A796E5 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0FA1182D229E00A796E5 /* MenuController.m */; };
+		B7EF012D1834A55D00C1A523 /* AddItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EF012C1834A55D00C1A523 /* AddItemView.m */; };
+		B7EF01331834AB8300C1A523 /* ItemImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EF01321834AB8300C1A523 /* ItemImageView.m */; };
 		B7F8B22D182CCAA500C7668A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F8B22C182CCAA500C7668A /* Foundation.framework */; };
 		B7F8B22F182CCAA500C7668A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F8B22E182CCAA500C7668A /* CoreGraphics.framework */; };
 		B7F8B231182CCAA500C7668A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F8B230182CCAA500C7668A /* UIKit.framework */; };
@@ -89,6 +90,7 @@
 		B7F92225183461BB00A39D97 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F9221F183461BB00A39D97 /* FMDatabaseQueue.m */; };
 		B7F92226183461BB00A39D97 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F92221183461BB00A39D97 /* FMResultSet.m */; };
 		B7F922281834621300A39D97 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F922271834621300A39D97 /* libsqlite3.dylib */; };
+		B7F9222C18348E7600A39D97 /* AddEntityController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F9222B18348E7600A39D97 /* AddEntityController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,8 +156,6 @@
 		B70C2F8C1830B147003A72AF /* MMSideDrawerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSideDrawerTableViewCell.m; sourceTree = "<group>"; };
 		B70C2F8D1830B147003A72AF /* MMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTableViewCell.h; sourceTree = "<group>"; };
 		B70C2F8E1830B147003A72AF /* MMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTableViewCell.m; sourceTree = "<group>"; };
-		B70C2F921830B64D003A72AF /* StoreHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreHeaderView.h; path = Classes/Views/StoreHeaderView/StoreHeaderView.h; sourceTree = "<group>"; };
-		B70C2F931830B64D003A72AF /* StoreHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreHeaderView.m; path = Classes/Views/StoreHeaderView/StoreHeaderView.m; sourceTree = "<group>"; };
 		B70C2F991830B8A9003A72AF /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Store.h; path = Classes/Models/Store/Store.h; sourceTree = "<group>"; };
 		B70C2F9A1830B8A9003A72AF /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Store.m; path = Classes/Models/Store/Store.m; sourceTree = "<group>"; };
 		B70C2F9D1830B9B6003A72AF /* DataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataList.h; path = Classes/Models/Core/DataList.h; sourceTree = "<group>"; };
@@ -182,6 +182,10 @@
 		B7CF0F9D182D226400A796E5 /* ListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListController.m; path = Classes/Controllers/ListController/ListController.m; sourceTree = "<group>"; };
 		B7CF0FA0182D229E00A796E5 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuController.h; path = Classes/Controllers/MenuController/MenuController.h; sourceTree = "<group>"; };
 		B7CF0FA1182D229E00A796E5 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = Classes/Controllers/MenuController/MenuController.m; sourceTree = "<group>"; };
+		B7EF012B1834A55D00C1A523 /* AddItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddItemView.h; path = Classes/Views/StoreView/AddEntityView/AddItemView.h; sourceTree = "<group>"; };
+		B7EF012C1834A55D00C1A523 /* AddItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddItemView.m; path = Classes/Views/StoreView/AddEntityView/AddItemView.m; sourceTree = "<group>"; };
+		B7EF01311834AB8300C1A523 /* ItemImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemImageView.h; path = Classes/Views/StoreView/AddEntityView/ItemImageView.h; sourceTree = "<group>"; };
+		B7EF01321834AB8300C1A523 /* ItemImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemImageView.m; path = Classes/Views/StoreView/AddEntityView/ItemImageView.m; sourceTree = "<group>"; };
 		B7F8B229182CCAA500C7668A /* MobileCommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileCommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7F8B22C182CCAA500C7668A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B7F8B22E182CCAA500C7668A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -276,6 +280,8 @@
 		B7F92220183461BB00A39D97 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		B7F92221183461BB00A39D97 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		B7F922271834621300A39D97 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		B7F9222A18348E7600A39D97 /* AddEntityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddEntityController.h; path = Classes/Controllers/MyStoreController/AddEntityController/AddEntityController.h; sourceTree = "<group>"; };
+		B7F9222B18348E7600A39D97 /* AddEntityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddEntityController.m; path = Classes/Controllers/MyStoreController/AddEntityController/AddEntityController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,19 +460,20 @@
 		B70C2F871830ADCD003A72AF /* MyStoreController */ = {
 			isa = PBXGroup;
 			children = (
+				B7F9222918348E4700A39D97 /* AddEntityController */,
 				B70C2F881830ADE8003A72AF /* MyStoreController.h */,
 				B70C2F891830ADE8003A72AF /* MyStoreController.m */,
 			);
 			name = MyStoreController;
 			sourceTree = "<group>";
 		};
-		B70C2F911830B62D003A72AF /* StoreHeaderView */ = {
+		B70C2F911830B62D003A72AF /* StoreView */ = {
 			isa = PBXGroup;
 			children = (
-				B70C2F921830B64D003A72AF /* StoreHeaderView.h */,
-				B70C2F931830B64D003A72AF /* StoreHeaderView.m */,
+				B7EF01301834AB5B00C1A523 /* AddItemView */,
+				B7EF012F1834AB4700C1A523 /* StoreHeaderView */,
 			);
-			name = StoreHeaderView;
+			name = StoreView;
 			sourceTree = "<group>";
 		};
 		B70C2F9C1830B9A2003A72AF /* Core */ = {
@@ -553,6 +560,24 @@
 				B7A734A518320B10007EC29A /* MenuHeaderController.m */,
 			);
 			name = MenuController;
+			sourceTree = "<group>";
+		};
+		B7EF012F1834AB4700C1A523 /* StoreHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = StoreHeaderView;
+			sourceTree = "<group>";
+		};
+		B7EF01301834AB5B00C1A523 /* AddItemView */ = {
+			isa = PBXGroup;
+			children = (
+				B7EF012B1834A55D00C1A523 /* AddItemView.h */,
+				B7EF012C1834A55D00C1A523 /* AddItemView.m */,
+				B7EF01311834AB8300C1A523 /* ItemImageView.h */,
+				B7EF01321834AB8300C1A523 /* ItemImageView.m */,
+			);
+			name = AddItemView;
 			sourceTree = "<group>";
 		};
 		B7F8B220182CCAA500C7668A = {
@@ -660,7 +685,7 @@
 			children = (
 				39F4BA6E1833771B00312B7E /* LoginView */,
 				B7A734A718320B22007EC29A /* MenuView */,
-				B70C2F911830B62D003A72AF /* StoreHeaderView */,
+				B70C2F911830B62D003A72AF /* StoreView */,
 				B70C2F7F1830A5B1003A72AF /* TableViewHelps */,
 			);
 			name = Views;
@@ -820,6 +845,15 @@
 			name = FMDB;
 			sourceTree = "<group>";
 		};
+		B7F9222918348E4700A39D97 /* AddEntityController */ = {
+			isa = PBXGroup;
+			children = (
+				B7F9222A18348E7600A39D97 /* AddEntityController.h */,
+				B7F9222B18348E7600A39D97 /* AddEntityController.m */,
+			);
+			name = AddEntityController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -928,6 +962,7 @@
 				39F4BA7418337A3700312B7E /* LoginView.m in Sources */,
 				B7F8B2A5182CCC6700C7668A /* AFURLConnectionOperation.m in Sources */,
 				B7F8B2E9182CD01D00C7668A /* MMDrawerBarButtonItem.m in Sources */,
+				B7EF012D1834A55D00C1A523 /* AddItemView.m in Sources */,
 				B7F92225183461BB00A39D97 /* FMDatabaseQueue.m in Sources */,
 				B70C2F75183097F8003A72AF /* Entity.m in Sources */,
 				B7F8B2EB182CD01D00C7668A /* MMDrawerVisualState.m in Sources */,
@@ -939,7 +974,6 @@
 				B70C2FA21830BC90003A72AF /* StoreList.m in Sources */,
 				B7F8B283182CCC5B00C7668A /* SDWebImageDownloader.m in Sources */,
 				B7F8B287182CCC5B00C7668A /* UIButton+WebCache.m in Sources */,
-				B70C2F941830B64D003A72AF /* StoreHeaderView.m in Sources */,
 				B70C2F821830A5E9003A72AF /* MMSideDrawerSectionHeaderView.m in Sources */,
 				B7F8B2EC182CD01D00C7668A /* UIViewController+MMDrawerController.m in Sources */,
 				B7861DC518325D9600A04002 /* MenuHeaderView.m in Sources */,
@@ -949,6 +983,7 @@
 				B7F8B2A4182CCC6700C7668A /* AFSecurityPolicy.m in Sources */,
 				B7A734A618320B10007EC29A /* MenuHeaderController.m in Sources */,
 				B77F41771830D76C009A9A57 /* UserCenter.m in Sources */,
+				B7F9222C18348E7600A39D97 /* AddEntityController.m in Sources */,
 				39F4BA6918336D5B00312B7E /* SSKeychain.m in Sources */,
 				B7F8B281182CCC5B00C7668A /* SDWebImageCompat.m in Sources */,
 				B7F8B23D182CCAA500C7668A /* BCAppDelegate.m in Sources */,
@@ -983,6 +1018,7 @@
 				B7F92224183461BB00A39D97 /* FMDatabasePool.m in Sources */,
 				B7F8B2A0182CCC6700C7668A /* AFHTTPRequestOperation.m in Sources */,
 				B7F8B2A7182CCC6700C7668A /* AFURLResponseSerialization.m in Sources */,
+				B7EF01331834AB8300C1A523 /* ItemImageView.m in Sources */,
 				B7F8B280182CCC5B00C7668A /* SDImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

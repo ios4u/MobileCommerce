@@ -61,15 +61,14 @@
         _passwdTF.clearButtonMode = UITextFieldViewModeWhileEditing;
         
         _signInBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_signInBtn setTitle:NSLocalizedStringFromTable(@"sign", kLocalization, nil) forState:UIControlStateNormal];
+        [_signInBtn setTitle:NSLocalizedStringFromTable(@"signin", kLocalization, nil) forState:UIControlStateNormal];
         _signInBtn.backgroundColor = [UIColor greenColor];
-        
-        _signUpBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _signInBtn.backgroundColor = [UIColor redColor];
         
         [_signInBtn addTarget:self action:@selector(signInBtnAction:) forControlEvents:UIControlEventTouchUpInside];
         
         _signUpBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_signUpBtn setTitle:NSLocalizedStringFromTable(@"signup", kLocalization, nil) forState:UIControlStateNormal];
+        _signUpBtn.backgroundColor = [UIColor redColor];
         [_signUpBtn addTarget:self action:@selector(signUpBtnAction:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:_usernameL];
@@ -92,6 +91,9 @@
     
     _passwdTF.frame = CGRectMake(20., 210, 280, 40);
     _passwdL.frame = CGRectMake(0., 0., 60, 20);
+    
+    _signInBtn.frame = CGRectMake(20., 270., 120., 30);
+    _signUpBtn.frame = CGRectMake(180., 270., 120., 30);
 }
 
 /*
@@ -140,7 +142,7 @@
     if (_delegate && [_delegate respondsToSelector:@selector(TapSignInWithUsername:Passwd:)]) {
         [_delegate TapSignInWithUsername:_usernameTF.text Passwd:_passwdTF.text];
     }
-    return NO;
+    return YES;
 }
 
 @end
