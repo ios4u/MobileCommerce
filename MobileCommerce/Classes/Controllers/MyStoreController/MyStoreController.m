@@ -7,7 +7,7 @@
 //
 
 #import "MyStoreController.h"
-//#import "StoreHeaderView.h"
+#import "StoreHeaderView.h"
 //#import "AddEntityController.h"
 
 @interface MyStoreController ()
@@ -16,7 +16,7 @@
 
 @implementation MyStoreController
 
-//@synthesize headerView = _headerView;
+@synthesize headerView = _headerView;
 @synthesize rightBarBtn = _rightBarBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,8 +32,12 @@
 {
     [super loadView];
     
-    _rightBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightBarBtnAction:)];
     
+    _headerView = [[StoreHeaderView alloc] initWithFrame:CGRectMake(0.0, 0., WIDTH, 200)];
+    
+    self.tableview.tableHeaderView = _headerView;
+    
+    _rightBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightBarBtnAction:)];
     self.navigationItem.rightBarButtonItem = _rightBarBtn;
 }
 

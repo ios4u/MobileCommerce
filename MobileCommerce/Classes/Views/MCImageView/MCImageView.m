@@ -19,6 +19,7 @@
     if (self) {
         // Initialization code
         self.userInteractionEnabled = YES;
+        self.contentMode = UIViewContentModeScaleAspectFit;
     }
     return self;
 }
