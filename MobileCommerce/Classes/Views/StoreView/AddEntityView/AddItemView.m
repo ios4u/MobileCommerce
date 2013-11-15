@@ -23,7 +23,7 @@
         self.backgroundColor = [UIColor lightGrayColor];
         
         
-        _itemImageV = [[ItemImageView alloc] initWithFrame:CGRectZero];
+        _itemImageV = [[MCImageView alloc] initWithFrame:CGRectZero];
         _itemImageV.backgroundColor = [UIColor redColor];
         _itemImageV.delegate = self;
         

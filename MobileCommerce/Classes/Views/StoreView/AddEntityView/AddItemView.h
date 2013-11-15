@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ItemImageView.h"
+#import "MCImageView.h"
 
 
 @protocol AddItemViewDelegate <NSObject>
@@ -16,10 +16,10 @@
 
 @end
 
-@interface AddItemView : UIView <ItemImageViewDelegate>
+@interface AddItemView : UIView <MCImageViewDelegate>
 
 @property (weak, nonatomic) id <AddItemViewDelegate> delegate;
-@property (strong, nonatomic) ItemImageView * itemImageV;
+@property (strong, nonatomic) MCImageView * itemImageV;
 @property (strong, nonatomic) UILabel * itemNameL;
 @property (strong, nonatomic) UITextField * itemNameTF;
 

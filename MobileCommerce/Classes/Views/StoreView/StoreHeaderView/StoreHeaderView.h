@@ -12,4 +12,8 @@
 
 //@property (strong, nonatomic)
 
+@property (strong, nonatomic) UILabel * storeNameL;
+@property (strong, nonatomic) UIButton * storeAddressBtn;
+@property (strong, nonatomic) UIButton * storePhoneBtn;
+
 @end

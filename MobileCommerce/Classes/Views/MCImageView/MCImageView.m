@@ -1,14 +1,14 @@
 //
-//  ItemImageView.m
+//  MCImageView.m
 //  MobileCommerce
 //
-//  Created by 谢家欣 on 13-11-14.
+//  Created by 谢家欣 on 13-11-15.
 //  Copyright (c) 2013年 谢家欣. All rights reserved.
 //
 
-#import "ItemImageView.h"
+#import "MCImageView.h"
 
-@implementation ItemImageView
+@implementation MCImageView
 
 @synthesize delegate = _delegate;
 

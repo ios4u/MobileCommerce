@@ -10,14 +10,27 @@
 
 @implementation StoreHeaderView
 
+@synthesize storeNameL = _storeNameL;
+@synthesize storeAddressBtn = _storeAddressBtn;
+@synthesize storePhoneBtn = _storePhoneBtn;
+
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        
+        
+        [self addSubview:_storeNameL];
+        [self addSubview:_storeAddressBtn];
+        [self addSubview:_storePhoneBtn];
+        
     }
     return self;
 }
+
+#pragma mark - button action
 
 /*
 // Only override drawRect: if you perform custom drawing.
