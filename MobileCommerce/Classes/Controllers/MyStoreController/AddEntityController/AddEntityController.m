@@ -39,9 +39,10 @@
     self.view = _addItemView;
     
     UIBarButtonItem * cancelBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissModalViewControllerAnimated:)];
+    UIBarButtonItem * doneBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneBarBtnAction:)];
     
     self.navigationItem.leftBarButtonItem = cancelBarBtn;
-    
+    self.navigationItem.rightBarButtonItem = doneBarBtn;
 }
 
 - (void)viewDidLoad
@@ -56,6 +57,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - button action
+- (void)doneBarBtnAction:(id)sender
+{
+    
+}
+
+#pragma mark - add item view action
 - (void)openPickerImager:(id)sender
 {
     _itemImageV = (UIImageView *)sender;

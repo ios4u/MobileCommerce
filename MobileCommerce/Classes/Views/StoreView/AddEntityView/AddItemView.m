@@ -40,9 +40,23 @@
         _itemNameTF.clearButtonMode = UITextFieldViewModeWhileEditing;
         _itemNameTF.borderStyle = UITextBorderStyleRoundedRect;
         
+        _priceL = [[UILabel alloc] initWithFrame:CGRectZero];
+        _priceL.text = NSLocalizedStringFromTable(@"price", kLocalization, nil);
+        _priceL.textAlignment = NSTextAlignmentCenter;
+        _priceL.textColor = [UIColor blackColor];
+        
+        _priceTF = [[UITextField alloc] initWithFrame:CGRectZero];
+        _priceTF.placeholder = NSLocalizedStringFromTable(@"price", kLocalization, nil);
+        _priceTF.leftViewMode = UITextFieldViewModeAlways;
+        _priceTF.leftView = _priceL;
+        _priceTF.clearButtonMode = UITextFieldViewModeWhileEditing;
+        _priceTF.borderStyle = UITextBorderStyleRoundedRect;
+        
         [self addSubview:_itemImageV];
         [self addSubview:_itemNameL];
         [self addSubview:_itemNameTF];
+        [self addSubview:_priceL];
+        [self addSubview:_priceTF];
     }
     return self;
 }
@@ -52,9 +66,11 @@
     [super layoutSubviews];
     
     _itemImageV.frame = CGRectMake(40, 100, 128, 128);
-    
     _itemNameTF.frame = CGRectMake(40, 238., 240, 40);
     _itemNameL.frame = CGRectMake(0., 0., 60, 40);
+    
+    _priceTF.frame = CGRectMake(40, 288, 240, 40);
+    _priceL.frame = CGRectMake(0., 0., 60., 40.);
 }
 
 - (void)TapImageView:(id)sender

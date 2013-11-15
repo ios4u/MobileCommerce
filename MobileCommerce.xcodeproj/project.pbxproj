@@ -28,6 +28,7 @@
 		B70C2F9B1830B8A9003A72AF /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F9A1830B8A9003A72AF /* Store.m */; };
 		B70C2F9F1830B9B6003A72AF /* DataList.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F9E1830B9B6003A72AF /* DataList.m */; };
 		B70C2FA21830BC90003A72AF /* StoreList.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2FA11830BC90003A72AF /* StoreList.m */; };
+		B73043C118350AF1007CDEE5 /* StoreHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73043C018350AF1007CDEE5 /* StoreHeaderView.m */; };
 		B77D462618307D890051DCB4 /* MenuList.m in Sources */ = {isa = PBXBuildFile; fileRef = B77D462518307D890051DCB4 /* MenuList.m */; };
 		B77D462C18307F370051DCB4 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = B77D462B18307F370051DCB4 /* Menu.m */; };
 		B77F41741830D385009A9A57 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F41731830D385009A9A57 /* User.m */; };
@@ -162,6 +163,8 @@
 		B70C2F9E1830B9B6003A72AF /* DataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataList.m; path = Classes/Models/Core/DataList.m; sourceTree = "<group>"; };
 		B70C2FA01830BC90003A72AF /* StoreList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreList.h; path = Classes/Models/Store/StoreList.h; sourceTree = "<group>"; };
 		B70C2FA11830BC90003A72AF /* StoreList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreList.m; path = Classes/Models/Store/StoreList.m; sourceTree = "<group>"; };
+		B73043BF18350AF1007CDEE5 /* StoreHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreHeaderView.h; path = Classes/Views/StoreView/StoreHeaderView/StoreHeaderView.h; sourceTree = "<group>"; };
+		B73043C018350AF1007CDEE5 /* StoreHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreHeaderView.m; path = Classes/Views/StoreView/StoreHeaderView/StoreHeaderView.m; sourceTree = "<group>"; };
 		B77D462418307D890051DCB4 /* MenuList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuList.h; path = Classes/Models/Menu/MenuList.h; sourceTree = "<group>"; };
 		B77D462518307D890051DCB4 /* MenuList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuList.m; path = Classes/Models/Menu/MenuList.m; sourceTree = "<group>"; };
 		B77D462A18307F370051DCB4 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Menu.h; path = Classes/Models/Menu/Menu.h; sourceTree = "<group>"; };
@@ -565,6 +568,8 @@
 		B7EF012F1834AB4700C1A523 /* StoreHeaderView */ = {
 			isa = PBXGroup;
 			children = (
+				B73043BF18350AF1007CDEE5 /* StoreHeaderView.h */,
+				B73043C018350AF1007CDEE5 /* StoreHeaderView.m */,
 			);
 			name = StoreHeaderView;
 			sourceTree = "<group>";
@@ -986,6 +991,7 @@
 				B7F9222C18348E7600A39D97 /* AddEntityController.m in Sources */,
 				39F4BA6918336D5B00312B7E /* SSKeychain.m in Sources */,
 				B7F8B281182CCC5B00C7668A /* SDWebImageCompat.m in Sources */,
+				B73043C118350AF1007CDEE5 /* StoreHeaderView.m in Sources */,
 				B7F8B23D182CCAA500C7668A /* BCAppDelegate.m in Sources */,
 				B7F8B28A182CCC5B00C7668A /* UIImage+WebP.m in Sources */,
 				B7F8B2EA182CD01D00C7668A /* MMDrawerController.m in Sources */,

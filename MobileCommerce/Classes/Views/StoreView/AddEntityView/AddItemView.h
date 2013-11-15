@@ -23,4 +23,7 @@
 @property (strong, nonatomic) UILabel * itemNameL;
 @property (strong, nonatomic) UITextField * itemNameTF;
 
+@property (strong, nonatomic) UILabel * priceL;
+@property (strong, nonatomic) UITextField * priceTF;
+
 @end
