@@ -7,6 +7,7 @@
 //
 
 #import "LoginController.h"
+#import "SignUpController.h"
 
 @interface LoginController ()
 
@@ -69,7 +70,14 @@
 
 - (void)TapSignUp
 {
-
+    SignUpController * controller = [[SignUpController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@""
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:nil];
+    controller.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
 }
 
 @end

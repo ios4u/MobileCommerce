@@ -9,9 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "Store.h"
 
+@protocol StoreHeaderViewDelegate <NSObject>
+
+- (void)TapAddressBtn:(NSString *)address;
+- (void)TapPhoneBtn:(NSString *)phone;
+
+@end
+
 @interface StoreHeaderView : UIView
 
 //@property (strong, nonatomic)
+@property (weak, nonatomic) id <StoreHeaderViewDelegate> delegate;
 @property (strong, nonatomic) Store * store;
 @property (strong, nonatomic) UIImageView * storeImageView;
 @property (strong, nonatomic) UILabel * storeNameL;

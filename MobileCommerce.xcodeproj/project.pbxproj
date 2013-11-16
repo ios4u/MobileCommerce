@@ -35,6 +35,8 @@
 		B77F41741830D385009A9A57 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F41731830D385009A9A57 /* User.m */; };
 		B77F41771830D76C009A9A57 /* UserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F41761830D76C009A9A57 /* UserCenter.m */; };
 		B7861DC518325D9600A04002 /* MenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7861DC418325D9600A04002 /* MenuHeaderView.m */; };
+		B79CFD9218370FF40046B024 /* SignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = B79CFD9118370FF40046B024 /* SignUpController.m */; };
+		B79CFD96183713B30046B024 /* SignUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = B79CFD95183713B30046B024 /* SignUpView.m */; };
 		B7A734A318320A58007EC29A /* OpenCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A734A218320A58007EC29A /* OpenCenterController.m */; };
 		B7A734A618320B10007EC29A /* MenuHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A734A518320B10007EC29A /* MenuHeaderController.m */; };
 		B7CF0F9B182D214500A796E5 /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9A182D214500A796E5 /* RootController.m */; };
@@ -177,6 +179,10 @@
 		B77F41761830D76C009A9A57 /* UserCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCenter.m; path = Classes/Models/User/UserCenter.m; sourceTree = "<group>"; };
 		B7861DC318325D9600A04002 /* MenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuHeaderView.h; path = Classes/Views/MenuView/HeaderView/MenuHeaderView.h; sourceTree = "<group>"; };
 		B7861DC418325D9600A04002 /* MenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuHeaderView.m; path = Classes/Views/MenuView/HeaderView/MenuHeaderView.m; sourceTree = "<group>"; };
+		B79CFD9018370FF40046B024 /* SignUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpController.h; path = Classes/Controllers/SignUpController/SignUpController.h; sourceTree = "<group>"; };
+		B79CFD9118370FF40046B024 /* SignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpController.m; path = Classes/Controllers/SignUpController/SignUpController.m; sourceTree = "<group>"; };
+		B79CFD94183713B30046B024 /* SignUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpView.h; path = Classes/Views/SignUpView/SignUpView.h; sourceTree = "<group>"; };
+		B79CFD95183713B30046B024 /* SignUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpView.m; path = Classes/Views/SignUpView/SignUpView.m; sourceTree = "<group>"; };
 		B7A734A118320A58007EC29A /* OpenCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenCenterController.h; path = Classes/Controllers/OpenCenterController/OpenCenterController.h; sourceTree = "<group>"; };
 		B7A734A218320A58007EC29A /* OpenCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenCenterController.m; path = Classes/Controllers/OpenCenterController/OpenCenterController.m; sourceTree = "<group>"; };
 		B7A734A418320B10007EC29A /* MenuHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuHeaderController.h; path = Classes/Controllers/MenuController/MenuHeaderController.h; sourceTree = "<group>"; };
@@ -519,6 +525,24 @@
 			name = User;
 			sourceTree = "<group>";
 		};
+		B79CFD8F18370FCD0046B024 /* SignUpController */ = {
+			isa = PBXGroup;
+			children = (
+				B79CFD9018370FF40046B024 /* SignUpController.h */,
+				B79CFD9118370FF40046B024 /* SignUpController.m */,
+			);
+			name = SignUpController;
+			sourceTree = "<group>";
+		};
+		B79CFD93183713980046B024 /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				B79CFD94183713B30046B024 /* SignUpView.h */,
+				B79CFD95183713B30046B024 /* SignUpView.m */,
+			);
+			name = SignUpView;
+			sourceTree = "<group>";
+		};
 		B7A734A018320A25007EC29A /* OpenCenterController */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +719,7 @@
 		B7F8B25D182CCC2400C7668A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B79CFD93183713980046B024 /* SignUpView */,
 				B731C1891835B780009EDE95 /* MCImageView */,
 				39F4BA6E1833771B00312B7E /* LoginView */,
 				B7A734A718320B22007EC29A /* MenuView */,
@@ -707,6 +732,7 @@
 		B7F8B25E182CCC2900C7668A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B79CFD8F18370FCD0046B024 /* SignUpController */,
 				B7A734A018320A25007EC29A /* OpenCenterController */,
 				39F4BA6A183373A700312B7E /* LoginController */,
 				B70C2F871830ADCD003A72AF /* MyStoreController */,
@@ -972,6 +998,7 @@
 			files = (
 				B77F41741830D385009A9A57 /* User.m in Sources */,
 				B7F8B2A8182CCC6700C7668A /* AFURLSessionManager.m in Sources */,
+				B79CFD9218370FF40046B024 /* SignUpController.m in Sources */,
 				39F4BA7418337A3700312B7E /* LoginView.m in Sources */,
 				B7F8B2A5182CCC6700C7668A /* AFURLConnectionOperation.m in Sources */,
 				B7F8B2E9182CD01D00C7668A /* MMDrawerBarButtonItem.m in Sources */,
@@ -1027,6 +1054,7 @@
 				B70C2F7818309992003A72AF /* EntityList.m in Sources */,
 				B70C2F701830972F003A72AF /* ShopController.m in Sources */,
 				B77D462618307D890051DCB4 /* MenuList.m in Sources */,
+				B79CFD96183713B30046B024 /* SignUpView.m in Sources */,
 				B7F8B27F182CCC5B00C7668A /* NSData+GIF.m in Sources */,
 				B70C2F9F1830B9B6003A72AF /* DataList.m in Sources */,
 				B7F8B2A6182CCC6700C7668A /* AFURLRequestSerialization.m in Sources */,
@@ -1090,7 +1118,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1103,6 +1131,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1120,9 +1149,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/edison7500/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
+					/Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
+				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1130,7 +1164,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1143,6 +1177,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1154,9 +1189,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/edison7500/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
+					/Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
+				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -1170,10 +1210,7 @@
 				GCC_PREFIX_HEADER = "MobileCommerce/MobileCommerce-Prefix.pch";
 				INFOPLIST_FILE = "MobileCommerce/MobileCommerce-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/edison7500/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
-				);
+				LIBRARY_SEARCH_PATHS = /Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -1190,10 +1227,7 @@
 				GCC_PREFIX_HEADER = "MobileCommerce/MobileCommerce-Prefix.pch";
 				INFOPLIST_FILE = "MobileCommerce/MobileCommerce-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/edison7500/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
-				);
+				LIBRARY_SEARCH_PATHS = /Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

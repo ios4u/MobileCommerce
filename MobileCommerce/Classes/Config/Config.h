@@ -49,6 +49,6 @@ return shared##className; \
 #define kLoginController @"LoginController"
 #define kAddItemController @"AddEntityController"
 
-static BOOL OSVersionIsAtLeastiOS7() {
-    return (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1);
-}
+//static BOOL OSVersionIsAtLeastiOS7() {
+//    return (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1);
+//}

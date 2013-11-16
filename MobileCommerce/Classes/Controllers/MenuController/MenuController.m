@@ -41,19 +41,12 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     
-    UIColor * tableViewBackgroundColor;
-    if(OSVersionIsAtLeastiOS7()){
-        tableViewBackgroundColor = [UIColor colorWithRed:110.0/255.0
+    UIColor * tableViewBackgroundColor = [UIColor colorWithRed:110.0/255.0
                                                    green:113.0/255.0
                                                     blue:115.0/255.0
                                                    alpha:1.0];
-    }
-    else {
-        tableViewBackgroundColor = [UIColor colorWithRed:77.0/255.0
-                                                   green:79.0/255.0
-                                                    blue:80.0/255.0
-                                                   alpha:1.0];
-    }
+
+
     [_tableView setBackgroundColor:tableViewBackgroundColor];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.view = _tableView;

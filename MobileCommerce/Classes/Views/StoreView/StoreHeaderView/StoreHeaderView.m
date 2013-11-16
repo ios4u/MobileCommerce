@@ -10,6 +10,7 @@
 
 @implementation StoreHeaderView
 
+@synthesize delegate = _delegate;
 @synthesize store = _store;
 @synthesize storeNameL = _storeNameL;
 @synthesize storeAddressBtn = _storeAddressBtn;
@@ -74,12 +75,16 @@
 
 - (void)storeAddressBtnAction:(id)sender
 {
-
+    if (_delegate && [_delegate respondsToSelector:@selector(TapAddressBtn:)]) {
+        [_delegate TapAddressBtn:_store.address];
+    }
 }
 
 - (void)storePhoneBtnAction:(id)sender
 {
-
+    if (_delegate && [_delegate respondsToSelector:@selector(TapPhoneBtn:)]) {
+        [_delegate TapPhoneBtn:_store.tel];
+    }
 }
 
 
