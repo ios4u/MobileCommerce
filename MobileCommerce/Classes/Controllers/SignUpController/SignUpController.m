@@ -32,9 +32,6 @@
 
 - (void)loadView
 {
-//    _signUpView = [[SignUpView alloc] initWithFrame:CGRectMake(0., 0., WIDTH, HEIGHT)];
-    
-//    self.view = _signUpView;
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0., 0., WIDTH, HEIGHT) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;

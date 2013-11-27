@@ -8,13 +8,14 @@
 
 #import "CodeVerifiedController.h"
 
+
 @interface CodeVerifiedController ()
 
 @end
 
 @implementation CodeVerifiedController
 
-@synthesize submitBtn = _submitBtn;
+@synthesize verifiedView = _verifiedView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +28,13 @@
 
 - (void)loadView
 {
-    [super loadView];
+//    [super loadView];
+    _verifiedView = [[VerifiedView alloc] initWithFrame:CGRectMake(0., 0., WIDTH, HEIGHT)];
+    _verifiedView.delegate = self;
+    
+    self.title = NSLocalizedStringFromTable(@"verify", kLocalization, nil);
+    
+    self.view = _verifiedView;
 }
 
 - (void)viewDidLoad
@@ -40,6 +47,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - verifiedView delegate
+- (void)TapCodeVerifiedWithCode:(NSString *)code
+{
+    DLOG(@"verified %@", code);
 }
 
 @end

@@ -17,6 +17,7 @@
 "signin"="登陆";
 "signup"="注册";
 "signout"="注销";
+"verify"="验证";
 "submit" = "提交";
 
 "username"="用户名";

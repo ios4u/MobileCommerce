@@ -37,6 +37,7 @@
 		B7861DC518325D9600A04002 /* MenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7861DC418325D9600A04002 /* MenuHeaderView.m */; };
 		B79105E818448757000C558F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79105E718448757000C558F /* CoreLocation.framework */; };
 		B79CFD9218370FF40046B024 /* SignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = B79CFD9118370FF40046B024 /* SignUpController.m */; };
+		B79E79E21846212A0080957B /* VerifiedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B79E79E11846212A0080957B /* VerifiedView.m */; };
 		B7A734A318320A58007EC29A /* OpenCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A734A218320A58007EC29A /* OpenCenterController.m */; };
 		B7A734A618320B10007EC29A /* MenuHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A734A518320B10007EC29A /* MenuHeaderController.m */; };
 		B7CF0F9B182D214500A796E5 /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9A182D214500A796E5 /* RootController.m */; };
@@ -182,6 +183,8 @@
 		B79105E718448757000C558F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B79CFD9018370FF40046B024 /* SignUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpController.h; path = Classes/Controllers/SignUpController/SignUpController.h; sourceTree = "<group>"; };
 		B79CFD9118370FF40046B024 /* SignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpController.m; path = Classes/Controllers/SignUpController/SignUpController.m; sourceTree = "<group>"; };
+		B79E79E01846212A0080957B /* VerifiedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VerifiedView.h; path = Classes/Views/VerifiedView/VerifiedView.h; sourceTree = "<group>"; };
+		B79E79E11846212A0080957B /* VerifiedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VerifiedView.m; path = Classes/Views/VerifiedView/VerifiedView.m; sourceTree = "<group>"; };
 		B7A734A118320A58007EC29A /* OpenCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenCenterController.h; path = Classes/Controllers/OpenCenterController/OpenCenterController.h; sourceTree = "<group>"; };
 		B7A734A218320A58007EC29A /* OpenCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenCenterController.m; path = Classes/Controllers/OpenCenterController/OpenCenterController.m; sourceTree = "<group>"; };
 		B7A734A418320B10007EC29A /* MenuHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuHeaderController.h; path = Classes/Controllers/MenuController/MenuHeaderController.h; sourceTree = "<group>"; };
@@ -534,6 +537,15 @@
 			name = SignUpController;
 			sourceTree = "<group>";
 		};
+		B79E79DF184621060080957B /* VerifiedView */ = {
+			isa = PBXGroup;
+			children = (
+				B79E79E01846212A0080957B /* VerifiedView.h */,
+				B79E79E11846212A0080957B /* VerifiedView.m */,
+			);
+			name = VerifiedView;
+			sourceTree = "<group>";
+		};
 		B7A734A018320A25007EC29A /* OpenCenterController */ = {
 			isa = PBXGroup;
 			children = (
@@ -711,6 +723,7 @@
 		B7F8B25D182CCC2400C7668A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B79E79DF184621060080957B /* VerifiedView */,
 				B731C1891835B780009EDE95 /* MCImageView */,
 				B7A734A718320B22007EC29A /* MenuView */,
 				B70C2F911830B62D003A72AF /* StoreView */,
@@ -1011,6 +1024,7 @@
 				B7F8B239182CCAA500C7668A /* main.m in Sources */,
 				B7F92223183461BB00A39D97 /* FMDatabaseAdditions.m in Sources */,
 				B7F8B2A4182CCC6700C7668A /* AFSecurityPolicy.m in Sources */,
+				B79E79E21846212A0080957B /* VerifiedView.m in Sources */,
 				B7A734A618320B10007EC29A /* MenuHeaderController.m in Sources */,
 				B77F41771830D76C009A9A57 /* UserCenter.m in Sources */,
 				B7F9222C18348E7600A39D97 /* AddEntityController.m in Sources */,

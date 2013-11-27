@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CodeVerifiedController : UIViewController
+#import "VerifiedView.h"
 
-@property (strong, nonatomic) UITextField * codeTF;
-@property (strong, nonatomic) UIButton * submitBtn;
+@interface CodeVerifiedController : UIViewController <VerifiedViewDelegate>
+
+@property (strong, nonatomic) VerifiedView * verifiedView;
 
 @end
