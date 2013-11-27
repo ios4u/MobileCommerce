@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-#import "LoginView.h"
+//#import "LoginView.h"
 
-@interface LoginController : UIViewController <LoginViewDelegate>
+@interface LoginController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
-@property (strong, nonatomic) LoginView * loginView;
+//@property (strong, nonatomic) LoginView * loginView;
+@property (strong, nonatomic) UITableView * tableView;
 @property (strong, nonatomic) UIBarButtonItem * dismissBarBtn;
-
+@property (strong, nonatomic) UIButton * forgetPasswdBtn;
+@property (strong, nonatomic) UITextField * usernameTF;
+@property (strong, nonatomic) UITextField * passwdTF;
 @end

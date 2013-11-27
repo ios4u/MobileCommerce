@@ -14,7 +14,6 @@
 		39F4BA6618336C0600312B7E /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 39F4BA6118336C0600312B7E /* zbar-samples.png */; };
 		39F4BA6918336D5B00312B7E /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4BA6818336D5B00312B7E /* SSKeychain.m */; };
 		39F4BA6D183373D000312B7E /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4BA6C183373D000312B7E /* LoginController.m */; };
-		39F4BA7418337A3700312B7E /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4BA7318337A3700312B7E /* LoginView.m */; };
 		B70C2F6C183092B5003A72AF /* EntityController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F6B183092B5003A72AF /* EntityController.m */; };
 		B70C2F701830972F003A72AF /* ShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F6F1830972F003A72AF /* ShopController.m */; };
 		B70C2F75183097F8003A72AF /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F74183097F8003A72AF /* Entity.m */; };
@@ -28,6 +27,7 @@
 		B70C2F9B1830B8A9003A72AF /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F9A1830B8A9003A72AF /* Store.m */; };
 		B70C2F9F1830B9B6003A72AF /* DataList.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F9E1830B9B6003A72AF /* DataList.m */; };
 		B70C2FA21830BC90003A72AF /* StoreList.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2FA11830BC90003A72AF /* StoreList.m */; };
+		B71E0D0F18459B6B00E1D481 /* SignInCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E0D0E18459B6B00E1D481 /* SignInCell.m */; };
 		B73043C118350AF1007CDEE5 /* StoreHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73043C018350AF1007CDEE5 /* StoreHeaderView.m */; };
 		B731C18C1835B7A5009EDE95 /* MCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B731C18B1835B7A5009EDE95 /* MCImageView.m */; };
 		B77D462618307D890051DCB4 /* MenuList.m in Sources */ = {isa = PBXBuildFile; fileRef = B77D462518307D890051DCB4 /* MenuList.m */; };
@@ -35,6 +35,7 @@
 		B77F41741830D385009A9A57 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F41731830D385009A9A57 /* User.m */; };
 		B77F41771830D76C009A9A57 /* UserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F41761830D76C009A9A57 /* UserCenter.m */; };
 		B7861DC518325D9600A04002 /* MenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7861DC418325D9600A04002 /* MenuHeaderView.m */; };
+		B79105E818448757000C558F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79105E718448757000C558F /* CoreLocation.framework */; };
 		B79CFD9218370FF40046B024 /* SignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = B79CFD9118370FF40046B024 /* SignUpController.m */; };
 		B79CFD96183713B30046B024 /* SignUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = B79CFD95183713B30046B024 /* SignUpView.m */; };
 		B7A734A318320A58007EC29A /* OpenCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A734A218320A58007EC29A /* OpenCenterController.m */; };
@@ -136,8 +137,6 @@
 		39F4BA6818336D5B00312B7E /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		39F4BA6B183373D000312B7E /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = Classes/Controllers/LoginController/LoginController.h; sourceTree = "<group>"; };
 		39F4BA6C183373D000312B7E /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = Classes/Controllers/LoginController/LoginController.m; sourceTree = "<group>"; };
-		39F4BA7218337A3700312B7E /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginView.h; path = Classes/Views/LoginView/LoginView.h; sourceTree = "<group>"; };
-		39F4BA7318337A3700312B7E /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginView.m; path = Classes/Views/LoginView/LoginView.m; sourceTree = "<group>"; };
 		B70C2F68183090C3003A72AF /* ColorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorConfig.h; path = Classes/Config/ColorConfig.h; sourceTree = "<group>"; };
 		B70C2F6A183092B5003A72AF /* EntityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityController.h; path = Classes/Controllers/EntityController/EntityController.h; sourceTree = "<group>"; };
 		B70C2F6B183092B5003A72AF /* EntityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntityController.m; path = Classes/Controllers/EntityController/EntityController.m; sourceTree = "<group>"; };
@@ -165,6 +164,8 @@
 		B70C2F9E1830B9B6003A72AF /* DataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataList.m; path = Classes/Models/Core/DataList.m; sourceTree = "<group>"; };
 		B70C2FA01830BC90003A72AF /* StoreList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreList.h; path = Classes/Models/Store/StoreList.h; sourceTree = "<group>"; };
 		B70C2FA11830BC90003A72AF /* StoreList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreList.m; path = Classes/Models/Store/StoreList.m; sourceTree = "<group>"; };
+		B71E0D0D18459B6B00E1D481 /* SignInCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInCell.h; path = Classes/Views/LoginView/SignInCell.h; sourceTree = "<group>"; };
+		B71E0D0E18459B6B00E1D481 /* SignInCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInCell.m; path = Classes/Views/LoginView/SignInCell.m; sourceTree = "<group>"; };
 		B73043BF18350AF1007CDEE5 /* StoreHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreHeaderView.h; path = Classes/Views/StoreView/StoreHeaderView/StoreHeaderView.h; sourceTree = "<group>"; };
 		B73043C018350AF1007CDEE5 /* StoreHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreHeaderView.m; path = Classes/Views/StoreView/StoreHeaderView/StoreHeaderView.m; sourceTree = "<group>"; };
 		B731C18A1835B7A5009EDE95 /* MCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCImageView.h; path = Classes/Views/MCImageView/MCImageView.h; sourceTree = "<group>"; };
@@ -179,6 +180,7 @@
 		B77F41761830D76C009A9A57 /* UserCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCenter.m; path = Classes/Models/User/UserCenter.m; sourceTree = "<group>"; };
 		B7861DC318325D9600A04002 /* MenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuHeaderView.h; path = Classes/Views/MenuView/HeaderView/MenuHeaderView.h; sourceTree = "<group>"; };
 		B7861DC418325D9600A04002 /* MenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuHeaderView.m; path = Classes/Views/MenuView/HeaderView/MenuHeaderView.m; sourceTree = "<group>"; };
+		B79105E718448757000C558F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B79CFD9018370FF40046B024 /* SignUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpController.h; path = Classes/Controllers/SignUpController/SignUpController.h; sourceTree = "<group>"; };
 		B79CFD9118370FF40046B024 /* SignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpController.m; path = Classes/Controllers/SignUpController/SignUpController.m; sourceTree = "<group>"; };
 		B79CFD94183713B30046B024 /* SignUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpView.h; path = Classes/Views/SignUpView/SignUpView.h; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79105E818448757000C558F /* CoreLocation.framework in Frameworks */,
 				B7F922281834621300A39D97 /* libsqlite3.dylib in Frameworks */,
 				B7F8B2AE182CCCFC00C7668A /* SystemConfiguration.framework in Frameworks */,
 				B7F8B2AC182CCCB000C7668A /* MobileCoreServices.framework in Frameworks */,
@@ -398,8 +401,8 @@
 		39F4BA6E1833771B00312B7E /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
-				39F4BA7218337A3700312B7E /* LoginView.h */,
-				39F4BA7318337A3700312B7E /* LoginView.m */,
+				B71E0D0D18459B6B00E1D481 /* SignInCell.h */,
+				B71E0D0E18459B6B00E1D481 /* SignInCell.m */,
 			);
 			name = LoginView;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 		B7F8B22B182CCAA500C7668A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B79105E718448757000C558F /* CoreLocation.framework */,
 				B7F922271834621300A39D97 /* libsqlite3.dylib */,
 				B7F8B2AD182CCCFC00C7668A /* SystemConfiguration.framework */,
 				B7F8B2AB182CCCB000C7668A /* MobileCoreServices.framework */,
@@ -999,7 +1003,6 @@
 				B77F41741830D385009A9A57 /* User.m in Sources */,
 				B7F8B2A8182CCC6700C7668A /* AFURLSessionManager.m in Sources */,
 				B79CFD9218370FF40046B024 /* SignUpController.m in Sources */,
-				39F4BA7418337A3700312B7E /* LoginView.m in Sources */,
 				B7F8B2A5182CCC6700C7668A /* AFURLConnectionOperation.m in Sources */,
 				B7F8B2E9182CD01D00C7668A /* MMDrawerBarButtonItem.m in Sources */,
 				B7EF012D1834A55D00C1A523 /* AddItemView.m in Sources */,
@@ -1030,6 +1033,7 @@
 				B7F8B23D182CCAA500C7668A /* BCAppDelegate.m in Sources */,
 				B7F8B28A182CCC5B00C7668A /* UIImage+WebP.m in Sources */,
 				B7F8B2EA182CD01D00C7668A /* MMDrawerController.m in Sources */,
+				B71E0D0F18459B6B00E1D481 /* SignInCell.m in Sources */,
 				B70C2F901830B147003A72AF /* MMTableViewCell.m in Sources */,
 				B7F8B2A1182CCC6700C7668A /* AFHTTPRequestOperationManager.m in Sources */,
 				B7CF0F9B182D214500A796E5 /* RootController.m in Sources */,
