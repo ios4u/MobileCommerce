@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "AddItemView.h"
 
-@interface AddEntityController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, AddItemViewDelegate>
+@interface AddEntityController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate,UITableViewDataSource, UITableViewDelegate, AddItemViewDelegate>
 
 @property (strong, nonatomic) AddItemView * addItemView;
-
-
+@property (strong, nonatomic) UITableView * tableView;
+@property (strong, nonatomic) UIActionSheet * actionSheet;
+@property (strong, nonatomic) UIImagePickerController * imagePicker;
 @end

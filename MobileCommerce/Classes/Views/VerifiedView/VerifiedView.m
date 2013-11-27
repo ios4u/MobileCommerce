@@ -20,7 +20,7 @@
     if (self) {
         // Initialization code
 //        self.backgroundColor =
-        self.backgroundColor = [UIColor colorWithRed:239. / 255. green:239. / 255. blue:244. / 255. alpha:1.];
+        self.backgroundColor = kDefaultBackgroundColor;
         
         _codeTF = [[UITextField alloc] initWithFrame:CGRectZero];
         _codeTF.keyboardType = UIKeyboardTypeNumberPad;

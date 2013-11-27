@@ -24,3 +24,8 @@
 "password"="密码";
 "forget password"="忘记密码";
 "phone number"="电话号码";
+
+
+"item name"="商品名称";
+"price"="价格";
+"stock"="库存";

@@ -121,7 +121,7 @@
         case 0:
         {
             cell.textLabel.text = NSLocalizedStringFromTable(@"username", kLocalization, nil);
-            tf.keyboardType = UIKeyboardTypeNumberPad;
+            tf.keyboardType = UIKeyboardTypeAlphabet;
             tf.placeholder = NSLocalizedStringFromTable(@"username", kLocalization, nil);
             _usernameTF = tf;
         }
