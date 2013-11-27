@@ -16,6 +16,7 @@
 "signin"="SignIn";
 "signup"="SignUp";
 "signout"="Sign Out";
+"submit"="Submit";
 
 "username"="UserName";
 "password"="PassWord";

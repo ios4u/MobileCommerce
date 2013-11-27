@@ -53,7 +53,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [[UserCenter sharedUserCenter] addTheObserverWithObject:self];
-    self.title = NSLocalizedStringFromTable(@"sign in or up", kLocalization, nil);
+    self.title = NSLocalizedStringFromTable(@"signin", kLocalization, nil);
 }
 
 - (void)didReceiveMemoryWarning
@@ -167,26 +167,29 @@
 //    CLOG(@"okokokok");
     if (indexPath.section == 1) {
         [_tableView deselectRowAtIndexPath:indexPath animated:YES];
-        if ([_usernameTF.text length] < 8 || [_passwdTF.text length] < 6) {
-//            error_info = @"用户名或者密码不符合要求";
-//            [SVProgressHUD showErrorWithStatus:error_info];
-            return;
-        }
-
-//        switch (indexPath.row) {
-//            case 0:
-//            {
-//                [_user loginWithUsername:_usernameTF.text Passwd:_passwdTF.text];
-//            }
-//                break;
-//            case 1:
-//            {
-//                [_user registerWithUsername:_usernameTF.text Passwd:_passwdTF.text];
-//            }
-//                break;
-//            default:
-//                break;
+//        if ([_usernameTF.text length] < 8 || [_passwdTF.text length] < 6) {
+////            error_info = @"用户名或者密码不符合要求";
+////            [SVProgressHUD showErrorWithStatus:error_info];
+//            return;
 //        }
+
+        switch (indexPath.row) {
+            case 0:
+            {
+//                [_user loginWithUsername:_usernameTF.text Passwd:_passwdTF.text];
+                [[UserCenter sharedUserCenter] signInWithUsername:_usernameTF.text Passwd:_passwdTF.text];
+            }
+                break;
+            case 1:
+            {
+//                [_user registerWithUsername:_usernameTF.text Passwd:_passwdTF.text];
+                SignUpController * controller = [[SignUpController alloc] init];
+                [self.navigationController pushViewController:controller animated:YES];
+            }
+                break;
+            default:
+                break;
+        }
     }
 
 }
