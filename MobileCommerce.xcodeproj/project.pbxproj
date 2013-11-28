@@ -39,6 +39,7 @@
 		B79CFD9218370FF40046B024 /* SignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = B79CFD9118370FF40046B024 /* SignUpController.m */; };
 		B79E79E21846212A0080957B /* VerifiedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B79E79E11846212A0080957B /* VerifiedView.m */; };
 		B79E79E6184653750080957B /* EntityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B79E79E5184653750080957B /* EntityCell.m */; };
+		B79E79EA184659120080957B /* DropListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B79E79E9184659120080957B /* DropListController.m */; };
 		B7A734A318320A58007EC29A /* OpenCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A734A218320A58007EC29A /* OpenCenterController.m */; };
 		B7A734A618320B10007EC29A /* MenuHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A734A518320B10007EC29A /* MenuHeaderController.m */; };
 		B7CF0F9B182D214500A796E5 /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9A182D214500A796E5 /* RootController.m */; };
@@ -188,6 +189,8 @@
 		B79E79E11846212A0080957B /* VerifiedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VerifiedView.m; path = Classes/Views/VerifiedView/VerifiedView.m; sourceTree = "<group>"; };
 		B79E79E4184653750080957B /* EntityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityCell.h; path = Classes/Views/EntityViews/EntityCell.h; sourceTree = "<group>"; };
 		B79E79E5184653750080957B /* EntityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntityCell.m; path = Classes/Views/EntityViews/EntityCell.m; sourceTree = "<group>"; };
+		B79E79E8184659120080957B /* DropListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DropListController.h; path = Classes/Controllers/DropListController/DropListController.h; sourceTree = "<group>"; };
+		B79E79E9184659120080957B /* DropListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropListController.m; path = Classes/Controllers/DropListController/DropListController.m; sourceTree = "<group>"; };
 		B7A734A118320A58007EC29A /* OpenCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenCenterController.h; path = Classes/Controllers/OpenCenterController/OpenCenterController.h; sourceTree = "<group>"; };
 		B7A734A218320A58007EC29A /* OpenCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenCenterController.m; path = Classes/Controllers/OpenCenterController/OpenCenterController.m; sourceTree = "<group>"; };
 		B7A734A418320B10007EC29A /* MenuHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuHeaderController.h; path = Classes/Controllers/MenuController/MenuHeaderController.h; sourceTree = "<group>"; };
@@ -558,6 +561,15 @@
 			name = EntityViews;
 			sourceTree = "<group>";
 		};
+		B79E79E7184658DC0080957B /* DropListController */ = {
+			isa = PBXGroup;
+			children = (
+				B79E79E8184659120080957B /* DropListController.h */,
+				B79E79E9184659120080957B /* DropListController.m */,
+			);
+			name = DropListController;
+			sourceTree = "<group>";
+		};
 		B7A734A018320A25007EC29A /* OpenCenterController */ = {
 			isa = PBXGroup;
 			children = (
@@ -756,6 +768,7 @@
 				B70C2F831830AC65003A72AF /* EntityDetailController */,
 				B70C2F6D18309704003A72AF /* ShopController */,
 				B70C2F6918309291003A72AF /* EntityController */,
+				B79E79E7184658DC0080957B /* DropListController */,
 				B7CF0F9F182D226900A796E5 /* MenuController */,
 				B7CF0F97182D1F9100A796E5 /* ListController */,
 				B7CF0F98182D210A00A796E5 /* RootController */,
@@ -1033,6 +1046,7 @@
 				B70C2F821830A5E9003A72AF /* MMSideDrawerSectionHeaderView.m in Sources */,
 				B7F8B2EC182CD01D00C7668A /* UIViewController+MMDrawerController.m in Sources */,
 				B7861DC518325D9600A04002 /* MenuHeaderView.m in Sources */,
+				B79E79EA184659120080957B /* DropListController.m in Sources */,
 				B7F8B282182CCC5B00C7668A /* SDWebImageDecoder.m in Sources */,
 				B7F8B239182CCAA500C7668A /* main.m in Sources */,
 				B79E79E6184653750080957B /* EntityCell.m in Sources */,

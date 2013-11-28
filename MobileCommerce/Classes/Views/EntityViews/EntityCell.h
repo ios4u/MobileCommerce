@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Entity;
+
 @interface EntityCell : UITableViewCell
+
+@property (strong, nonatomic) Entity * entity;
 
 @end

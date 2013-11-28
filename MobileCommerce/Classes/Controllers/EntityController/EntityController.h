@@ -7,11 +7,12 @@
 //
 
 #import "ListController.h"
-
+#import "DropListController.h"
 @class EntityList;
 
-@interface EntityController : ListController;
+@interface EntityController : ListController <UISearchBarDelegate, PassValueDelegate>;
 
 @property (strong, nonatomic) EntityList * data;
-
+@property (strong, nonatomic) UISearchBar * searchBar;
+@property (strong, nonatomic) DropListController * dropList;
 @end
