@@ -41,9 +41,9 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     [self removeObserver:obj forKeyPath:@"isSignOut"];
 }
 
-- (void)siginup
+- (void)signUpWithUsername:(NSString *)username Passwd:(NSString *)passwd Phone:(NSString *)phone
 {
-
+    DLOG(@"signup signup");
 }
 
 - (void)signInWithUsername:(NSString *)username Passwd:(NSString *)passwd

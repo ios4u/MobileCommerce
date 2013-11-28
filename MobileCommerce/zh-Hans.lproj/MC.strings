@@ -17,7 +17,15 @@
 "signin"="登陆";
 "signup"="注册";
 "signout"="注销";
+"verify"="验证";
+"submit" = "提交";
 
 "username"="用户名";
 "password"="密码";
+"forget password"="忘记密码";
 "phone number"="电话号码";
+
+
+"item name"="商品名称";
+"price"="价格";
+"stock"="库存";

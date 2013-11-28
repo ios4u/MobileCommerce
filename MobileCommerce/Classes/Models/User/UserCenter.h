@@ -23,8 +23,9 @@
 
 DEFINE_SINGLETON_FOR_HEADER(UserCenter);
 
-- (void)siginup;
+//- (void)siginup;
 //- (void)signin;
+- (void)signUpWithUsername:(NSString *)username Passwd:(NSString *)passwd Phone:(NSString *)phone;
 - (void)signInWithUsername:(NSString *)username Passwd:(NSString *)passwd;
 - (void)signout;
 - (BOOL)isSeller;

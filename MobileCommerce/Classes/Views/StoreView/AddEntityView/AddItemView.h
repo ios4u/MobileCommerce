@@ -12,18 +12,18 @@
 
 @protocol AddItemViewDelegate <NSObject>
 
-- (void)openPickerImager:(id)sender;
-
+//- (void)openPickerImager:(id)sender;
+- (void)TapEntityImage:(id)sender;
 @end
 
 @interface AddItemView : UIView <MCImageViewDelegate>
 
 @property (weak, nonatomic) id <AddItemViewDelegate> delegate;
 @property (strong, nonatomic) MCImageView * itemImageV;
-@property (strong, nonatomic) UILabel * itemNameL;
-@property (strong, nonatomic) UITextField * itemNameTF;
-
-@property (strong, nonatomic) UILabel * priceL;
-@property (strong, nonatomic) UITextField * priceTF;
+//@property (strong, nonatomic) UILabel * itemNameL;
+//@property (strong, nonatomic) UITextField * itemNameTF;
+//
+//@property (strong, nonatomic) UILabel * priceL;
+//@property (strong, nonatomic) UITextField * priceTF;
 
 @end

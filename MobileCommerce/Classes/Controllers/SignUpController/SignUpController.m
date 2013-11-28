@@ -7,6 +7,7 @@
 //
 
 #import "SignUpController.h"
+#import "CodeVerifiedController.h"
 
 @interface SignUpController ()
 
@@ -14,7 +15,11 @@
 
 @implementation SignUpController
 
-@synthesize signUpView = _signUpView;
+//@synthesize signUpView = _signUpView;
+@synthesize tableView = _tableView;
+@synthesize usernameTF = _usernameTF;
+@synthesize passwdTF = _passwdTF;
+@synthesize mobilePhoneTF = _mobilePhoneTF;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,9 +32,10 @@
 
 - (void)loadView
 {
-    _signUpView = [[SignUpView alloc] initWithFrame:CGRectMake(0., 0., WIDTH, HEIGHT)];
-    
-    self.view = _signUpView;
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0., 0., WIDTH, HEIGHT) style:UITableViewStyleGrouped];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    self.view = _tableView;
 }
 
 - (void)viewDidLoad
@@ -43,6 +49,97 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - tableView data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 1) {
+        return 1;
+    }
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 1) {
+        static NSString * CellIdentifer = @"submitCell";
+        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+        }
+        cell.textLabel.text = NSLocalizedStringFromTable(@"submit", kLocalization, nil);
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        return cell;
+    }
+    
+    static NSString * CellIdentifer = @"ContentInCell";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    UITextField * tf;
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+        tf = [[UITextField alloc] initWithFrame:CGRectZero];
+        tf.autocorrectionType = UITextAutocorrectionTypeNo;
+        tf.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        tf.adjustsFontSizeToFitWidth = YES;
+        tf.clearButtonMode = UITextFieldViewModeWhileEditing;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        [cell.contentView addSubview:tf];
+    }
+    switch (indexPath.row) {
+        case 0:
+        {
+            cell.textLabel.text = NSLocalizedStringFromTable(@"username", kLocalization, nil);
+            tf.keyboardType = UIKeyboardTypeNumberPad;
+            tf.placeholder = NSLocalizedStringFromTable(@"username", kLocalization, nil);
+            _usernameTF = tf;
+        }
+            break;
+        case 1:
+        {
+            cell.textLabel.text = NSLocalizedStringFromTable(@"password", kLocalization, nil);
+            tf.secureTextEntry = YES;
+            tf.keyboardType = UIKeyboardTypeAlphabet;
+            tf.placeholder = NSLocalizedStringFromTable(@"password", kLocalization, nil);
+            tf.returnKeyType = UIReturnKeyGo;
+            _passwdTF = tf;
+        }
+            break;
+        case 2:
+        {
+            cell.textLabel.text = NSLocalizedStringFromTable(@"phone number", kLocalization, nil);
+            tf.secureTextEntry = YES;
+            tf.keyboardType = UIKeyboardTypeAlphabet;
+            tf.placeholder = NSLocalizedStringFromTable(@"phone number", kLocalization, nil);
+            tf.returnKeyType = UIReturnKeyGo;
+            _mobilePhoneTF = tf;
+        }
+            break;
+        default:
+            break;
+    }
+    tf.frame = CGRectMake(120, 8, 170, 30);
+    tf.delegate = self;
+    return cell;
+}
+
+#pragma mark - table view delegate 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1) {
+        [[UserCenter sharedUserCenter] signUpWithUsername:_usernameTF.text Passwd:_passwdTF.text Phone:_mobilePhoneTF.text];
+        
+        CodeVerifiedController * controller = [[CodeVerifiedController alloc] init];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
 @end

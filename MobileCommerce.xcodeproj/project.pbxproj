@@ -14,7 +14,6 @@
 		39F4BA6618336C0600312B7E /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 39F4BA6118336C0600312B7E /* zbar-samples.png */; };
 		39F4BA6918336D5B00312B7E /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4BA6818336D5B00312B7E /* SSKeychain.m */; };
 		39F4BA6D183373D000312B7E /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4BA6C183373D000312B7E /* LoginController.m */; };
-		39F4BA7418337A3700312B7E /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4BA7318337A3700312B7E /* LoginView.m */; };
 		B70C2F6C183092B5003A72AF /* EntityController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F6B183092B5003A72AF /* EntityController.m */; };
 		B70C2F701830972F003A72AF /* ShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F6F1830972F003A72AF /* ShopController.m */; };
 		B70C2F75183097F8003A72AF /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F74183097F8003A72AF /* Entity.m */; };
@@ -28,6 +27,7 @@
 		B70C2F9B1830B8A9003A72AF /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F9A1830B8A9003A72AF /* Store.m */; };
 		B70C2F9F1830B9B6003A72AF /* DataList.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F9E1830B9B6003A72AF /* DataList.m */; };
 		B70C2FA21830BC90003A72AF /* StoreList.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2FA11830BC90003A72AF /* StoreList.m */; };
+		B71E0D131845BD4300E1D481 /* CodeVerifiedController.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E0D121845BD4300E1D481 /* CodeVerifiedController.m */; };
 		B73043C118350AF1007CDEE5 /* StoreHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73043C018350AF1007CDEE5 /* StoreHeaderView.m */; };
 		B731C18C1835B7A5009EDE95 /* MCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B731C18B1835B7A5009EDE95 /* MCImageView.m */; };
 		B77D462618307D890051DCB4 /* MenuList.m in Sources */ = {isa = PBXBuildFile; fileRef = B77D462518307D890051DCB4 /* MenuList.m */; };
@@ -35,8 +35,10 @@
 		B77F41741830D385009A9A57 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F41731830D385009A9A57 /* User.m */; };
 		B77F41771830D76C009A9A57 /* UserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F41761830D76C009A9A57 /* UserCenter.m */; };
 		B7861DC518325D9600A04002 /* MenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7861DC418325D9600A04002 /* MenuHeaderView.m */; };
+		B79105E818448757000C558F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79105E718448757000C558F /* CoreLocation.framework */; };
 		B79CFD9218370FF40046B024 /* SignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = B79CFD9118370FF40046B024 /* SignUpController.m */; };
-		B79CFD96183713B30046B024 /* SignUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = B79CFD95183713B30046B024 /* SignUpView.m */; };
+		B79E79E21846212A0080957B /* VerifiedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B79E79E11846212A0080957B /* VerifiedView.m */; };
+		B79E79E6184653750080957B /* EntityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B79E79E5184653750080957B /* EntityCell.m */; };
 		B7A734A318320A58007EC29A /* OpenCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A734A218320A58007EC29A /* OpenCenterController.m */; };
 		B7A734A618320B10007EC29A /* MenuHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A734A518320B10007EC29A /* MenuHeaderController.m */; };
 		B7CF0F9B182D214500A796E5 /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9A182D214500A796E5 /* RootController.m */; };
@@ -136,8 +138,6 @@
 		39F4BA6818336D5B00312B7E /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		39F4BA6B183373D000312B7E /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = Classes/Controllers/LoginController/LoginController.h; sourceTree = "<group>"; };
 		39F4BA6C183373D000312B7E /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = Classes/Controllers/LoginController/LoginController.m; sourceTree = "<group>"; };
-		39F4BA7218337A3700312B7E /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginView.h; path = Classes/Views/LoginView/LoginView.h; sourceTree = "<group>"; };
-		39F4BA7318337A3700312B7E /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginView.m; path = Classes/Views/LoginView/LoginView.m; sourceTree = "<group>"; };
 		B70C2F68183090C3003A72AF /* ColorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorConfig.h; path = Classes/Config/ColorConfig.h; sourceTree = "<group>"; };
 		B70C2F6A183092B5003A72AF /* EntityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityController.h; path = Classes/Controllers/EntityController/EntityController.h; sourceTree = "<group>"; };
 		B70C2F6B183092B5003A72AF /* EntityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntityController.m; path = Classes/Controllers/EntityController/EntityController.m; sourceTree = "<group>"; };
@@ -165,6 +165,8 @@
 		B70C2F9E1830B9B6003A72AF /* DataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataList.m; path = Classes/Models/Core/DataList.m; sourceTree = "<group>"; };
 		B70C2FA01830BC90003A72AF /* StoreList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreList.h; path = Classes/Models/Store/StoreList.h; sourceTree = "<group>"; };
 		B70C2FA11830BC90003A72AF /* StoreList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreList.m; path = Classes/Models/Store/StoreList.m; sourceTree = "<group>"; };
+		B71E0D111845BD4300E1D481 /* CodeVerifiedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeVerifiedController.h; path = Classes/Controllers/CodeVerifiedController/CodeVerifiedController.h; sourceTree = "<group>"; };
+		B71E0D121845BD4300E1D481 /* CodeVerifiedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CodeVerifiedController.m; path = Classes/Controllers/CodeVerifiedController/CodeVerifiedController.m; sourceTree = "<group>"; };
 		B73043BF18350AF1007CDEE5 /* StoreHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreHeaderView.h; path = Classes/Views/StoreView/StoreHeaderView/StoreHeaderView.h; sourceTree = "<group>"; };
 		B73043C018350AF1007CDEE5 /* StoreHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreHeaderView.m; path = Classes/Views/StoreView/StoreHeaderView/StoreHeaderView.m; sourceTree = "<group>"; };
 		B731C18A1835B7A5009EDE95 /* MCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCImageView.h; path = Classes/Views/MCImageView/MCImageView.h; sourceTree = "<group>"; };
@@ -179,10 +181,13 @@
 		B77F41761830D76C009A9A57 /* UserCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCenter.m; path = Classes/Models/User/UserCenter.m; sourceTree = "<group>"; };
 		B7861DC318325D9600A04002 /* MenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuHeaderView.h; path = Classes/Views/MenuView/HeaderView/MenuHeaderView.h; sourceTree = "<group>"; };
 		B7861DC418325D9600A04002 /* MenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuHeaderView.m; path = Classes/Views/MenuView/HeaderView/MenuHeaderView.m; sourceTree = "<group>"; };
+		B79105E718448757000C558F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B79CFD9018370FF40046B024 /* SignUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpController.h; path = Classes/Controllers/SignUpController/SignUpController.h; sourceTree = "<group>"; };
 		B79CFD9118370FF40046B024 /* SignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpController.m; path = Classes/Controllers/SignUpController/SignUpController.m; sourceTree = "<group>"; };
-		B79CFD94183713B30046B024 /* SignUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpView.h; path = Classes/Views/SignUpView/SignUpView.h; sourceTree = "<group>"; };
-		B79CFD95183713B30046B024 /* SignUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpView.m; path = Classes/Views/SignUpView/SignUpView.m; sourceTree = "<group>"; };
+		B79E79E01846212A0080957B /* VerifiedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VerifiedView.h; path = Classes/Views/VerifiedView/VerifiedView.h; sourceTree = "<group>"; };
+		B79E79E11846212A0080957B /* VerifiedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VerifiedView.m; path = Classes/Views/VerifiedView/VerifiedView.m; sourceTree = "<group>"; };
+		B79E79E4184653750080957B /* EntityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityCell.h; path = Classes/Views/EntityViews/EntityCell.h; sourceTree = "<group>"; };
+		B79E79E5184653750080957B /* EntityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntityCell.m; path = Classes/Views/EntityViews/EntityCell.m; sourceTree = "<group>"; };
 		B7A734A118320A58007EC29A /* OpenCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenCenterController.h; path = Classes/Controllers/OpenCenterController/OpenCenterController.h; sourceTree = "<group>"; };
 		B7A734A218320A58007EC29A /* OpenCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenCenterController.m; path = Classes/Controllers/OpenCenterController/OpenCenterController.m; sourceTree = "<group>"; };
 		B7A734A418320B10007EC29A /* MenuHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuHeaderController.h; path = Classes/Controllers/MenuController/MenuHeaderController.h; sourceTree = "<group>"; };
@@ -298,6 +303,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79105E818448757000C558F /* CoreLocation.framework in Frameworks */,
 				B7F922281834621300A39D97 /* libsqlite3.dylib in Frameworks */,
 				B7F8B2AE182CCCFC00C7668A /* SystemConfiguration.framework in Frameworks */,
 				B7F8B2AC182CCCB000C7668A /* MobileCoreServices.framework in Frameworks */,
@@ -395,15 +401,6 @@
 			name = LoginController;
 			sourceTree = "<group>";
 		};
-		39F4BA6E1833771B00312B7E /* LoginView */ = {
-			isa = PBXGroup;
-			children = (
-				39F4BA7218337A3700312B7E /* LoginView.h */,
-				39F4BA7318337A3700312B7E /* LoginView.m */,
-			);
-			name = LoginView;
-			sourceTree = "<group>";
-		};
 		B70C2F6918309291003A72AF /* EntityController */ = {
 			isa = PBXGroup;
 			children = (
@@ -494,6 +491,15 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
+		B71E0D101845BCE300E1D481 /* CodeVerifiedController */ = {
+			isa = PBXGroup;
+			children = (
+				B71E0D111845BD4300E1D481 /* CodeVerifiedController.h */,
+				B71E0D121845BD4300E1D481 /* CodeVerifiedController.m */,
+			);
+			name = CodeVerifiedController;
+			sourceTree = "<group>";
+		};
 		B731C1891835B780009EDE95 /* MCImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,13 +540,22 @@
 			name = SignUpController;
 			sourceTree = "<group>";
 		};
-		B79CFD93183713980046B024 /* SignUpView */ = {
+		B79E79DF184621060080957B /* VerifiedView */ = {
 			isa = PBXGroup;
 			children = (
-				B79CFD94183713B30046B024 /* SignUpView.h */,
-				B79CFD95183713B30046B024 /* SignUpView.m */,
+				B79E79E01846212A0080957B /* VerifiedView.h */,
+				B79E79E11846212A0080957B /* VerifiedView.m */,
 			);
-			name = SignUpView;
+			name = VerifiedView;
+			sourceTree = "<group>";
+		};
+		B79E79E3184653510080957B /* EntityViews */ = {
+			isa = PBXGroup;
+			children = (
+				B79E79E4184653750080957B /* EntityCell.h */,
+				B79E79E5184653750080957B /* EntityCell.m */,
+			);
+			name = EntityViews;
 			sourceTree = "<group>";
 		};
 		B7A734A018320A25007EC29A /* OpenCenterController */ = {
@@ -638,6 +653,7 @@
 		B7F8B22B182CCAA500C7668A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B79105E718448757000C558F /* CoreLocation.framework */,
 				B7F922271834621300A39D97 /* libsqlite3.dylib */,
 				B7F8B2AD182CCCFC00C7668A /* SystemConfiguration.framework */,
 				B7F8B2AB182CCCB000C7668A /* MobileCoreServices.framework */,
@@ -719,9 +735,9 @@
 		B7F8B25D182CCC2400C7668A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B79CFD93183713980046B024 /* SignUpView */,
+				B79E79E3184653510080957B /* EntityViews */,
+				B79E79DF184621060080957B /* VerifiedView */,
 				B731C1891835B780009EDE95 /* MCImageView */,
-				39F4BA6E1833771B00312B7E /* LoginView */,
 				B7A734A718320B22007EC29A /* MenuView */,
 				B70C2F911830B62D003A72AF /* StoreView */,
 				B70C2F7F1830A5B1003A72AF /* TableViewHelps */,
@@ -732,8 +748,9 @@
 		B7F8B25E182CCC2900C7668A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B79CFD8F18370FCD0046B024 /* SignUpController */,
 				B7A734A018320A25007EC29A /* OpenCenterController */,
+				B71E0D101845BCE300E1D481 /* CodeVerifiedController */,
+				B79CFD8F18370FCD0046B024 /* SignUpController */,
 				39F4BA6A183373A700312B7E /* LoginController */,
 				B70C2F871830ADCD003A72AF /* MyStoreController */,
 				B70C2F831830AC65003A72AF /* EntityDetailController */,
@@ -999,7 +1016,6 @@
 				B77F41741830D385009A9A57 /* User.m in Sources */,
 				B7F8B2A8182CCC6700C7668A /* AFURLSessionManager.m in Sources */,
 				B79CFD9218370FF40046B024 /* SignUpController.m in Sources */,
-				39F4BA7418337A3700312B7E /* LoginView.m in Sources */,
 				B7F8B2A5182CCC6700C7668A /* AFURLConnectionOperation.m in Sources */,
 				B7F8B2E9182CD01D00C7668A /* MMDrawerBarButtonItem.m in Sources */,
 				B7EF012D1834A55D00C1A523 /* AddItemView.m in Sources */,
@@ -1019,8 +1035,10 @@
 				B7861DC518325D9600A04002 /* MenuHeaderView.m in Sources */,
 				B7F8B282182CCC5B00C7668A /* SDWebImageDecoder.m in Sources */,
 				B7F8B239182CCAA500C7668A /* main.m in Sources */,
+				B79E79E6184653750080957B /* EntityCell.m in Sources */,
 				B7F92223183461BB00A39D97 /* FMDatabaseAdditions.m in Sources */,
 				B7F8B2A4182CCC6700C7668A /* AFSecurityPolicy.m in Sources */,
+				B79E79E21846212A0080957B /* VerifiedView.m in Sources */,
 				B7A734A618320B10007EC29A /* MenuHeaderController.m in Sources */,
 				B77F41771830D76C009A9A57 /* UserCenter.m in Sources */,
 				B7F9222C18348E7600A39D97 /* AddEntityController.m in Sources */,
@@ -1045,6 +1063,7 @@
 				B7CF0F9E182D226400A796E5 /* ListController.m in Sources */,
 				B77D462C18307F370051DCB4 /* Menu.m in Sources */,
 				B7F8B285182CCC5B00C7668A /* SDWebImageManager.m in Sources */,
+				B71E0D131845BD4300E1D481 /* CodeVerifiedController.m in Sources */,
 				B7F8B289182CCC5B00C7668A /* UIImage+MultiFormat.m in Sources */,
 				B7F8B286182CCC5B00C7668A /* SDWebImagePrefetcher.m in Sources */,
 				B70C2F6C183092B5003A72AF /* EntityController.m in Sources */,
@@ -1054,7 +1073,6 @@
 				B70C2F7818309992003A72AF /* EntityList.m in Sources */,
 				B70C2F701830972F003A72AF /* ShopController.m in Sources */,
 				B77D462618307D890051DCB4 /* MenuList.m in Sources */,
-				B79CFD96183713B30046B024 /* SignUpView.m in Sources */,
 				B7F8B27F182CCC5B00C7668A /* NSData+GIF.m in Sources */,
 				B70C2F9F1830B9B6003A72AF /* DataList.m in Sources */,
 				B7F8B2A6182CCC6700C7668A /* AFURLRequestSerialization.m in Sources */,
