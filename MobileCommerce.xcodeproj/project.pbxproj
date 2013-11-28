@@ -1149,11 +1149,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = (
-					/Users/edison7500/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
-					/Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
-				);
-				"LIBRARY_SEARCH_PATHS[arch=*]" = /Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK;
+				LIBRARY_SEARCH_PATHS = /Users/edison7500/Workspace/MobileCommerce/;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
@@ -1189,11 +1186,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = (
-					/Users/edison7500/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
-					/Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
-				);
-				"LIBRARY_SEARCH_PATHS[arch=*]" = /Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK;
+				LIBRARY_SEARCH_PATHS = /Users/edison7500/Workspace/MobileCommerce/;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s";
@@ -1210,7 +1204,7 @@
 				GCC_PREFIX_HEADER = "MobileCommerce/MobileCommerce-Prefix.pch";
 				INFOPLIST_FILE = "MobileCommerce/MobileCommerce-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = /Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK;
+				LIBRARY_SEARCH_PATHS = /Users/edison7500/Workspace/MobileCommerce/MobileCommerce/ZBarSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -1227,7 +1221,7 @@
 				GCC_PREFIX_HEADER = "MobileCommerce/MobileCommerce-Prefix.pch";
 				INFOPLIST_FILE = "MobileCommerce/MobileCommerce-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = /Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK;
+				LIBRARY_SEARCH_PATHS = /Users/edison7500/Workspace/MobileCommerce/MobileCommerce/ZBarSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
