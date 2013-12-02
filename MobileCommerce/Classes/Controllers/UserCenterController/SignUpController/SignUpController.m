@@ -38,7 +38,8 @@
     _tableView.dataSource = self;
     self.view = _tableView;
     
-    
+    _SignUpBarBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"signup", kLocalization, nil) style:UIBarButtonItemStylePlain target:self action:@selector(SignUpBarBtnAction:)];
+    self.navigationItem.rightBarButtonItem = _SignUpBarBtn;
     
 }
 
@@ -130,6 +131,12 @@
 //        CodeVerifiedController * controller = [[CodeVerifiedController alloc] init];
 //        [self.navigationController pushViewController:controller animated:YES];
 //    }
+}
+
+#pragma mark - button action
+- (void)SignUpBarBtnAction:(id)sender
+{
+    
 }
 
 @end
