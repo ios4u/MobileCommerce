@@ -19,8 +19,8 @@
 @synthesize tableView = _tableView;
 @synthesize dismissBarBtn = _dismissBarBtn;
 @synthesize forgetPasswdBtn = _forgetPasswdBtn;
-@synthesize usernameTF = _usernameTF;
-@synthesize passwdTF = _passwdTF;
+//@synthesize usernameTF = _usernameTF;
+//@synthesize passwdTF = _passwdTF;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -65,7 +65,7 @@
 #pragma mark - tableView data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -78,73 +78,73 @@
     return 88.;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    if (section == 1) {
-        return nil;
-    }
-    UIView * footerview = [[UIView alloc] initWithFrame:CGRectZero];
-    //        footerview.backgroundColor = [UIColor redColor];
-    _forgetPasswdBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_forgetPasswdBtn setTitle:NSLocalizedStringFromTable(@"forget password", kLocalization, nil) forState:UIControlStateNormal];
-    [_forgetPasswdBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    _forgetPasswdBtn.titleLabel.font = [UIFont systemFontOfSize:16.];
-    _forgetPasswdBtn.frame = CGRectMake(0., 10, WIDTH, 22);
-    [_forgetPasswdBtn addTarget:self action:@selector(forgetPasswdBtnAction:) forControlEvents:UIControlEventTouchUpInside];
-    [footerview addSubview:_forgetPasswdBtn];
-    return footerview;
-    //        return _forgetPasswdBtn;
-}
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+//{
+//    if (section == 1) {
+//        return nil;
+//    }
+//    UIView * footerview = [[UIView alloc] initWithFrame:CGRectZero];
+//    //        footerview.backgroundColor = [UIColor redColor];
+//    _forgetPasswdBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [_forgetPasswdBtn setTitle:NSLocalizedStringFromTable(@"forget password", kLocalization, nil) forState:UIControlStateNormal];
+//    [_forgetPasswdBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//    _forgetPasswdBtn.titleLabel.font = [UIFont systemFontOfSize:16.];
+//    _forgetPasswdBtn.frame = CGRectMake(0., 10, WIDTH, 22);
+//    [_forgetPasswdBtn addTarget:self action:@selector(forgetPasswdBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [footerview addSubview:_forgetPasswdBtn];
+//    return footerview;
+//    //        return _forgetPasswdBtn;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        static NSString * CellIdentifer = @"ContentInCell";
-        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
-    
-        UITextField * tf;
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
-        
-        //        [cell.contentView addSubview:tf];
-            tf = [[UITextField alloc] initWithFrame:CGRectZero];
-            tf.autocorrectionType = UITextAutocorrectionTypeNo;
-            tf.autocapitalizationType = UITextAutocapitalizationTypeNone;
-            tf.adjustsFontSizeToFitWidth = YES;
-            tf.clearButtonMode = UITextFieldViewModeWhileEditing;
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-            [cell.contentView addSubview:tf];
-        }
-    
-    switch (indexPath.row) {
-        case 0:
-        {
-            cell.textLabel.text = NSLocalizedStringFromTable(@"username", kLocalization, nil);
-            tf.keyboardType = UIKeyboardTypeAlphabet;
-            tf.placeholder = NSLocalizedStringFromTable(@"username", kLocalization, nil);
-            _usernameTF = tf;
-        }
-            break;
-        case 1:
-        {
-            cell.textLabel.text = NSLocalizedStringFromTable(@"password", kLocalization, nil);
-            tf.secureTextEntry = YES;
-            tf.keyboardType = UIKeyboardTypeAlphabet;
-            tf.placeholder = NSLocalizedStringFromTable(@"password", kLocalization, nil);
-            tf.returnKeyType = UIReturnKeyGo;
-            _passwdTF = tf;
-        }
-            break;
-        default:
-            break;
-    }
-    tf.frame = CGRectMake(120, 8, 170, 30);
-    //        [tf addTarget:self action:@selector(textFieldFinished:) forControlEvents:UIControlEventEditingDidEndOnExit];
-    tf.delegate = self;
-    
-    return cell;
-    } else {
+//    if (indexPath.section == 0) {
+//        static NSString * CellIdentifer = @"ContentInCell";
+//        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+//    
+//        UITextField * tf;
+//        if (cell == nil) {
+//            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+//        
+//        //        [cell.contentView addSubview:tf];
+//            tf = [[UITextField alloc] initWithFrame:CGRectZero];
+//            tf.autocorrectionType = UITextAutocorrectionTypeNo;
+//            tf.autocapitalizationType = UITextAutocapitalizationTypeNone;
+//            tf.adjustsFontSizeToFitWidth = YES;
+//            tf.clearButtonMode = UITextFieldViewModeWhileEditing;
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        
+//            [cell.contentView addSubview:tf];
+//        }
+//    
+//    switch (indexPath.row) {
+//        case 0:
+//        {
+//            cell.textLabel.text = NSLocalizedStringFromTable(@"username", kLocalization, nil);
+//            tf.keyboardType = UIKeyboardTypeAlphabet;
+//            tf.placeholder = NSLocalizedStringFromTable(@"username", kLocalization, nil);
+//            _usernameTF = tf;
+//        }
+//            break;
+//        case 1:
+//        {
+//            cell.textLabel.text = NSLocalizedStringFromTable(@"password", kLocalization, nil);
+//            tf.secureTextEntry = YES;
+//            tf.keyboardType = UIKeyboardTypeAlphabet;
+//            tf.placeholder = NSLocalizedStringFromTable(@"password", kLocalization, nil);
+//            tf.returnKeyType = UIReturnKeyGo;
+//            _passwdTF = tf;
+//        }
+//            break;
+//        default:
+//            break;
+//    }
+//    tf.frame = CGRectMake(120, 8, 170, 30);
+//    //        [tf addTarget:self action:@selector(textFieldFinished:) forControlEvents:UIControlEventEditingDidEndOnExit];
+//    tf.delegate = self;
+//    
+//    return cell;
+//    } else {
         static NSString * CellIdentifer = @"SignInActionCell";
         UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
         if (cell == nil) {
@@ -157,7 +157,7 @@
         }
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
         return cell;
-    }
+//    }
     
 }
 
@@ -177,7 +177,7 @@
             case 0:
             {
 //                [_user loginWithUsername:_usernameTF.text Passwd:_passwdTF.text];
-                [[UserCenter sharedUserCenter] signInWithUsername:_usernameTF.text Passwd:_passwdTF.text];
+//                [[UserCenter sharedUserCenter] signInWithUsername:_usernameTF.text Passwd:_passwdTF.text];
             }
                 break;
             case 1:

@@ -16,6 +16,4 @@
 @property (strong, nonatomic) UITableView * tableView;
 @property (strong, nonatomic) UIBarButtonItem * dismissBarBtn;
 @property (strong, nonatomic) UIButton * forgetPasswdBtn;
-@property (strong, nonatomic) UITextField * usernameTF;
-@property (strong, nonatomic) UITextField * passwdTF;
 @end

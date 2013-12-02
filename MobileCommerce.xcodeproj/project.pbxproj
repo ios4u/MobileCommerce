@@ -30,6 +30,8 @@
 		B71E0D131845BD4300E1D481 /* CodeVerifiedController.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E0D121845BD4300E1D481 /* CodeVerifiedController.m */; };
 		B73043C118350AF1007CDEE5 /* StoreHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73043C018350AF1007CDEE5 /* StoreHeaderView.m */; };
 		B731C18C1835B7A5009EDE95 /* MCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B731C18B1835B7A5009EDE95 /* MCImageView.m */; };
+		B74B3AAD184C703B00256515 /* SignInController.m in Sources */ = {isa = PBXBuildFile; fileRef = B74B3AAC184C703B00256515 /* SignInController.m */; };
+		B74B3AB0184C711300256515 /* UserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B74B3AAF184C711300256515 /* UserCenterViewController.m */; };
 		B77D462618307D890051DCB4 /* MenuList.m in Sources */ = {isa = PBXBuildFile; fileRef = B77D462518307D890051DCB4 /* MenuList.m */; };
 		B77D462C18307F370051DCB4 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = B77D462B18307F370051DCB4 /* Menu.m */; };
 		B77F41741830D385009A9A57 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F41731830D385009A9A57 /* User.m */; };
@@ -172,6 +174,10 @@
 		B73043C018350AF1007CDEE5 /* StoreHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreHeaderView.m; path = Classes/Views/StoreView/StoreHeaderView/StoreHeaderView.m; sourceTree = "<group>"; };
 		B731C18A1835B7A5009EDE95 /* MCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCImageView.h; path = Classes/Views/MCImageView/MCImageView.h; sourceTree = "<group>"; };
 		B731C18B1835B7A5009EDE95 /* MCImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCImageView.m; path = Classes/Views/MCImageView/MCImageView.m; sourceTree = "<group>"; };
+		B74B3AAB184C703B00256515 /* SignInController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInController.h; path = Classes/Controllers/UserCenterController/SignInController/SignInController.h; sourceTree = "<group>"; };
+		B74B3AAC184C703B00256515 /* SignInController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInController.m; path = Classes/Controllers/UserCenterController/SignInController/SignInController.m; sourceTree = "<group>"; };
+		B74B3AAE184C711300256515 /* UserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserCenterViewController.h; path = Classes/Controllers/UserCenterController/UserCenterViewController.h; sourceTree = "<group>"; };
+		B74B3AAF184C711300256515 /* UserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCenterViewController.m; path = Classes/Controllers/UserCenterController/UserCenterViewController.m; sourceTree = "<group>"; };
 		B77D462418307D890051DCB4 /* MenuList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuList.h; path = Classes/Models/Menu/MenuList.h; sourceTree = "<group>"; };
 		B77D462518307D890051DCB4 /* MenuList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuList.m; path = Classes/Models/Menu/MenuList.m; sourceTree = "<group>"; };
 		B77D462A18307F370051DCB4 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Menu.h; path = Classes/Models/Menu/Menu.h; sourceTree = "<group>"; };
@@ -512,6 +518,25 @@
 			name = MCImageView;
 			sourceTree = "<group>";
 		};
+		B74B3AA9184C6FF900256515 /* UserCenterController */ = {
+			isa = PBXGroup;
+			children = (
+				B74B3AAA184C700600256515 /* SignInController */,
+				B74B3AAE184C711300256515 /* UserCenterViewController.h */,
+				B74B3AAF184C711300256515 /* UserCenterViewController.m */,
+			);
+			name = UserCenterController;
+			sourceTree = "<group>";
+		};
+		B74B3AAA184C700600256515 /* SignInController */ = {
+			isa = PBXGroup;
+			children = (
+				B74B3AAB184C703B00256515 /* SignInController.h */,
+				B74B3AAC184C703B00256515 /* SignInController.m */,
+			);
+			name = SignInController;
+			sourceTree = "<group>";
+		};
 		B77D462018307D500051DCB4 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,6 +785,7 @@
 		B7F8B25E182CCC2900C7668A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B74B3AA9184C6FF900256515 /* UserCenterController */,
 				B7A734A018320A25007EC29A /* OpenCenterController */,
 				B71E0D101845BCE300E1D481 /* CodeVerifiedController */,
 				B79CFD8F18370FCD0046B024 /* SignUpController */,
@@ -1049,6 +1075,7 @@
 				B79E79EA184659120080957B /* DropListController.m in Sources */,
 				B7F8B282182CCC5B00C7668A /* SDWebImageDecoder.m in Sources */,
 				B7F8B239182CCAA500C7668A /* main.m in Sources */,
+				B74B3AAD184C703B00256515 /* SignInController.m in Sources */,
 				B79E79E6184653750080957B /* EntityCell.m in Sources */,
 				B7F92223183461BB00A39D97 /* FMDatabaseAdditions.m in Sources */,
 				B7F8B2A4182CCC6700C7668A /* AFSecurityPolicy.m in Sources */,
@@ -1083,6 +1110,7 @@
 				B70C2F6C183092B5003A72AF /* EntityController.m in Sources */,
 				B70C2F861830AC8A003A72AF /* EntityDetailController.m in Sources */,
 				B7F92226183461BB00A39D97 /* FMResultSet.m in Sources */,
+				B74B3AB0184C711300256515 /* UserCenterViewController.m in Sources */,
 				39F4BA6D183373D000312B7E /* LoginController.m in Sources */,
 				B70C2F7818309992003A72AF /* EntityList.m in Sources */,
 				B70C2F701830972F003A72AF /* ShopController.m in Sources */,
