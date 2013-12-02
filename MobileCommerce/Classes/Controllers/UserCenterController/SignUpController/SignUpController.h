@@ -14,6 +14,7 @@
 
 //@property (strong, nonatomic) SignUpView * signUpView;
 @property (strong, nonatomic) UITableView * tableView;
+@property (strong, nonatomic) UIBarButtonItem * SignUpBarBtn;
 @property (strong, nonatomic) UITextField * usernameTF;
 @property (strong, nonatomic) UITextField * passwdTF;
 @property (strong, nonatomic) UITextField * mobilePhoneTF;

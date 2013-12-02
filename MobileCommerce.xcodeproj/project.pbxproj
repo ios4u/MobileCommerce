@@ -13,7 +13,6 @@
 		39F4BA6518336C0600312B7E /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = 39F4BA6018336C0600312B7E /* zbar-helpicons.png */; };
 		39F4BA6618336C0600312B7E /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 39F4BA6118336C0600312B7E /* zbar-samples.png */; };
 		39F4BA6918336D5B00312B7E /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4BA6818336D5B00312B7E /* SSKeychain.m */; };
-		39F4BA6D183373D000312B7E /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4BA6C183373D000312B7E /* LoginController.m */; };
 		B70C2F6C183092B5003A72AF /* EntityController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F6B183092B5003A72AF /* EntityController.m */; };
 		B70C2F701830972F003A72AF /* ShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F6F1830972F003A72AF /* ShopController.m */; };
 		B70C2F75183097F8003A72AF /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F74183097F8003A72AF /* Entity.m */; };
@@ -32,13 +31,13 @@
 		B731C18C1835B7A5009EDE95 /* MCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B731C18B1835B7A5009EDE95 /* MCImageView.m */; };
 		B74B3AAD184C703B00256515 /* SignInController.m in Sources */ = {isa = PBXBuildFile; fileRef = B74B3AAC184C703B00256515 /* SignInController.m */; };
 		B74B3AB0184C711300256515 /* UserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B74B3AAF184C711300256515 /* UserCenterViewController.m */; };
+		B74B3AB4184C74D400256515 /* SignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = B74B3AB3184C74D400256515 /* SignUpController.m */; };
 		B77D462618307D890051DCB4 /* MenuList.m in Sources */ = {isa = PBXBuildFile; fileRef = B77D462518307D890051DCB4 /* MenuList.m */; };
 		B77D462C18307F370051DCB4 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = B77D462B18307F370051DCB4 /* Menu.m */; };
 		B77F41741830D385009A9A57 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F41731830D385009A9A57 /* User.m */; };
 		B77F41771830D76C009A9A57 /* UserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F41761830D76C009A9A57 /* UserCenter.m */; };
 		B7861DC518325D9600A04002 /* MenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7861DC418325D9600A04002 /* MenuHeaderView.m */; };
 		B79105E818448757000C558F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79105E718448757000C558F /* CoreLocation.framework */; };
-		B79CFD9218370FF40046B024 /* SignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = B79CFD9118370FF40046B024 /* SignUpController.m */; };
 		B79E79E21846212A0080957B /* VerifiedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B79E79E11846212A0080957B /* VerifiedView.m */; };
 		B79E79E6184653750080957B /* EntityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B79E79E5184653750080957B /* EntityCell.m */; };
 		B79E79EA184659120080957B /* DropListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B79E79E9184659120080957B /* DropListController.m */; };
@@ -139,8 +138,6 @@
 		39F4BA6118336C0600312B7E /* zbar-samples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-samples.png"; sourceTree = "<group>"; };
 		39F4BA6718336D5B00312B7E /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		39F4BA6818336D5B00312B7E /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
-		39F4BA6B183373D000312B7E /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = Classes/Controllers/LoginController/LoginController.h; sourceTree = "<group>"; };
-		39F4BA6C183373D000312B7E /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = Classes/Controllers/LoginController/LoginController.m; sourceTree = "<group>"; };
 		B70C2F68183090C3003A72AF /* ColorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorConfig.h; path = Classes/Config/ColorConfig.h; sourceTree = "<group>"; };
 		B70C2F6A183092B5003A72AF /* EntityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityController.h; path = Classes/Controllers/EntityController/EntityController.h; sourceTree = "<group>"; };
 		B70C2F6B183092B5003A72AF /* EntityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntityController.m; path = Classes/Controllers/EntityController/EntityController.m; sourceTree = "<group>"; };
@@ -178,6 +175,8 @@
 		B74B3AAC184C703B00256515 /* SignInController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInController.m; path = Classes/Controllers/UserCenterController/SignInController/SignInController.m; sourceTree = "<group>"; };
 		B74B3AAE184C711300256515 /* UserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserCenterViewController.h; path = Classes/Controllers/UserCenterController/UserCenterViewController.h; sourceTree = "<group>"; };
 		B74B3AAF184C711300256515 /* UserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCenterViewController.m; path = Classes/Controllers/UserCenterController/UserCenterViewController.m; sourceTree = "<group>"; };
+		B74B3AB2184C74D400256515 /* SignUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpController.h; sourceTree = "<group>"; };
+		B74B3AB3184C74D400256515 /* SignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpController.m; sourceTree = "<group>"; };
 		B77D462418307D890051DCB4 /* MenuList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuList.h; path = Classes/Models/Menu/MenuList.h; sourceTree = "<group>"; };
 		B77D462518307D890051DCB4 /* MenuList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuList.m; path = Classes/Models/Menu/MenuList.m; sourceTree = "<group>"; };
 		B77D462A18307F370051DCB4 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Menu.h; path = Classes/Models/Menu/Menu.h; sourceTree = "<group>"; };
@@ -189,8 +188,6 @@
 		B7861DC318325D9600A04002 /* MenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuHeaderView.h; path = Classes/Views/MenuView/HeaderView/MenuHeaderView.h; sourceTree = "<group>"; };
 		B7861DC418325D9600A04002 /* MenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuHeaderView.m; path = Classes/Views/MenuView/HeaderView/MenuHeaderView.m; sourceTree = "<group>"; };
 		B79105E718448757000C558F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		B79CFD9018370FF40046B024 /* SignUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpController.h; path = Classes/Controllers/SignUpController/SignUpController.h; sourceTree = "<group>"; };
-		B79CFD9118370FF40046B024 /* SignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpController.m; path = Classes/Controllers/SignUpController/SignUpController.m; sourceTree = "<group>"; };
 		B79E79E01846212A0080957B /* VerifiedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VerifiedView.h; path = Classes/Views/VerifiedView/VerifiedView.h; sourceTree = "<group>"; };
 		B79E79E11846212A0080957B /* VerifiedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VerifiedView.m; path = Classes/Views/VerifiedView/VerifiedView.m; sourceTree = "<group>"; };
 		B79E79E4184653750080957B /* EntityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityCell.h; path = Classes/Views/EntityViews/EntityCell.h; sourceTree = "<group>"; };
@@ -401,15 +398,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		39F4BA6A183373A700312B7E /* LoginController */ = {
-			isa = PBXGroup;
-			children = (
-				39F4BA6B183373D000312B7E /* LoginController.h */,
-				39F4BA6C183373D000312B7E /* LoginController.m */,
-			);
-			name = LoginController;
-			sourceTree = "<group>";
-		};
 		B70C2F6918309291003A72AF /* EntityController */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +509,7 @@
 		B74B3AA9184C6FF900256515 /* UserCenterController */ = {
 			isa = PBXGroup;
 			children = (
+				B74B3AB1184C74D400256515 /* SignUpController */,
 				B74B3AAA184C700600256515 /* SignInController */,
 				B74B3AAE184C711300256515 /* UserCenterViewController.h */,
 				B74B3AAF184C711300256515 /* UserCenterViewController.m */,
@@ -535,6 +524,16 @@
 				B74B3AAC184C703B00256515 /* SignInController.m */,
 			);
 			name = SignInController;
+			sourceTree = "<group>";
+		};
+		B74B3AB1184C74D400256515 /* SignUpController */ = {
+			isa = PBXGroup;
+			children = (
+				B74B3AB2184C74D400256515 /* SignUpController.h */,
+				B74B3AB3184C74D400256515 /* SignUpController.m */,
+			);
+			name = SignUpController;
+			path = Classes/Controllers/UserCenterController/SignUpController;
 			sourceTree = "<group>";
 		};
 		B77D462018307D500051DCB4 /* Menu */ = {
@@ -557,15 +556,6 @@
 				B77F41761830D76C009A9A57 /* UserCenter.m */,
 			);
 			name = User;
-			sourceTree = "<group>";
-		};
-		B79CFD8F18370FCD0046B024 /* SignUpController */ = {
-			isa = PBXGroup;
-			children = (
-				B79CFD9018370FF40046B024 /* SignUpController.h */,
-				B79CFD9118370FF40046B024 /* SignUpController.m */,
-			);
-			name = SignUpController;
 			sourceTree = "<group>";
 		};
 		B79E79DF184621060080957B /* VerifiedView */ = {
@@ -788,8 +778,6 @@
 				B74B3AA9184C6FF900256515 /* UserCenterController */,
 				B7A734A018320A25007EC29A /* OpenCenterController */,
 				B71E0D101845BCE300E1D481 /* CodeVerifiedController */,
-				B79CFD8F18370FCD0046B024 /* SignUpController */,
-				39F4BA6A183373A700312B7E /* LoginController */,
 				B70C2F871830ADCD003A72AF /* MyStoreController */,
 				B70C2F831830AC65003A72AF /* EntityDetailController */,
 				B70C2F6D18309704003A72AF /* ShopController */,
@@ -1054,7 +1042,6 @@
 			files = (
 				B77F41741830D385009A9A57 /* User.m in Sources */,
 				B7F8B2A8182CCC6700C7668A /* AFURLSessionManager.m in Sources */,
-				B79CFD9218370FF40046B024 /* SignUpController.m in Sources */,
 				B7F8B2A5182CCC6700C7668A /* AFURLConnectionOperation.m in Sources */,
 				B7F8B2E9182CD01D00C7668A /* MMDrawerBarButtonItem.m in Sources */,
 				B7EF012D1834A55D00C1A523 /* AddItemView.m in Sources */,
@@ -1088,6 +1075,7 @@
 				B73043C118350AF1007CDEE5 /* StoreHeaderView.m in Sources */,
 				B7F8B23D182CCAA500C7668A /* BCAppDelegate.m in Sources */,
 				B7F8B28A182CCC5B00C7668A /* UIImage+WebP.m in Sources */,
+				B74B3AB4184C74D400256515 /* SignUpController.m in Sources */,
 				B7F8B2EA182CD01D00C7668A /* MMDrawerController.m in Sources */,
 				B70C2F901830B147003A72AF /* MMTableViewCell.m in Sources */,
 				B7F8B2A1182CCC6700C7668A /* AFHTTPRequestOperationManager.m in Sources */,
@@ -1111,7 +1099,6 @@
 				B70C2F861830AC8A003A72AF /* EntityDetailController.m in Sources */,
 				B7F92226183461BB00A39D97 /* FMResultSet.m in Sources */,
 				B74B3AB0184C711300256515 /* UserCenterViewController.m in Sources */,
-				39F4BA6D183373D000312B7E /* LoginController.m in Sources */,
 				B70C2F7818309992003A72AF /* EntityList.m in Sources */,
 				B70C2F701830972F003A72AF /* ShopController.m in Sources */,
 				B77D462618307D890051DCB4 /* MenuList.m in Sources */,

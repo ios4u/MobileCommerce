@@ -73,9 +73,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
     }
     if (indexPath.row == 0) {
-        cell.textLabel.text = NSLocalizedStringFromTable(@"signin", kLocalization, nil);
-    } else {
         cell.textLabel.text = NSLocalizedStringFromTable(@"signup", kLocalization, nil);
+    } else {
+        cell.textLabel.text = NSLocalizedStringFromTable(@"signin", kLocalization, nil);
     }
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     return cell;    
@@ -85,7 +85,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-    
+        Class SignUpClass = NSClassFromString(kSignUpController);
+        UIViewController * controller = [[SignUpClass alloc] init];
+//        SignUpController * controller = [[SignUpController alloc] init];
+        [self.navigationController pushViewController:controller animated:YES];
     } else {
     
     }
