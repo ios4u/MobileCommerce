@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SignInController : UIViewController
+@interface SignInController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) UITableView * tableView;
+@property (strong, nonatomic) UITextField * usernameTF;
+@property (strong, nonatomic) UITextField * passwdTF;
+@property (strong, nonatomic) UIBarButtonItem * signInBarBtn;
 
 @end

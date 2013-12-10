@@ -84,14 +84,16 @@
 #pragma mark - table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UIViewController * controller;
     if (indexPath.row == 0) {
         Class SignUpClass = NSClassFromString(kSignUpController);
-        UIViewController * controller = [[SignUpClass alloc] init];
-//        SignUpController * controller = [[SignUpController alloc] init];
-        [self.navigationController pushViewController:controller animated:YES];
+        controller = [[SignUpClass alloc] init];
+//        [self.navigationController pushViewController:controller animated:YES];
     } else {
-    
+        Class SignInClass = NSClassFromString(kSignInController);
+        controller = [[SignInClass alloc] init];
     }
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark - button action

@@ -15,6 +15,9 @@
 @implementation SignInController
 
 @synthesize tableView = _tableView;
+@synthesize usernameTF = _usernameTF;
+@synthesize passwdTF = _passwdTF;
+@synthesize signInBarBtn = _signInBarBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +31,12 @@
 - (void)loadView
 {
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0., 0., WIDTH, HEIGHT) style:UITableViewStyleGrouped];
-
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    self.view = _tableView;
+    
+    _signInBarBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"signin", kLocalization, nil) style:UIBarButtonItemStylePlain target:self action:@selector(signInBarBtnAction:)];
+    self.navigationItem.rightBarButtonItem = _signInBarBtn;
 }
 
 - (void)viewDidLoad
@@ -41,6 +49,43 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - tableView data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString * CellIdentifer = @"ContentInCell";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    UITextField * tf;
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+        tf = [[UITextField alloc] initWithFrame:CGRectZero];
+        tf.autocorrectionType = UITextAutocorrectionTypeNo;
+        tf.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        tf.adjustsFontSizeToFitWidth = YES;
+        tf.clearButtonMode = UITextFieldViewModeWhileEditing;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        [cell.contentView addSubview:tf];
+    }
+    
+    return cell;
+}
+
+#pragma mark - button action
+- (void)signInBarBtnAction:(id)sender
+{
+
 }
 
 @end
