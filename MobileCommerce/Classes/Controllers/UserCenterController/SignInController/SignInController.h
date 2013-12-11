@@ -14,5 +14,6 @@
 @property (strong, nonatomic) UITextField * usernameTF;
 @property (strong, nonatomic) UITextField * passwdTF;
 @property (strong, nonatomic) UIBarButtonItem * signInBarBtn;
+@property (strong, nonatomic) UIButton * forgetBtn;
 
 @end

@@ -18,6 +18,7 @@
 @synthesize usernameTF = _usernameTF;
 @synthesize passwdTF = _passwdTF;
 @synthesize signInBarBtn = _signInBarBtn;
+@synthesize forgetBtn = _forgetBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,7 +36,7 @@
     _tableView.dataSource = self;
     self.view = _tableView;
     
-    _signInBarBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"signin", kLocalization, nil) style:UIBarButtonItemStylePlain target:self action:@selector(signInBarBtnAction:)];
+    _signInBarBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"done", kLocalization, nil) style:UIBarButtonItemStylePlain target:self action:@selector(signInBarBtnAction:)];
     self.navigationItem.rightBarButtonItem = _signInBarBtn;
 }
 
@@ -43,6 +44,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.title = NSLocalizedStringFromTable(@"signin", kLocalization, nil);
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,6 +62,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 2;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView * footerview = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    
+    return footerview;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -83,6 +93,7 @@
         {
             cell.textLabel.text = NSLocalizedStringFromTable(@"username", kLocalization, nil);
             tf.placeholder = NSLocalizedStringFromTable(@"username", kLocalization, nil);
+            tf.keyboardType = UIKeyboardTypeAlphabet;
             _usernameTF = tf;
         }
             break;
@@ -91,6 +102,7 @@
             cell.textLabel.text = NSLocalizedStringFromTable(@"password", kLocalization, nil);
             tf.placeholder = NSLocalizedStringFromTable(@"password", kLocalization, nil);
             tf.secureTextEntry = YES;
+            tf.keyboardType = UIKeyboardTypeAlphabet;
             _passwdTF = tf;
         }
             break;
@@ -105,7 +117,7 @@
 #pragma mark - button action
 - (void)signInBarBtnAction:(id)sender
 {
-
+    
 }
 
 @end

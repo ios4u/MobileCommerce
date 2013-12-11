@@ -38,7 +38,7 @@
     _tableView.dataSource = self;
     self.view = _tableView;
     
-    _SignUpBarBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"signup", kLocalization, nil) style:UIBarButtonItemStylePlain target:self action:@selector(SignUpBarBtnAction:)];
+    _SignUpBarBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"done", kLocalization, nil) style:UIBarButtonItemStylePlain target:self action:@selector(SignUpBarBtnAction:)];
     self.navigationItem.rightBarButtonItem = _SignUpBarBtn;
     
 }

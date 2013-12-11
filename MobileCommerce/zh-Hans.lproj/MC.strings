@@ -19,6 +19,7 @@
 "signout"="注销";
 "verify"="验证";
 "submit" = "提交";
+"done"="完成";
 
 "username"="用户名";
 "password"="密码";
