@@ -75,10 +75,30 @@
         tf.adjustsFontSizeToFitWidth = YES;
         tf.clearButtonMode = UITextFieldViewModeWhileEditing;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
         [cell.contentView addSubview:tf];
     }
     
+    switch (indexPath.row) {
+        case 0:
+        {
+            cell.textLabel.text = NSLocalizedStringFromTable(@"username", kLocalization, nil);
+            tf.placeholder = NSLocalizedStringFromTable(@"username", kLocalization, nil);
+            _usernameTF = tf;
+        }
+            break;
+        case 1:
+        {
+            cell.textLabel.text = NSLocalizedStringFromTable(@"password", kLocalization, nil);
+            tf.placeholder = NSLocalizedStringFromTable(@"password", kLocalization, nil);
+            tf.secureTextEntry = YES;
+            _passwdTF = tf;
+        }
+            break;
+        default:
+            break;
+    }
+    tf.frame = CGRectMake(120, 8, 170, 30);
+    tf.delegate = self;
     return cell;
 }
 

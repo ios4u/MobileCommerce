@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SignInController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SignInController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) UITableView * tableView;
 @property (strong, nonatomic) UITextField * usernameTF;
