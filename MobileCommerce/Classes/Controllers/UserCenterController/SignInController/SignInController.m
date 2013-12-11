@@ -64,11 +64,18 @@
     return 2;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 88.;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     UIView * footerview = [[UIView alloc] initWithFrame:CGRectZero];
     
-    
+    _forgetBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_forgetBtn addTarget:self action:@selector(fotgetBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [footerview addSubview:_forgetBtn];
     return footerview;
 }
 
@@ -118,6 +125,11 @@
 - (void)signInBarBtnAction:(id)sender
 {
     
+}
+
+- (void)fotgetBtnAction:(id)sender
+{
+
 }
 
 @end

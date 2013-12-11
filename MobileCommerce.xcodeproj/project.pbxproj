@@ -334,6 +334,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3968742518584D9700697138 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3968742618584D9D00697138 /* NSDictionary+ */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		3968742618584D9D00697138 /* NSDictionary+ */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "NSDictionary+";
+			sourceTree = "<group>";
+		};
+		3968742718584E1B00697138 /* Networking Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Networking Extensions";
+			sourceTree = "<group>";
+		};
 		39F4BA4418336C0600312B7E /* ZBarSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -739,6 +761,8 @@
 		B7F8B25B182CCAFF00C7668A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3968742718584E1B00697138 /* Networking Extensions */,
+				3968742518584D9700697138 /* Utils */,
 				B7F8B328182CD22A00C7668A /* Config */,
 				B7F8B25E182CCC2900C7668A /* Controllers */,
 				B7F8B25D182CCC2400C7668A /* Views */,
