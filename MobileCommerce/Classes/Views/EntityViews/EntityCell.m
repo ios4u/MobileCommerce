@@ -10,6 +10,8 @@
 
 @implementation EntityCell
 
+@synthesize entity = _entity;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -24,6 +26,17 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setEntity:(Entity *)entity
+{
+    _entity = entity;
+    [self setNeedsLayout];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
 }
 
 @end

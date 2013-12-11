@@ -29,7 +29,7 @@ DEFINE_SINGLETON_FOR_CLASS(OpenCenterController);
 - (void)openLoginController
 {
 //    [self.controller pres]
-    Class loginClass = NSClassFromString(kLoginController);
+    Class loginClass = NSClassFromString(kUserCenterController);
     UIViewController * controller = [[loginClass alloc] init];
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:controller];
     [self.controller presentViewController:nav animated:YES completion:nil];

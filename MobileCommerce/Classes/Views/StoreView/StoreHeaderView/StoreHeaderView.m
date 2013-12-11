@@ -22,6 +22,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.backgroundColor = kDefaultBackgroundColor;
         _storeImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
 //        [_storeImageView seth]
         _storeImageView.backgroundColor = [UIColor blueColor];

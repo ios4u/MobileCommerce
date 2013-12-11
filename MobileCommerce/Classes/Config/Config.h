@@ -46,7 +46,10 @@ return shared##className; \
 #define kLocalization @"MC"
 
 
-#define kLoginController @"LoginController"
+
+#define kUserCenterController @"UserCenterViewController"
+#define kSignInController @"SignInController"
+#define kSignUpController @"SignUpController"
 #define kAddItemController @"AddEntityController"
 
 //static BOOL OSVersionIsAtLeastiOS7() {

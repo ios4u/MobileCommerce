@@ -17,6 +17,7 @@
 
 //@synthesize signUpView = _signUpView;
 @synthesize tableView = _tableView;
+@synthesize SignUpBarBtn = _SignUpBarBtn;
 @synthesize usernameTF = _usernameTF;
 @synthesize passwdTF = _passwdTF;
 @synthesize mobilePhoneTF = _mobilePhoneTF;
@@ -36,6 +37,10 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     self.view = _tableView;
+    
+    _SignUpBarBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"signup", kLocalization, nil) style:UIBarButtonItemStylePlain target:self action:@selector(SignUpBarBtnAction:)];
+    self.navigationItem.rightBarButtonItem = _SignUpBarBtn;
+    
 }
 
 - (void)viewDidLoad
@@ -55,30 +60,16 @@
 #pragma mark - tableView data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 1) {
-        return 1;
-    }
     return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1) {
-        static NSString * CellIdentifer = @"submitCell";
-        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
-        }
-        cell.textLabel.text = NSLocalizedStringFromTable(@"submit", kLocalization, nil);
-        cell.textLabel.textAlignment = NSTextAlignmentCenter;
-        return cell;
-    }
-    
     static NSString * CellIdentifer = @"ContentInCell";
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
     UITextField * tf;
@@ -133,13 +124,19 @@
 #pragma mark - table view delegate 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section == 1) {
-        [[UserCenter sharedUserCenter] signUpWithUsername:_usernameTF.text Passwd:_passwdTF.text Phone:_mobilePhoneTF.text];
-        
-        CodeVerifiedController * controller = [[CodeVerifiedController alloc] init];
-        [self.navigationController pushViewController:controller animated:YES];
-    }
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    if (indexPath.section == 1) {
+//        [[UserCenter sharedUserCenter] signUpWithUsername:_usernameTF.text Passwd:_passwdTF.text Phone:_mobilePhoneTF.text];
+//        
+//        CodeVerifiedController * controller = [[CodeVerifiedController alloc] init];
+//        [self.navigationController pushViewController:controller animated:YES];
+//    }
+}
+
+#pragma mark - button action
+- (void)SignUpBarBtnAction:(id)sender
+{
+    
 }
 
 @end
