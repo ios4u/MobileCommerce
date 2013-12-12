@@ -26,7 +26,6 @@
 		B70C2F9B1830B8A9003A72AF /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F9A1830B8A9003A72AF /* Store.m */; };
 		B70C2F9F1830B9B6003A72AF /* DataList.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2F9E1830B9B6003A72AF /* DataList.m */; };
 		B70C2FA21830BC90003A72AF /* StoreList.m in Sources */ = {isa = PBXBuildFile; fileRef = B70C2FA11830BC90003A72AF /* StoreList.m */; };
-		B71E0D131845BD4300E1D481 /* CodeVerifiedController.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E0D121845BD4300E1D481 /* CodeVerifiedController.m */; };
 		B73043C118350AF1007CDEE5 /* StoreHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73043C018350AF1007CDEE5 /* StoreHeaderView.m */; };
 		B731C18C1835B7A5009EDE95 /* MCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B731C18B1835B7A5009EDE95 /* MCImageView.m */; };
 		B74B3AAD184C703B00256515 /* SignInController.m in Sources */ = {isa = PBXBuildFile; fileRef = B74B3AAC184C703B00256515 /* SignInController.m */; };
@@ -73,6 +72,7 @@
 		B7C85D2C1859458C00C81806 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C85D261859458C00C81806 /* MMDrawerController.m */; };
 		B7C85D2D1859458C00C81806 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C85D281859458C00C81806 /* MMDrawerVisualState.m */; };
 		B7C85D2E1859458C00C81806 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C85D2A1859458C00C81806 /* UIViewController+MMDrawerController.m */; };
+		B7C85D321859498700C81806 /* CodeVerifiedController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C85D311859498700C81806 /* CodeVerifiedController.m */; };
 		B7CF0F9B182D214500A796E5 /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9A182D214500A796E5 /* RootController.m */; };
 		B7CF0F9E182D226400A796E5 /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9D182D226400A796E5 /* ListController.m */; };
 		B7CF0FA2182D229E00A796E5 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0FA1182D229E00A796E5 /* MenuController.m */; };
@@ -161,8 +161,6 @@
 		B70C2F9E1830B9B6003A72AF /* DataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataList.m; path = Classes/Models/Core/DataList.m; sourceTree = "<group>"; };
 		B70C2FA01830BC90003A72AF /* StoreList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreList.h; path = Classes/Models/Store/StoreList.h; sourceTree = "<group>"; };
 		B70C2FA11830BC90003A72AF /* StoreList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreList.m; path = Classes/Models/Store/StoreList.m; sourceTree = "<group>"; };
-		B71E0D111845BD4300E1D481 /* CodeVerifiedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeVerifiedController.h; path = Classes/Controllers/CodeVerifiedController/CodeVerifiedController.h; sourceTree = "<group>"; };
-		B71E0D121845BD4300E1D481 /* CodeVerifiedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CodeVerifiedController.m; path = Classes/Controllers/CodeVerifiedController/CodeVerifiedController.m; sourceTree = "<group>"; };
 		B73043BF18350AF1007CDEE5 /* StoreHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreHeaderView.h; path = Classes/Views/StoreView/StoreHeaderView/StoreHeaderView.h; sourceTree = "<group>"; };
 		B73043C018350AF1007CDEE5 /* StoreHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreHeaderView.m; path = Classes/Views/StoreView/StoreHeaderView/StoreHeaderView.m; sourceTree = "<group>"; };
 		B731C18A1835B7A5009EDE95 /* MCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCImageView.h; path = Classes/Views/MCImageView/MCImageView.h; sourceTree = "<group>"; };
@@ -257,6 +255,8 @@
 		B7C85D281859458C00C81806 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
 		B7C85D291859458C00C81806 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		B7C85D2A1859458C00C81806 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		B7C85D301859498700C81806 /* CodeVerifiedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeVerifiedController.h; sourceTree = "<group>"; };
+		B7C85D311859498700C81806 /* CodeVerifiedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeVerifiedController.m; sourceTree = "<group>"; };
 		B7CF0F99182D214500A796E5 /* RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootController.h; path = Classes/Controllers/RootController/RootController.h; sourceTree = "<group>"; };
 		B7CF0F9A182D214500A796E5 /* RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootController.m; path = Classes/Controllers/RootController/RootController.m; sourceTree = "<group>"; };
 		B7CF0F9C182D226400A796E5 /* ListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListController.h; path = Classes/Controllers/ListController/ListController.h; sourceTree = "<group>"; };
@@ -500,15 +500,6 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		B71E0D101845BCE300E1D481 /* CodeVerifiedController */ = {
-			isa = PBXGroup;
-			children = (
-				B71E0D111845BD4300E1D481 /* CodeVerifiedController.h */,
-				B71E0D121845BD4300E1D481 /* CodeVerifiedController.m */,
-			);
-			name = CodeVerifiedController;
-			sourceTree = "<group>";
-		};
 		B731C1891835B780009EDE95 /* MCImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +512,7 @@
 		B74B3AA9184C6FF900256515 /* UserCenterController */ = {
 			isa = PBXGroup;
 			children = (
+				B7C85D2F1859498700C81806 /* CodeVerifiedController */,
 				B74B3AB1184C74D400256515 /* SignUpController */,
 				B74B3AAA184C700600256515 /* SignInController */,
 				B74B3AAE184C711300256515 /* UserCenterViewController.h */,
@@ -716,6 +708,16 @@
 			path = Vendor/MMDrawerController;
 			sourceTree = "<group>";
 		};
+		B7C85D2F1859498700C81806 /* CodeVerifiedController */ = {
+			isa = PBXGroup;
+			children = (
+				B7C85D301859498700C81806 /* CodeVerifiedController.h */,
+				B7C85D311859498700C81806 /* CodeVerifiedController.m */,
+			);
+			name = CodeVerifiedController;
+			path = Classes/Controllers/UserCenterController/CodeVerifiedController;
+			sourceTree = "<group>";
+		};
 		B7CF0F97182D1F9100A796E5 /* ListController */ = {
 			isa = PBXGroup;
 			children = (
@@ -884,7 +886,6 @@
 			children = (
 				B74B3AA9184C6FF900256515 /* UserCenterController */,
 				B7A734A018320A25007EC29A /* OpenCenterController */,
-				B71E0D101845BCE300E1D481 /* CodeVerifiedController */,
 				B70C2F871830ADCD003A72AF /* MyStoreController */,
 				B70C2F831830AC65003A72AF /* EntityDetailController */,
 				B70C2F6D18309704003A72AF /* ShopController */,
@@ -1088,9 +1089,9 @@
 				B70C2F8A1830ADE8003A72AF /* MyStoreController.m in Sources */,
 				B7CF0FA2182D229E00A796E5 /* MenuController.m in Sources */,
 				B7CF0F9E182D226400A796E5 /* ListController.m in Sources */,
+				B7C85D321859498700C81806 /* CodeVerifiedController.m in Sources */,
 				B7C85D2E1859458C00C81806 /* UIViewController+MMDrawerController.m in Sources */,
 				B77D462C18307F370051DCB4 /* Menu.m in Sources */,
-				B71E0D131845BD4300E1D481 /* CodeVerifiedController.m in Sources */,
 				B7C85CE71859447100C81806 /* AFImageRequestOperation.m in Sources */,
 				B70C2F6C183092B5003A72AF /* EntityController.m in Sources */,
 				B7C85D1E1859448900C81806 /* UIImage+MultiFormat.m in Sources */,
