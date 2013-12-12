@@ -6,8 +6,10 @@
 //  Copyright (c) 2013年 谢家欣. All rights reserved.
 //
 
-//#import "AFhttp"
+#import "AFHTTPClient.h"
 
-@interface AppDotComAPIClient : NSObject
+@interface AppDotComAPIClient : AFHTTPClient
+
+DEFINE_SINGLETON_FOR_HEADER(AppDotComAPIClient)
 
 @end

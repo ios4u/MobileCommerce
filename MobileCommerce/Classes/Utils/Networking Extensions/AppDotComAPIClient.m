@@ -7,7 +7,30 @@
 //
 
 #import "AppDotComAPIClient.h"
+#import "AFHTTPRequestOperation.h"
 
 @implementation AppDotComAPIClient
+
+
++ (AppDotComAPIClient *)sharedAppDotComAPIClient
+{
+    static AppDotComAPIClient * _sharedClient = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedClient = [[AppDotComAPIClient alloc] initWithBaseURL:[NSURL URLWithString:@""]];
+    });
+    
+    return _sharedClient;
+}
+
+- (id)initWithBaseURL:(NSURL *)url
+{
+    self = [super initWithBaseURL:url];
+    if (self) {
+        [self registerHTTPOperationClass:[AFHTTPRequestOperation class]];
+        [self setDefaultHeader:@"Accept" value:@"application/json"];
+    }
+    return self;
+}
 
 @end
