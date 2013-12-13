@@ -17,11 +17,11 @@
     // Override point for customization after application launch.
     
 //    if(OSVersionIsAtLeastiOS7()){
-        UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
-                                              green:173.0/255.0
-                                               blue:234.0/255.0
-                                              alpha:1.0];
-        [self.window setTintColor:tintColor];
+//        UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
+//                                              green:173.0/255.0
+//                                               blue:234.0/255.0
+//                                              alpha:1.0];
+//        [self.window setTintColor:tintColor];
 //    }
     self.window.rootViewController = [RootController sharedRootController];
 //    self.window.backgroundColor = [UIColor whiteColor];
