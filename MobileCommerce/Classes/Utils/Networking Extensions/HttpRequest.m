@@ -7,6 +7,7 @@
 //
 
 #import "HttpRequest.h"
+#import "HttpResponse.h"
 #import "AppDotComAPIClient.h"
 
 @implementation HttpRequest
@@ -28,6 +29,9 @@
                         Block:(void (^)(id res, NSError * error))block
 {
     [[AppDotComAPIClient sharedAppDotComAPIClient] postPath:url parameters:paramter success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        HttpResponse * res = [[HttpResponse alloc] init];
+        [res processResObj:responseObject];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {

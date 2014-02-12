@@ -28,7 +28,8 @@
     self = [super initWithBaseURL:url];
     if (self) {
         [self registerHTTPOperationClass:[AFHTTPRequestOperation class]];
-        [self setDefaultHeader:@"Accept" value:@"application/json"];
+//        [self setDefaultHeader:@"Accept" value:@"application/json"];
+        [self setDefaultHeader:@"Accept" value:@"text/html"];
     }
     return self;
 }

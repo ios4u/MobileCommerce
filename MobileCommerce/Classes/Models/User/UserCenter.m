@@ -47,9 +47,12 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:2];
     [paramters setValue:username forKey:@"username"];
     [paramters setValue:passwd forKey:@"password"];
+//    NSLog(@"%@", paramters);
     [HttpRequest postDataWithParamters:paramters URL:@"signup" Block:^(id res, NSError *error) {
         if (error) {
             NSLog(@"%@", error);
+        } else {
+        
         }
     }];
 }

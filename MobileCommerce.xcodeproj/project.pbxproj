@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		396C37C618ABBBB300CBAF23 /* HttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 396C37C518ABBBB300CBAF23 /* HttpResponse.m */; };
+		396C37CB18ABBC9000CBAF23 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 396C37CA18ABBC9000CBAF23 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		396C37CE18ABBCFE00CBAF23 /* NSDictionary+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 396C37CD18ABBCFE00CBAF23 /* NSDictionary+Helper.m */; };
 		39F4BA6218336C0600312B7E /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F4BA5C18336C0600312B7E /* libzbar.a */; };
 		39F4BA6318336C0600312B7E /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 39F4BA5E18336C0600312B7E /* zbar-back.png */; };
 		39F4BA6418336C0600312B7E /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 39F4BA5F18336C0600312B7E /* zbar-help.html */; };
@@ -108,6 +111,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		396C37C418ABBBB300CBAF23 /* HttpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpResponse.h; path = "Classes/Utils/Networking Extensions/HttpResponse.h"; sourceTree = "<group>"; };
+		396C37C518ABBBB300CBAF23 /* HttpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpResponse.m; path = "Classes/Utils/Networking Extensions/HttpResponse.m"; sourceTree = "<group>"; };
+		396C37C918ABBC9000CBAF23 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		396C37CA18ABBC9000CBAF23 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		396C37CC18ABBCFE00CBAF23 /* NSDictionary+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Helper.h"; path = "Classes/Utils/NSDictionary+/NSDictionary+Helper.h"; sourceTree = "<group>"; };
+		396C37CD18ABBCFE00CBAF23 /* NSDictionary+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Helper.m"; path = "Classes/Utils/NSDictionary+/NSDictionary+Helper.m"; sourceTree = "<group>"; };
 		39F4BA4818336C0600312B7E /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		39F4BA4918336C0600312B7E /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		39F4BA4A18336C0600312B7E /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -337,6 +346,8 @@
 		3968742618584D9D00697138 /* NSDictionary+ */ = {
 			isa = PBXGroup;
 			children = (
+				396C37CC18ABBCFE00CBAF23 /* NSDictionary+Helper.h */,
+				396C37CD18ABBCFE00CBAF23 /* NSDictionary+Helper.m */,
 			);
 			name = "NSDictionary+";
 			sourceTree = "<group>";
@@ -348,8 +359,19 @@
 				B7C85CCF185943B900C81806 /* AppDotComAPIClient.m */,
 				B7F3F3B018AB179700FAA576 /* HttpRequest.h */,
 				B7F3F3B118AB179700FAA576 /* HttpRequest.m */,
+				396C37C418ABBBB300CBAF23 /* HttpResponse.h */,
+				396C37C518ABBBB300CBAF23 /* HttpResponse.m */,
 			);
 			name = "Networking Extensions";
+			sourceTree = "<group>";
+		};
+		396C37C818ABBC9000CBAF23 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				396C37C918ABBC9000CBAF23 /* JSONKit.h */,
+				396C37CA18ABBC9000CBAF23 /* JSONKit.m */,
+			);
+			path = JSONKit;
 			sourceTree = "<group>";
 		};
 		39F4BA4418336C0600312B7E /* ZBarSDK */ = {
@@ -907,6 +929,7 @@
 		B7F8B25F182CCC4200C7668A /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				396C37C818ABBC9000CBAF23 /* JSONKit */,
 				B7C85D211859458C00C81806 /* MMDrawerController */,
 				B7C85CF51859448900C81806 /* SDWebImage */,
 				B7C85CEE1859447E00C81806 /* SVProgressHUD */,
@@ -1066,6 +1089,7 @@
 				B7C85D1C1859448900C81806 /* UIButton+WebCache.m in Sources */,
 				B7C85D2C1859458C00C81806 /* MMDrawerController.m in Sources */,
 				B7F8B239182CCAA500C7668A /* main.m in Sources */,
+				396C37C618ABBBB300CBAF23 /* HttpResponse.m in Sources */,
 				B74B3AAD184C703B00256515 /* SignInController.m in Sources */,
 				B7C85CEB1859447100C81806 /* AFURLConnectionOperation.m in Sources */,
 				B79E79E6184653750080957B /* EntityCell.m in Sources */,
@@ -1085,9 +1109,11 @@
 				B7C85CEA1859447100C81806 /* AFPropertyListRequestOperation.m in Sources */,
 				B7C85D141859448900C81806 /* NSData+GIF.m in Sources */,
 				B73043C118350AF1007CDEE5 /* StoreHeaderView.m in Sources */,
+				396C37CB18ABBC9000CBAF23 /* JSONKit.m in Sources */,
 				B7C85D2D1859458C00C81806 /* MMDrawerVisualState.m in Sources */,
 				B7F8B23D182CCAA500C7668A /* BCAppDelegate.m in Sources */,
 				B74B3AB4184C74D400256515 /* SignUpController.m in Sources */,
+				396C37CE18ABBCFE00CBAF23 /* NSDictionary+Helper.m in Sources */,
 				B70C2F901830B147003A72AF /* MMTableViewCell.m in Sources */,
 				B7CF0F9B182D214500A796E5 /* RootController.m in Sources */,
 				B7C85D151859448900C81806 /* SDImageCache.m in Sources */,
@@ -1260,7 +1286,10 @@
 					/Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
 					/Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
 				);
-				"LIBRARY_SEARCH_PATHS[arch=*]" = /Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					/Users/edison7500/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
+					/Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
