@@ -15,13 +15,25 @@
 + (void)getDataWithParamters:(NSDictionary *)paramters URL:(NSString *)url
                       Block:(void (^)(id res, NSError * error))block
 {
-    
+    [[AppDotComAPIClient sharedAppDotComAPIClient] getPath:url parameters:paramters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block) {
+            block(nil, error);
+        }
+    }];
 }
 
 + (void)postDataWithParamters:(NSDictionary *)paramter URL:(NSString *)url
                         Block:(void (^)(id res, NSError * error))block
 {
-    
+    [[AppDotComAPIClient sharedAppDotComAPIClient] postPath:url parameters:paramter success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block) {
+            block(nil, error);
+        }
+    }];
 }
 
 @end
