@@ -8,6 +8,7 @@
 
 #import "SignUpController.h"
 #import "CodeVerifiedController.h"
+#import "UserCenter.h"
 
 @interface SignUpController ()
 
@@ -106,7 +107,7 @@
         case 2:
         {
             cell.textLabel.text = NSLocalizedStringFromTable(@"phone number", kLocalization, nil);
-            tf.secureTextEntry = YES;
+//            tf.secureTextEntry = YES;
             tf.keyboardType = UIKeyboardTypeAlphabet;
             tf.placeholder = NSLocalizedStringFromTable(@"phone number", kLocalization, nil);
             tf.returnKeyType = UIReturnKeyGo;
@@ -136,7 +137,8 @@
 #pragma mark - button action
 - (void)SignUpBarBtnAction:(id)sender
 {
-    
+    NSLog(@"username %@", _mobilePhoneTF.text);
+    [[UserCenter sharedUserCenter] signUpWithUsername:_usernameTF.text Passwd:_passwdTF.text Phone:_mobilePhoneTF.text];
 }
 
 @end

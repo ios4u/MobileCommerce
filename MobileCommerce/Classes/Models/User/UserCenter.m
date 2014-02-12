@@ -8,6 +8,7 @@
 
 #import "UserCenter.h"
 #import "SSKeychain.h"
+#import "HttpRequest.h"
 
 @implementation UserCenter
 @synthesize access_token = _access_token;
@@ -43,7 +44,14 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 - (void)signUpWithUsername:(NSString *)username Passwd:(NSString *)passwd Phone:(NSString *)phone
 {
-    DLOG(@"signup signup");
+    NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:2];
+    [paramters setValue:username forKey:@"username"];
+    [paramters setValue:passwd forKey:@"password"];
+    [HttpRequest postDataWithParamters:paramters URL:@"signup" Block:^(id res, NSError *error) {
+        if (error) {
+            NSLog(@"%@", error);
+        }
+    }];
 }
 
 - (void)signInWithUsername:(NSString *)username Passwd:(NSString *)passwd
