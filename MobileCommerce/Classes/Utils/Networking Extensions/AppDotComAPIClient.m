@@ -17,7 +17,7 @@
     static AppDotComAPIClient * _sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedClient = [[AppDotComAPIClient alloc] initWithBaseURL:[NSURL URLWithString:@""]];
+        _sharedClient = [[AppDotComAPIClient alloc] initWithBaseURL:[NSURL URLWithString:APIBase]];
     });
     
     return _sharedClient;

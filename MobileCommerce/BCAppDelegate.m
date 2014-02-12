@@ -61,9 +61,7 @@
 - (UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
 {
     NSString * key = [identifierComponents lastObject];
-//    if ([key isEqualToString:MCRootKey]) {
-//        return self.window.rootViewController;
-//    }
+
     if ([key isEqualToString:MCCenterNavigationControllerRestorationKey]) {
         return ((MMDrawerController *)self.window.rootViewController).centerViewController;
     } else if ([key isEqualToString:MCLeftNavigationControllerRestorationKey]) {

@@ -19,6 +19,7 @@
 
 #import "Config.h"
 #import "ColorConfig.h"
+#import "HttpConfig.h"
 //#import "RootController.h"
 #import "UserCenter.h"
 #import "OpenCenterController.h"

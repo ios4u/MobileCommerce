@@ -77,6 +77,7 @@
 		B7CF0F9E182D226400A796E5 /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9D182D226400A796E5 /* ListController.m */; };
 		B7CF0FA2182D229E00A796E5 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0FA1182D229E00A796E5 /* MenuController.m */; };
 		B7EF012D1834A55D00C1A523 /* AddItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EF012C1834A55D00C1A523 /* AddItemView.m */; };
+		B7F3F3B218AB179700FAA576 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F3F3B118AB179700FAA576 /* HttpRequest.m */; };
 		B7F8B22D182CCAA500C7668A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F8B22C182CCAA500C7668A /* Foundation.framework */; };
 		B7F8B22F182CCAA500C7668A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F8B22E182CCAA500C7668A /* CoreGraphics.framework */; };
 		B7F8B231182CCAA500C7668A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F8B230182CCAA500C7668A /* UIKit.framework */; };
@@ -265,6 +266,9 @@
 		B7CF0FA1182D229E00A796E5 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = Classes/Controllers/MenuController/MenuController.m; sourceTree = "<group>"; };
 		B7EF012B1834A55D00C1A523 /* AddItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddItemView.h; path = Classes/Views/StoreView/AddEntityView/AddItemView.h; sourceTree = "<group>"; };
 		B7EF012C1834A55D00C1A523 /* AddItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddItemView.m; path = Classes/Views/StoreView/AddEntityView/AddItemView.m; sourceTree = "<group>"; };
+		B7F3F3AF18AB11CA00FAA576 /* HttpConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HttpConfig.h; path = Classes/Config/HttpConfig.h; sourceTree = "<group>"; };
+		B7F3F3B018AB179700FAA576 /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpRequest.h; path = "Classes/Utils/Networking Extensions/HttpRequest.h"; sourceTree = "<group>"; };
+		B7F3F3B118AB179700FAA576 /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpRequest.m; path = "Classes/Utils/Networking Extensions/HttpRequest.m"; sourceTree = "<group>"; };
 		B7F8B229182CCAA500C7668A /* MobileCommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileCommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7F8B22C182CCAA500C7668A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B7F8B22E182CCAA500C7668A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -342,6 +346,8 @@
 			children = (
 				B7C85CCE185943B900C81806 /* AppDotComAPIClient.h */,
 				B7C85CCF185943B900C81806 /* AppDotComAPIClient.m */,
+				B7F3F3B018AB179700FAA576 /* HttpRequest.h */,
+				B7F3F3B118AB179700FAA576 /* HttpRequest.m */,
 			);
 			name = "Networking Extensions";
 			sourceTree = "<group>";
@@ -925,6 +931,7 @@
 			children = (
 				B7F8B329182CD24000C7668A /* Config.h */,
 				B70C2F68183090C3003A72AF /* ColorConfig.h */,
+				B7F3F3AF18AB11CA00FAA576 /* HttpConfig.h */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -1066,6 +1073,7 @@
 				B79E79E21846212A0080957B /* VerifiedView.m in Sources */,
 				B7C85D161859448900C81806 /* SDWebImageCompat.m in Sources */,
 				B7A734A618320B10007EC29A /* MenuHeaderController.m in Sources */,
+				B7F3F3B218AB179700FAA576 /* HttpRequest.m in Sources */,
 				B7C85D201859448900C81806 /* UIImageView+WebCache.m in Sources */,
 				B77F41771830D76C009A9A57 /* UserCenter.m in Sources */,
 				B7C85CE61859447100C81806 /* AFHTTPRequestOperation.m in Sources */,
