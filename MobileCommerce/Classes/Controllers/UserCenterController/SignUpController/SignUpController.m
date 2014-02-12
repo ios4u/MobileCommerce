@@ -32,6 +32,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [[UserCenter sharedUserCenter] removeTheObserverWithObject:self];
+}
+
 - (void)loadView
 {
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0., 0., WIDTH, HEIGHT) style:UITableViewStyleGrouped];
@@ -49,6 +54,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = NSLocalizedStringFromTable(@"signup", kLocalization, nil);
+    
+    [[UserCenter sharedUserCenter] addTheObserverWithObject:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -139,6 +146,13 @@
 {
 //    NSLog(@"username %@", _mobilePhoneTF.text);
     [[UserCenter sharedUserCenter] signUpWithUsername:_usernameTF.text Passwd:_passwdTF.text Phone:_mobilePhoneTF.text];
+}
+
+
+#pragma mark - handel kvo 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    NSLog(@"key %@", keyPath);
 }
 
 @end
