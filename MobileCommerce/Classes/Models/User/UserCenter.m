@@ -12,7 +12,8 @@
 #import "User.h"
 
 @implementation UserCenter
-@synthesize access_token = _access_token;
+@synthesize error = _error;
+@synthesize session = _session;
 @synthesize user = _user;
 
 DEFINE_SINGLETON_FOR_CLASS(UserCenter);
@@ -63,16 +64,19 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 {
     DLOG(@"login login");
     [self setValue:[NSNumber numberWithBool:YES] forKey:@"isSigningIn"];
+    _error = nil;
     NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:2];
     [paramters setValue:username forKey:@"username"];
     [paramters setValue:passwd forKey:@"password"];
     
     [HttpRequest postDataWithParamters:paramters URL:@"signin" Block:^(id res, NSError *error) {
         if (error) {
+            _error = error;
             NSLog(@"ERROR: %@", error.localizedDescription);
         } else {
             NSLog(@"%@", res);
             _user = [[User alloc] initWithAttributes:res];
+            
         }
         [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSigningIn"];
     }];
@@ -96,8 +100,8 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 - (BOOL)isLogin
 {
-    _access_token = [SSKeychain passwordForService:@"" account:@"access_token"];
-    if (_access_token) {
+    _session = [SSKeychain passwordForService:@"" account:@"session"];
+    if (_session) {
         return YES;
     } else {
         return NO;

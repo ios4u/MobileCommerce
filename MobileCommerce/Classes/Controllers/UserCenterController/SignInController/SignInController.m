@@ -147,7 +147,8 @@
         if( ![[change valueForKeyPath:@"new"] integerValue])
         {
 //            NSLog(@"OKOKOKOK");
-            [self dismissViewControllerAnimated:YES completion:nil];
+            if ([[UserCenter sharedUserCenter] isLogin])
+                [self dismissViewControllerAnimated:YES completion:nil];
         }
     }
 }
