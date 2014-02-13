@@ -11,6 +11,10 @@
 
 @implementation HttpResponse
 
+@synthesize data = _data;
+@synthesize rt = _rt;
+@synthesize error = _error;
+
 - (id)init
 {
     self = [super init];
@@ -23,8 +27,19 @@
 
 - (void)processResObj:(id)obj
 {
-    NSDictionary * JSON = [NSDictionary JsonObjFromData:obj];
-    NSLog(@"json %@", JSON);
+//    NSDictionary * JSON = [NSDictionary JsonObjFromData:obj];
+//    NSLog(@"json %@", obj);
+    _rt = [[obj valueForKeyPath:@"rt"] integerValue];
+    
+    switch (_rt) {
+        case 0:
+            
+            break;
+    
+        default:
+            _data = [obj valueForKeyPath:@"data"];
+            break;
+    }
 //    CLOG(@"json %@", JSON);
 }
 

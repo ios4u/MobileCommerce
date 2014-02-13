@@ -29,6 +29,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [[UserCenter sharedUserCenter] removeTheObserverWithObject:self];
+}
+
 - (void)loadView
 {
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0., 0., WIDTH, HEIGHT) style:UITableViewStyleGrouped];
@@ -45,6 +50,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = NSLocalizedStringFromTable(@"signin", kLocalization, nil);
+    [[UserCenter sharedUserCenter] addTheObserverWithObject:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,12 +130,27 @@
 #pragma mark - button action
 - (void)signInBarBtnAction:(id)sender
 {
-    
+    [[UserCenter sharedUserCenter] signInWithUsername:_usernameTF.text Passwd:_passwdTF.text];
 }
 
 - (void)fotgetBtnAction:(id)sender
 {
 
 }
+
+#pragma mark - handle kvo
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+//    NSLog(@"%@", keyPath);
+    if ([keyPath isEqualToString:@"isSigningIn"])
+    {
+        if( ![[change valueForKeyPath:@"new"] integerValue])
+        {
+//            NSLog(@"OKOKOKOK");
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
+}
+
 
 @end

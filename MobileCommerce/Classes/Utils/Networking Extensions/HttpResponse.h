@@ -10,6 +10,9 @@
 
 @interface HttpResponse : NSObject
 
+@property (strong, nonatomic) NSDictionary * data;
+@property (readonly) NSInteger rt;
+@property (strong, nonatomic) NSError * error;
 
 - (void)processResObj:(id)obj;
 

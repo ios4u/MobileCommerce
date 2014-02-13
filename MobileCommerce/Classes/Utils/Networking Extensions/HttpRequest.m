@@ -28,10 +28,17 @@
 + (void)postDataWithParamters:(NSDictionary *)paramter URL:(NSString *)url
                         Block:(void (^)(id res, NSError * error))block
 {
-    [[AppDotComAPIClient sharedAppDotComAPIClient] postPath:url parameters:paramter success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+    [[AppDotComAPIClient sharedAppDotComAPIClient] postPath:url parameters:paramter success:^(AFHTTPRequestOperation *operation, id JSON) {
+//        NSLog(@"json %@", JSON);
         HttpResponse * res = [[HttpResponse alloc] init];
-        [res processResObj:responseObject];
+        [res processResObj:JSON];
+        if (block) {
+            if (res.error) {
+            
+            } else {
+                block(res.data, nil);
+            }
+        }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {

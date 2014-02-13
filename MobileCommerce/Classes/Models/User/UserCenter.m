@@ -9,6 +9,7 @@
 #import "UserCenter.h"
 #import "SSKeychain.h"
 #import "HttpRequest.h"
+#import "User.h"
 
 @implementation UserCenter
 @synthesize access_token = _access_token;
@@ -47,6 +48,7 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:2];
     [paramters setValue:username forKey:@"username"];
     [paramters setValue:passwd forKey:@"password"];
+    [paramters setValue:phone forKey:@"mobile"];
 //    NSLog(@"%@", paramters);
     [HttpRequest postDataWithParamters:paramters URL:@"signup" Block:^(id res, NSError *error) {
         if (error) {
@@ -60,6 +62,21 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 - (void)signInWithUsername:(NSString *)username Passwd:(NSString *)passwd
 {
     DLOG(@"login login");
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isSigningIn"];
+    NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:2];
+    [paramters setValue:username forKey:@"username"];
+    [paramters setValue:passwd forKey:@"password"];
+    
+    [HttpRequest postDataWithParamters:paramters URL:@"signin" Block:^(id res, NSError *error) {
+        if (error) {
+            NSLog(@"ERROR: %@", error.localizedDescription);
+        } else {
+            NSLog(@"%@", res);
+            _user = [[User alloc] initWithAttributes:res];
+        }
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSigningIn"];
+    }];
+    
 }
 
 - (void)signout
