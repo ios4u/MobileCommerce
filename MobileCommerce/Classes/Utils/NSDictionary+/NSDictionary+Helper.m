@@ -7,16 +7,9 @@
 //
 
 #import "NSDictionary+Helper.h"
-#import "JSONKit.h"
+//#import "JSONKit.h"
 
 @implementation NSDictionary (Helper)
 
-+ (NSDictionary *)JsonObjFromData:(NSData *)data
-{
-    NSString * json_str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", json_str);
-    //    CLOG(@"%@", );
-    return [json_str objectFromJSONString];
-}
 
 @end

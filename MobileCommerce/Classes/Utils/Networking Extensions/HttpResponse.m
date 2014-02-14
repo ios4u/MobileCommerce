@@ -2,45 +2,40 @@
 //  HttpResponse.m
 //  MobileCommerce
 //
-//  Created by 谢 家欣 on 14-2-12.
+//  Created by 谢 家欣 on 14-2-14.
 //  Copyright (c) 2014年 谢家欣. All rights reserved.
 //
 
 #import "HttpResponse.h"
-#import "NSDictionary+Helper.h"
 
 @implementation HttpResponse
 
-@synthesize data = _data;
-@synthesize rt = _rt;
+@synthesize dict = _dict;
 @synthesize error = _error;
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self) {
     
     }
-    
     return self;
 }
 
-- (void)processResObj:(id)obj
+- (void)processObj:(id)obj
 {
-//    NSDictionary * JSON = [NSDictionary JsonObjFromData:obj];
 //    NSLog(@"json %@", obj);
-    _rt = [[obj valueForKeyPath:@"rt"] integerValue];
+    NSInteger rt = [[obj valueForKeyPath:@"rt"] integerValue];
     
-    switch (_rt) {
+    switch (rt) {
         case 0:
-            
+//            _error
             break;
-    
+            
         default:
-            _data = [obj valueForKeyPath:@"data"];
+            _dict = [obj valueForKeyPath:@"data"];
             break;
     }
-//    CLOG(@"json %@", JSON);
 }
 
 @end

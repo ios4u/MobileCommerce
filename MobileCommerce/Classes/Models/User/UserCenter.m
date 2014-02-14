@@ -13,7 +13,7 @@
 
 @implementation UserCenter
 @synthesize error = _error;
-@synthesize session = _session;
+//@synthesize session = _session;
 @synthesize user = _user;
 
 DEFINE_SINGLETON_FOR_CLASS(UserCenter);
@@ -76,7 +76,7 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
         } else {
             NSLog(@"%@", res);
             _user = [[User alloc] initWithAttributes:res];
-            
+            [self save];
         }
         [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSigningIn"];
     }];
@@ -90,7 +90,10 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 - (void)save
 {
-
+    NSLog(@"username %@", _user.username);
+    [SSKeychain setPassword:_user.username forService:@"union.MobileCommerce" account:@"username"];
+//    [SSKeychain passwordForService:@"union.MobileCommerce" account:_user.username];
+//    [Ss]
 }
 
 - (BOOL)isSeller
@@ -100,12 +103,9 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 - (BOOL)isLogin
 {
-    _session = [SSKeychain passwordForService:@"" account:@"session"];
-    if (_session) {
+    if ([SSKeychain passwordForService:@"union.MobileCommerce" account:@"username"])
         return YES;
-    } else {
-        return NO;
-    }
+    return NO;
 }
 
 @end

@@ -17,11 +17,11 @@
 //@synthesize store_id = _store_id;
 @synthesize isSeller = _isSeller;
 
-- (id)initWithAttributes:(NSDictionary *)attributes
+- (instancetype)initWithAttributes:(NSDictionary *)attributes
 {
     self = [super init];
     if (self) {
-        _user_id = [[attributes valueForKeyPath:@"user_id"] integerValue];
+        _user_id = [[attributes valueForKeyPath:@"id"] integerValue];
         _username = [attributes valueForKeyPath:@"username"];
         _mobile = [attributes valueForKeyPath:@"mobile"];
         _emial = [attributes valueForKeyPath:@"email"];

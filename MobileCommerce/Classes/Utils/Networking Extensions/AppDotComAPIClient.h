@@ -6,10 +6,11 @@
 //  Copyright (c) 2013年 谢家欣. All rights reserved.
 //
 
-#import "AFHTTPClient.h"
+#import <Foundation/Foundation.h>
+#import "AFHTTPSessionManager.h"
 
-@interface AppDotComAPIClient : AFHTTPClient
+@interface AppDotComAPIClient : AFHTTPSessionManager
 
-DEFINE_SINGLETON_FOR_HEADER(AppDotComAPIClient)
++ (instancetype)sharedClinet;
 
 @end

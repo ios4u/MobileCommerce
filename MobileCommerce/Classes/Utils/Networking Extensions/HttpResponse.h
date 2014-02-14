@@ -2,7 +2,7 @@
 //  HttpResponse.h
 //  MobileCommerce
 //
-//  Created by 谢 家欣 on 14-2-12.
+//  Created by 谢 家欣 on 14-2-14.
 //  Copyright (c) 2014年 谢家欣. All rights reserved.
 //
 
@@ -10,10 +10,10 @@
 
 @interface HttpResponse : NSObject
 
-@property (strong, nonatomic) NSDictionary * data;
-@property (readonly) NSInteger rt;
+@property (strong, nonatomic) NSDictionary * dict;
 @property (strong, nonatomic) NSError * error;
 
-- (void)processResObj:(id)obj;
+
+- (void)processObj:(id)obj;
 
 @end

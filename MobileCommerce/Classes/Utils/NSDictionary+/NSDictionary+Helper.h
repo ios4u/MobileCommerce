@@ -10,6 +10,4 @@
 
 @interface NSDictionary (Helper)
 
-+ (NSDictionary *)JsonObjFromData:(NSData *)data;
-
 @end

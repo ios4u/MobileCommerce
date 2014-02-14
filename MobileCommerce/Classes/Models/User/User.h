@@ -18,6 +18,6 @@
 @property (readwrite) BOOL isSeller;
 
 
-- (id)initWithAttributes:(NSDictionary *)attributes;
+- (instancetype)initWithAttributes:(NSDictionary *)attributes;
 
 @end

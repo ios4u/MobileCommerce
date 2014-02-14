@@ -18,7 +18,7 @@
 }
 
 @property (strong, nonatomic) NSError * error;
-@property (strong, nonatomic) NSString * session;
+//@property (strong, nonatomic) NSString * session;
 @property (strong, nonatomic) User * user;
 
 

@@ -16,35 +16,38 @@
 + (void)getDataWithParamters:(NSDictionary *)paramters URL:(NSString *)url
                       Block:(void (^)(id res, NSError * error))block
 {
-    [[AppDotComAPIClient sharedAppDotComAPIClient] getPath:url parameters:paramters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (block) {
-            block(nil, error);
-        }
-    }];
+//    [[AppDotComAPIClient sharedAppDotComAPIClient] getPath:url parameters:paramters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        if (block) {
+//            block(nil, error);
+//        }
+//    }];
 }
 
 + (void)postDataWithParamters:(NSDictionary *)paramter URL:(NSString *)url
                         Block:(void (^)(id res, NSError * error))block
 {
-    [[AppDotComAPIClient sharedAppDotComAPIClient] postPath:url parameters:paramter success:^(AFHTTPRequestOperation *operation, id JSON) {
-//        NSLog(@"json %@", JSON);
+    
+    NSLog(@"net type=%d", [[[AppDotComAPIClient sharedClinet] reachabilityManager] networkReachabilityStatus]);
+    
+    [[AppDotComAPIClient sharedClinet] POST:url parameters:paramter success:^(NSURLSessionDataTask *task, id JSON) {
         HttpResponse * res = [[HttpResponse alloc] init];
-        [res processResObj:JSON];
+        [res processObj:JSON];
         if (block) {
             if (res.error) {
-            
+                block(nil, res.error);
             } else {
-                block(res.data, nil);
+                block(res.dict, nil);
             }
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         if (block) {
             block(nil, error);
         }
     }];
+
 }
 
 @end
