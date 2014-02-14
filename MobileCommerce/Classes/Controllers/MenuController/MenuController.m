@@ -33,6 +33,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [[UserCenter sharedUserCenter] removeTheObserverWithObject:self];
+}
+
 - (void)loadView
 {
 
@@ -83,6 +88,7 @@
     _tableView.tableHeaderView = _headerController.view;
 	// Do any additional setup after loading the view.
     [_data load];
+    [[UserCenter sharedUserCenter] addTheObserverWithObject:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -153,21 +159,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    Menu * menu;
-//    switch (indexPath.section) {
-//        case 1:
-//        {
-//             menu = [_data objectAtShopLAtIndex:indexPath.row];
-//        }
-//            break;
-//            
-//        default:
-//        {
-//             menu = [_data objectAtUserLAtIndex:indexPath.row];
-//        }
-//            break;
-//    }
     Menu * menu = [_data objectAtIndex:indexPath.row];
+    
+    NSLog(@"menu %@", menu.klass);
+    if (!menu.klass) {
+        [[UserCenter sharedUserCenter] signout];
+    
+        return;
+    }
+    
     if ([menu.title isEqualToString:self.mm_drawerController.centerViewController.title]) {
         [self.mm_drawerController  toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
     } else {
@@ -178,5 +178,24 @@
         [self.mm_drawerController setCenterViewController:nav withFullCloseAnimation:YES completion:nil];
     }
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+//    NSLog(@"class %@", keyPath);
+    if ([keyPath isEqualToString:@"isSigningIn"])
+    {
+        if( ![[change valueForKeyPath:@"new"] integerValue])
+        {
+            //            NSLog(@"OKOKOKOK");
+            if ([[UserCenter sharedUserCenter] isLogin]) {
+//                [_tableView reloadData];
+                [_headerController.headerView layoutSubviews];
+                [_data refresh];
+                [_tableView reloadData];
+            }
+//                [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
 }
 @end

@@ -30,6 +30,11 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     return self;
 }
 
+- (NSString *)username
+{
+    return [SSKeychain passwordForService:kAppleID account:@"username"];
+}
+
 - (void)addTheObserverWithObject:(id)obj
 {
     [self addObserver:obj forKeyPath:@"isSigningIn" options:NSKeyValueObservingOptionNew context:nil];
@@ -53,9 +58,10 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 //    NSLog(@"%@", paramters);
     [HttpRequest postDataWithParamters:paramters URL:@"signup" Block:^(id res, NSError *error) {
         if (error) {
-            NSLog(@"%@", error);
+//            NSLog(@"%@", error);
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         } else {
-        
+            
         }
     }];
 }
@@ -85,15 +91,23 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 - (void)signout
 {
+    [SSKeychain deletePasswordForService:kAppleID account:@"username"];
+    [SSKeychain deletePasswordForService:kAppleID  account:@"auth"];
+    
+    [HttpRequest postDataWithParamters:nil URL:@"signout" Block:^(id res, NSError *error) {
+        if (error) {
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        } else {
 
+        }
+    }];
 }
 
 - (void)save
 {
     NSLog(@"username %@", _user.username);
-    [SSKeychain setPassword:_user.username forService:@"union.MobileCommerce" account:@"username"];
-//    [SSKeychain passwordForService:@"union.MobileCommerce" account:_user.username];
-//    [Ss]
+    [SSKeychain setPassword:_user.username forService:kAppleID account:@"username"];
+    [SSKeychain setPassword:[NSString stringWithFormat:@"%d", _user.auth]forService:kAppleID account:@"auth"];
 }
 
 - (BOOL)isSeller
@@ -103,7 +117,7 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 - (BOOL)isLogin
 {
-    if ([SSKeychain passwordForService:@"union.MobileCommerce" account:@"username"])
+    if ([SSKeychain passwordForService:kAppleID account:@"auth"])
         return YES;
     return NO;
 }

@@ -11,6 +11,7 @@
 @implementation User
 
 @synthesize user_id = _user_id;
+@synthesize auth = _auth;
 @synthesize username = _username;
 @synthesize mobile = _mobile;
 @synthesize emial = _emial;
@@ -22,6 +23,7 @@
     self = [super init];
     if (self) {
         _user_id = [[attributes valueForKeyPath:@"id"] integerValue];
+        _auth = [[attributes valueForKeyPath:@"auth"] integerValue];
         _username = [attributes valueForKeyPath:@"username"];
         _mobile = [attributes valueForKeyPath:@"mobile"];
         _emial = [attributes valueForKeyPath:@"email"];

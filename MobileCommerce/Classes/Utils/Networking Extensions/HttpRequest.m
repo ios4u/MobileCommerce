@@ -32,6 +32,10 @@
     NSLog(@"net type=%d", [[[AppDotComAPIClient sharedClinet] reachabilityManager] networkReachabilityStatus]);
     
     [[AppDotComAPIClient sharedClinet] POST:url parameters:paramter success:^(NSURLSessionDataTask *task, id JSON) {
+//        NSHTTPCookieStorage *cookiestorage = [ NSHTTPCookieStorage sharedHTTPCookieStorage ];
+        
+//        NSArray *cookies=[ cookiestorage cookies ];
+//        NSLog(@"cookies %@", cookies);
         HttpResponse * res = [[HttpResponse alloc] init];
         [res processObj:JSON];
         if (block) {

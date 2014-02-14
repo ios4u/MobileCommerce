@@ -29,6 +29,7 @@ shared##className = [[self alloc] init]; \
 return shared##className; \
 }
 
+#define kAppleID [[[NSBundle mainBundle] infoDictionary] valueForKeyPath:@"CFBundleIdentifier"]
 
 #define MCRootKey @"MCRootKey"
 #define MCCenterNavigationControllerRestorationKey @"CenterNavigationControllerRestorationKey"

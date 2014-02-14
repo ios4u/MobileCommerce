@@ -12,6 +12,8 @@
 
 @interface MenuList : DataList
 
+@property (strong, nonatomic) NSMutableArray * array;
+
 - (void)load;
 
 @end

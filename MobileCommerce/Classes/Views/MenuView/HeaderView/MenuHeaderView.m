@@ -31,9 +31,9 @@
         _avatarView.backgroundColor = [UIColor redColor];
         
         _usernameL = [[UILabel alloc] initWithFrame:CGRectZero];
-        _usernameL.backgroundColor = [UIColor blueColor];
+//        _usernameL.backgroundColor = [UIColor blueColor];
         _usernameL.textAlignment = NSTextAlignmentLeft;
-        _usernameL.textColor = [UIColor whiteColor];
+        _usernameL.textColor = [UIColor blackColor];
         _usernameL.font = [UIFont systemFontOfSize:14.];
         
         [self addSubview:_SignInOrUpL];
@@ -64,12 +64,15 @@
         
         _avatarView.frame = CGRectMake(20, 30, 40, 40);
         _usernameL.frame = CGRectMake(70., 45, 160, 20);
+        _usernameL.text = [[UserCenter sharedUserCenter] username];
         
     } else {
+     
         _SignInOrUpL.hidden = NO;
         _usernameL.hidden = YES;
         _avatarView.hidden = YES;
         _SignInOrUpL.frame = CGRectMake(20., 30., 200., 40);
+        
     }
 }
 

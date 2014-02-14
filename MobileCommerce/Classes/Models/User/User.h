@@ -11,6 +11,7 @@
 @interface User : NSObject
 
 @property (readonly) NSUInteger user_id;
+@property (readwrite) NSUInteger auth;
 @property (strong, nonatomic) NSString * username;
 @property (strong, nonatomic) NSString * mobile;
 @property (strong, nonatomic) NSString * emial;

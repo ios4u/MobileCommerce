@@ -24,16 +24,23 @@
 
 - (void)processObj:(id)obj
 {
-//    NSLog(@"json %@", obj);
-    NSInteger rt = [[obj valueForKeyPath:@"rt"] integerValue];
+    NSLog(@"json %@", obj);
+    NSInteger rt = [[obj valueForKeyPath:RET_CODE] integerValue];
     
     switch (rt) {
-        case 0:
-//            _error
+        case SUCCESS:
+            _dict = [obj valueForKeyPath:RET_DATA];
+//        case ERROR:
+            
+//            _error = [NSError errorWithDomain:UserErrorDomain code:<#(NSInteger)#> userInfo:<#(NSDictionary *)#>]
             break;
             
         default:
-            _dict = [obj valueForKeyPath:@"data"];
+        {
+            NSString * errorMsg = [obj valueForKeyPath:@"error"];
+            NSDictionary *userInfo = [NSDictionary dictionaryWithObject:errorMsg forKey:NSLocalizedDescriptionKey];
+            _error = [NSError errorWithDomain:UserErrorDomain code:ERROR userInfo:userInfo];
+        }
             break;
     }
 }
