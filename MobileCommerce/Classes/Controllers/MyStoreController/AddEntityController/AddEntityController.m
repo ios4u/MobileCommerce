@@ -7,6 +7,7 @@
 //
 
 #import "AddEntityController.h"
+//#import "HttpRequest.h"
 
 @interface AddEntityController ()
 
@@ -149,7 +150,8 @@
 #pragma mark - button action
 - (void)doneBarBtnAction:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [HttpRequest postDataWithParamters:<#(NSDictionary *)#> URL:<#(NSString *)#> Block:<#^(id res, NSError *error)block#>]
+//    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 

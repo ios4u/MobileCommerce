@@ -16,7 +16,7 @@
 
 @implementation EntityController
 
-@synthesize data = _data;
+@synthesize entities = _entities;
 @synthesize searchBar = _searchBar;
 @synthesize dropList = _dropList;
 
@@ -25,9 +25,14 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _data = [[EntityList alloc] init];
+        _entities = [[EntityList alloc] init];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [_entities removeTheObserverWithObject:self];
 }
 
 - (void)viewDidLoad
@@ -47,8 +52,8 @@
     [_dropList setDDListHidden:YES Animate:NO];
     
     [self.view addSubview:_dropList.view];
-    
-    [_data load];
+    [_entities addTheObserverWithObject:self];
+    [_entities load];
 	// Do any additional setup after loading the view.
 }
 
@@ -99,7 +104,7 @@
 #pragma mark - Table View datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_data count];
+    return [_entities count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -120,6 +125,13 @@
         [self searchBarSearchButtonClicked:_searchBar];
         [_dropList setDDListHidden:YES Animate:YES];
     }
+}
+
+
+#pragma mark - handle kvo
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+
 }
 
 @end

@@ -12,7 +12,7 @@
 
 @interface EntityController : ListController <UISearchBarDelegate, PassValueDelegate>;
 
-@property (strong, nonatomic) EntityList * data;
+@property (strong, nonatomic) EntityList * entities;
 @property (strong, nonatomic) UISearchBar * searchBar;
 @property (strong, nonatomic) DropListController * dropList;
 @end

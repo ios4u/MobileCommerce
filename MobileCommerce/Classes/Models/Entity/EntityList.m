@@ -7,6 +7,7 @@
 //
 
 #import "EntityList.h"
+#import "HttpRequest.h"
 
 @implementation EntityList
 
@@ -25,11 +26,16 @@
 - (void)load
 {
     [self setValue:[NSNumber numberWithBool:YES] forKey:@"isLoading"];
-}
-
-- (void)refresh
-{
-    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isRefreshing"];
+    
+    [HttpRequest getDataWithParamters:nil URL:@"store/item/" Block:^(id res, NSError *error) {
+        if (!error) {
+//            NSLog(@"error %@", error.localizedDescription);
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        } else {
+        
+        }
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isLoading"];
+    }];
 }
 
 @end

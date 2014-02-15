@@ -11,7 +11,6 @@
 
 @interface EntityList : DataList
 {
-
 }
 
 //@property (readwrite) NSInteger index;

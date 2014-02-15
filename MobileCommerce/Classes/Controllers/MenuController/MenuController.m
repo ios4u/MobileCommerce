@@ -87,7 +87,7 @@
     
     _tableView.tableHeaderView = _headerController.view;
 	// Do any additional setup after loading the view.
-    [_data load];
+    [_data refresh];
     [[UserCenter sharedUserCenter] addTheObserverWithObject:self];
 }
 
@@ -164,12 +164,11 @@
     NSLog(@"menu %@", menu.klass);
     if (!menu.klass) {
         [[UserCenter sharedUserCenter] signout];
-    
         return;
     }
     
     if ([menu.title isEqualToString:self.mm_drawerController.centerViewController.title]) {
-        [self.mm_drawerController  toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+        [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
     } else {
         //                DLOG(@"menu  %@", menu.title);
         Class centerClass = NSClassFromString(menu.klass);
@@ -195,6 +194,17 @@
                 [_tableView reloadData];
             }
 //                [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
+    
+    if ([keyPath isEqualToString:@"isSignOut"])
+    {
+        if ( ![[change valueForKeyPath:@"new"] integerValue] )
+        {
+            [_headerController.headerView layoutSubviews];
+            [_data refresh];
+            [_tableView reloadData];
+            [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
         }
     }
 }

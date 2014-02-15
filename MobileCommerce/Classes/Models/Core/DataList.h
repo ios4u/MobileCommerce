@@ -22,4 +22,8 @@
 
 - (id)objectAtIndex:(NSUInteger)index;
 - (void)removeObjectAtIndex:(NSInteger)index;
+
+- (void)addTheObserverWithObject:(id)obj;
+- (void)removeTheObserverWithObject:(id)obj;
+
 @end

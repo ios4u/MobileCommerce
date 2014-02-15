@@ -14,6 +14,6 @@
 
 @property (strong, nonatomic) NSMutableArray * array;
 
-- (void)load;
+//- (void)load;
 
 @end

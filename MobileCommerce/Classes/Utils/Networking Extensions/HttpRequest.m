@@ -16,13 +16,15 @@
 + (void)getDataWithParamters:(NSDictionary *)paramters URL:(NSString *)url
                       Block:(void (^)(id res, NSError * error))block
 {
-//    [[AppDotComAPIClient sharedAppDotComAPIClient] getPath:url parameters:paramters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        if (block) {
-//            block(nil, error);
-//        }
-//    }];
+    NSLog(@"uri %@", url);
+    [[AppDotComAPIClient sharedClinet] GET:url parameters:paramters success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"get res %@", responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (block) {
+            block(nil, error);
+            NSLog(@"get error %@", error);
+        }
+    }];
 }
 
 + (void)postDataWithParamters:(NSDictionary *)paramter URL:(NSString *)url

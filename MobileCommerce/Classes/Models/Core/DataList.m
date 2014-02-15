@@ -51,4 +51,16 @@
     [_dataList removeObjectAtIndex:index];
 }
 
+- (void)addTheObserverWithObject:(id)obj
+{
+    [self addObserver:obj forKeyPath:@"isLoading" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:obj forKeyPath:@"isRefreshing" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)removeTheObserverWithObject:(id)obj
+{
+    [self removeObserver:obj forKeyPath:@"isLoading"];
+    [self removeObserver:obj forKeyPath:@"isRefreshing"];
+}
+
 @end

@@ -91,15 +91,15 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 - (void)signout
 {
-    [SSKeychain deletePasswordForService:kAppleID account:@"username"];
-    [SSKeychain deletePasswordForService:kAppleID  account:@"auth"];
-    
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isSignOut"];
     [HttpRequest postDataWithParamters:nil URL:@"signout" Block:^(id res, NSError *error) {
         if (error) {
             [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         } else {
-
+            [SSKeychain deletePasswordForService:kAppleID account:@"username"];
+            [SSKeychain deletePasswordForService:kAppleID  account:@"auth"];
         }
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSignOut"];
     }];
 }
 
