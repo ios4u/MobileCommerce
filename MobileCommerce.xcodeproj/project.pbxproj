@@ -78,6 +78,7 @@
 		B7CF0F9B182D214500A796E5 /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9A182D214500A796E5 /* RootController.m */; };
 		B7CF0F9E182D226400A796E5 /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9D182D226400A796E5 /* ListController.m */; };
 		B7CF0FA2182D229E00A796E5 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0FA1182D229E00A796E5 /* MenuController.m */; };
+		B7E6673718B2F576001EF502 /* StoreEntityList.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E6673618B2F576001EF502 /* StoreEntityList.m */; };
 		B7EF012D1834A55D00C1A523 /* AddItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EF012C1834A55D00C1A523 /* AddItemView.m */; };
 		B7F3F3B218AB179700FAA576 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F3F3B118AB179700FAA576 /* HttpRequest.m */; };
 		B7F8B22D182CCAA500C7668A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F8B22C182CCAA500C7668A /* Foundation.framework */; };
@@ -270,6 +271,8 @@
 		B7CF0F9D182D226400A796E5 /* ListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListController.m; path = Classes/Controllers/ListController/ListController.m; sourceTree = "<group>"; };
 		B7CF0FA0182D229E00A796E5 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuController.h; path = Classes/Controllers/MenuController/MenuController.h; sourceTree = "<group>"; };
 		B7CF0FA1182D229E00A796E5 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = Classes/Controllers/MenuController/MenuController.m; sourceTree = "<group>"; };
+		B7E6673518B2F576001EF502 /* StoreEntityList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreEntityList.h; path = Classes/Models/Entity/StoreEntityList.h; sourceTree = "<group>"; };
+		B7E6673618B2F576001EF502 /* StoreEntityList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreEntityList.m; path = Classes/Models/Entity/StoreEntityList.m; sourceTree = "<group>"; };
 		B7EF012B1834A55D00C1A523 /* AddItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddItemView.h; path = Classes/Views/StoreView/AddEntityView/AddItemView.h; sourceTree = "<group>"; };
 		B7EF012C1834A55D00C1A523 /* AddItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddItemView.m; path = Classes/Views/StoreView/AddEntityView/AddItemView.m; sourceTree = "<group>"; };
 		B7F3F3AF18AB11CA00FAA576 /* HttpConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HttpConfig.h; path = Classes/Config/HttpConfig.h; sourceTree = "<group>"; };
@@ -489,6 +492,8 @@
 				B70C2F74183097F8003A72AF /* Entity.m */,
 				B70C2F7618309992003A72AF /* EntityList.h */,
 				B70C2F7718309992003A72AF /* EntityList.m */,
+				B7E6673518B2F576001EF502 /* StoreEntityList.h */,
+				B7E6673618B2F576001EF502 /* StoreEntityList.m */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -1106,6 +1111,7 @@
 				B7C85D1D1859448900C81806 /* UIImage+GIF.m in Sources */,
 				B70C2F8A1830ADE8003A72AF /* MyStoreController.m in Sources */,
 				B7CF0FA2182D229E00A796E5 /* MenuController.m in Sources */,
+				B7E6673718B2F576001EF502 /* StoreEntityList.m in Sources */,
 				B7CF0F9E182D226400A796E5 /* ListController.m in Sources */,
 				B7C85D321859498700C81806 /* CodeVerifiedController.m in Sources */,
 				392C3CA318ADC17800F50411 /* HttpResponse.m in Sources */,

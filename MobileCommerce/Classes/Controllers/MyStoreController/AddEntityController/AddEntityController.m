@@ -7,6 +7,7 @@
 //
 
 #import "AddEntityController.h"
+#import "StoreEntityList.h"
 //#import "HttpRequest.h"
 
 @interface AddEntityController ()
@@ -23,6 +24,8 @@
 @synthesize tableView = _tableView;
 @synthesize imagePicker = _imagePicker;
 @synthesize actionSheet = _actionSheet;
+@synthesize entities = _entities;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +35,17 @@
 
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [_entities removeTheObserverWithObject:self];
+}
+
+- (void)setEntities:(StoreEntityList *)entities
+{
+    _entities = entities;
+    [_entities addTheObserverWithObject:self];
 }
 
 - (void)loadView
@@ -205,6 +219,11 @@
 
     [picker dismissViewControllerAnimated:YES completion:nil];
     
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+
 }
 
 @end

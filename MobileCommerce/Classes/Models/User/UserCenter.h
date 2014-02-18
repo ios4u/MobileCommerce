@@ -34,6 +34,8 @@ DEFINE_SINGLETON_FOR_HEADER(UserCenter);
 - (BOOL)isSeller;
 - (BOOL)isLogin;
 
+- (void)loadCookies;
+
 - (void)addTheObserverWithObject:(id)obj;
 - (void)removeTheObserverWithObject:(id)obj;
 @end

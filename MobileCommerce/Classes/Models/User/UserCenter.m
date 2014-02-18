@@ -49,6 +49,8 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     [self removeObserver:obj forKeyPath:@"isSignOut"];
 }
 
+
+
 - (void)signUpWithUsername:(NSString *)username Passwd:(NSString *)passwd Phone:(NSString *)phone
 {
     NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:2];
@@ -78,9 +80,9 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     [HttpRequest postDataWithParamters:paramters URL:@"signin" Block:^(id res, NSError *error) {
         if (error) {
             _error = error;
-            NSLog(@"ERROR: %@", error.localizedDescription);
+//            NSLog(@"ERROR: %@", error.localizedDescription);
         } else {
-            NSLog(@"%@", res);
+//            NSLog(@"%@", res);
             _user = [[User alloc] initWithAttributes:res];
             [self save];
         }
@@ -103,9 +105,31 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     }];
 }
 
+- (void)saveCookies
+{
+    
+    NSData *cookiesData = [NSKeyedArchiver archivedDataWithRootObject: [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]];
+    NSLog(@"%@", cookiesData);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject: cookiesData forKey: @"sessionCookies"];
+    [defaults synchronize];
+    
+}
+
+- (void)loadCookies
+{
+    NSArray *cookies = [NSKeyedUnarchiver unarchiveObjectWithData: [[NSUserDefaults standardUserDefaults] objectForKey: @"sessionCookies"]];
+    NSLog(@"cookies %@", cookies);
+    NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie *cookie in cookies){
+        [cookieStorage setCookie: cookie];
+    }
+}
+
 - (void)save
 {
     NSLog(@"username %@", _user.username);
+    [self saveCookies];
     [SSKeychain setPassword:_user.username forService:kAppleID account:@"username"];
     [SSKeychain setPassword:[NSString stringWithFormat:@"%d", _user.auth]forService:kAppleID account:@"auth"];
 }

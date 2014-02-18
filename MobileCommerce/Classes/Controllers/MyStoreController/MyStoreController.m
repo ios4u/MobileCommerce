@@ -7,7 +7,7 @@
 //
 
 #import "MyStoreController.h"
-#import "EntityList.h"
+#import "StoreEntityList.h"
 #import "StoreHeaderView.h"
 //#import "AddEntityController.h"
 
@@ -26,7 +26,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _entities = [[EntityList alloc] init];
+        _entities = [[StoreEntityList alloc] init];
     }
     return self;
 }
@@ -54,7 +54,7 @@
 	// Do any additional setup after loading the view.
     self.title = NSLocalizedStringFromTable(@"my store", @"MC", nil);
     [_entities addTheObserverWithObject:self];
-//    [_entities load];
+    [_entities load];
 }
 
 - (void)didReceiveMemoryWarning
