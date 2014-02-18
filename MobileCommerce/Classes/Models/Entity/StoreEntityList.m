@@ -27,7 +27,7 @@
     }];
 }
 
-- (void)create
+- (void)createWithImage:(UIImage *)image Title:(NSString *)title Price:(float )price Stock:(NSInteger)stock
 {
     [HttpRequest postDataWithParamters:nil URL:@"store/item/create" Block:^(id res, NSError *error) {
         if (!error) {
@@ -36,6 +36,16 @@
             [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         }
     }];
+}
+
+- (void)addTheObserverWithObject:(id)obj
+{
+
+}
+
+- (void)removeTheObserverWithObject:(id)obj
+{
+
 }
 
 @end

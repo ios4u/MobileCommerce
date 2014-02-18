@@ -9,6 +9,9 @@
 #import "DataList.h"
 
 @interface StoreEntityList : DataList
+{
+
+}
 
 
 

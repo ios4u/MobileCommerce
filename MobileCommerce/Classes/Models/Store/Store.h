@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Store : NSObject
+{
+    BOOL isCreating;
+}
 
 @property (readonly) NSUInteger store_id;
 @property (strong, nonatomic) NSString * store_name;
@@ -18,4 +21,5 @@
 @property (unsafe_unretained, nonatomic) NSURL * image_url;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
+
 @end
