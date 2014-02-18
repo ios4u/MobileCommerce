@@ -38,7 +38,7 @@
         default:
         {
             NSString * errorMsg = [obj valueForKeyPath:@"error"];
-            NSLog(@"ERROR %@", errorMsg);
+            DLOG(@"ERROR %@", errorMsg);
             NSDictionary *userInfo = [NSDictionary dictionaryWithObject:errorMsg forKey:NSLocalizedDescriptionKey];
             _error = [NSError errorWithDomain:UserErrorDomain code:ERROR userInfo:userInfo];
         }

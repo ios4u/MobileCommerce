@@ -25,7 +25,7 @@
 
 
 
-#define UserErrorDomain @"org.basechem.user"
+#define UserErrorDomain @"union.mobilecommerce.error"
 
 typedef enum {
     kParamsMissing = -10000,

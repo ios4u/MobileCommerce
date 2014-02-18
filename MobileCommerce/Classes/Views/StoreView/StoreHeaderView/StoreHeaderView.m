@@ -25,14 +25,14 @@
         self.backgroundColor = kDefaultBackgroundColor;
         _storeImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
 //        [_storeImageView seth]
-        _storeImageView.backgroundColor = [UIColor blueColor];
+//        _storeImageView.backgroundColor = [UIColor blueColor];
         _storeImageView.contentMode = UIViewContentModeScaleAspectFit;
         
         _storeNameL = [[UILabel alloc] initWithFrame:CGRectZero];
         _storeNameL.textAlignment = NSTextAlignmentLeft;
         _storeNameL.textColor = [UIColor blackColor];
         _storeNameL.font = [UIFont systemFontOfSize:17.];
-        _storeNameL.backgroundColor = [UIColor redColor];
+//        _storeNameL.backgroundColor = [UIColor redColor];
         
         _storeAddressBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         

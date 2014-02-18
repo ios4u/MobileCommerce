@@ -65,7 +65,8 @@
 
 - (void)rightBarBtnAction:(id)sender
 {
-    [[OpenCenterController sharedOpenCenterController] openAddItemController];
+//    [[OpenCenterController sharedOpenCenterController] openAddItemController];
+    [[OpenCenterController sharedOpenCenterController] openCreateStoreController];
 }
 
 

@@ -52,6 +52,8 @@
     
     [[AppDotComAPIClient sharedClinet] POST:url parameters:paramter success:^(NSURLSessionDataTask *task, id JSON) {
         HttpResponse * res = [[HttpResponse alloc] init];
+        
+        DLOG(@"%@", task.response);
         [res processObj:JSON];
         if (block) {
             if (res.error) {
@@ -60,7 +62,6 @@
                 block(res.dict, nil);
             }
         }
-        
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         if (block) {
             block(nil, error);

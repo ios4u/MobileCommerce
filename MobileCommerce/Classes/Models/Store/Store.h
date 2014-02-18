@@ -22,4 +22,7 @@
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 
+
+- (void)createWithName:(NSString *)name Address:(NSString *)address;
+
 @end

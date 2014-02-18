@@ -63,14 +63,15 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 //            NSLog(@"%@", error);
             [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         } else {
-            
+            _user = [[User alloc] initWithAttributes:res];
+            [self save];
         }
     }];
 }
 
 - (void)signInWithUsername:(NSString *)username Passwd:(NSString *)passwd
 {
-    DLOG(@"login login");
+//    DLOG(@"login login");
     [self setValue:[NSNumber numberWithBool:YES] forKey:@"isSigningIn"];
     _error = nil;
     NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:2];
@@ -79,10 +80,8 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     
     [HttpRequest postDataWithParamters:paramters URL:@"signin" Block:^(id res, NSError *error) {
         if (error) {
-            _error = error;
-//            NSLog(@"ERROR: %@", error.localizedDescription);
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         } else {
-//            NSLog(@"%@", res);
             _user = [[User alloc] initWithAttributes:res];
             [self save];
         }
@@ -107,9 +106,9 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 - (void)saveCookies
 {
-    
+    NSLog(@"cookies %@", [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]);
     NSData *cookiesData = [NSKeyedArchiver archivedDataWithRootObject: [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]];
-    NSLog(@"%@", cookiesData);
+//    NSLog(@"%@", cookiesData);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject: cookiesData forKey: @"sessionCookies"];
     [defaults synchronize];

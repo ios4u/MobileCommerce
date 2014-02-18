@@ -45,4 +45,12 @@ DEFINE_SINGLETON_FOR_CLASS(OpenCenterController);
 
 }
 
+- (void)openCreateStoreController
+{
+    Class CreateStoreClass = NSClassFromString(kCreateStoreController);
+    UIViewController * controller = [[CreateStoreClass alloc] init];
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self.controller presentViewController:nav animated:YES completion:nil];
+}
+
 @end

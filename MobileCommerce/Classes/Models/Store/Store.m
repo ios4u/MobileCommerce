@@ -52,9 +52,14 @@
         if (!error) {
             [self setAttributes:res];
         } else {
-            [SVProgressHUD showErrorWithStatus:error.description];
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         }
     }];
+}
+
+- (void)updateWithName:(NSString *)name Address:(NSString *)address
+{
+
 }
 
 @end

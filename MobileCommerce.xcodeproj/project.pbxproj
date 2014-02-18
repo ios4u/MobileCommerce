@@ -79,6 +79,7 @@
 		B7CF0F9E182D226400A796E5 /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0F9D182D226400A796E5 /* ListController.m */; };
 		B7CF0FA2182D229E00A796E5 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CF0FA1182D229E00A796E5 /* MenuController.m */; };
 		B7E6673718B2F576001EF502 /* StoreEntityList.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E6673618B2F576001EF502 /* StoreEntityList.m */; };
+		B7E6673B18B3138A001EF502 /* CreateStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E6673A18B3138A001EF502 /* CreateStoreController.m */; };
 		B7EF012D1834A55D00C1A523 /* AddItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EF012C1834A55D00C1A523 /* AddItemView.m */; };
 		B7F3F3B218AB179700FAA576 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F3F3B118AB179700FAA576 /* HttpRequest.m */; };
 		B7F8B22D182CCAA500C7668A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F8B22C182CCAA500C7668A /* Foundation.framework */; };
@@ -273,6 +274,8 @@
 		B7CF0FA1182D229E00A796E5 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuController.m; path = Classes/Controllers/MenuController/MenuController.m; sourceTree = "<group>"; };
 		B7E6673518B2F576001EF502 /* StoreEntityList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreEntityList.h; path = Classes/Models/Entity/StoreEntityList.h; sourceTree = "<group>"; };
 		B7E6673618B2F576001EF502 /* StoreEntityList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreEntityList.m; path = Classes/Models/Entity/StoreEntityList.m; sourceTree = "<group>"; };
+		B7E6673918B3138A001EF502 /* CreateStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateStoreController.h; path = Classes/Controllers/MyStoreController/CreateStoreController/CreateStoreController.h; sourceTree = "<group>"; };
+		B7E6673A18B3138A001EF502 /* CreateStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateStoreController.m; path = Classes/Controllers/MyStoreController/CreateStoreController/CreateStoreController.m; sourceTree = "<group>"; };
 		B7EF012B1834A55D00C1A523 /* AddItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddItemView.h; path = Classes/Views/StoreView/AddEntityView/AddItemView.h; sourceTree = "<group>"; };
 		B7EF012C1834A55D00C1A523 /* AddItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddItemView.m; path = Classes/Views/StoreView/AddEntityView/AddItemView.m; sourceTree = "<group>"; };
 		B7F3F3AF18AB11CA00FAA576 /* HttpConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HttpConfig.h; path = Classes/Config/HttpConfig.h; sourceTree = "<group>"; };
@@ -523,6 +526,7 @@
 		B70C2F871830ADCD003A72AF /* MyStoreController */ = {
 			isa = PBXGroup;
 			children = (
+				B7E6673818B3134D001EF502 /* CreateStoreController */,
 				B7F9222918348E4700A39D97 /* AddEntityController */,
 				B70C2F881830ADE8003A72AF /* MyStoreController.h */,
 				B70C2F891830ADE8003A72AF /* MyStoreController.m */,
@@ -766,6 +770,15 @@
 				B7A734A518320B10007EC29A /* MenuHeaderController.m */,
 			);
 			name = MenuController;
+			sourceTree = "<group>";
+		};
+		B7E6673818B3134D001EF502 /* CreateStoreController */ = {
+			isa = PBXGroup;
+			children = (
+				B7E6673918B3138A001EF502 /* CreateStoreController.h */,
+				B7E6673A18B3138A001EF502 /* CreateStoreController.m */,
+			);
+			name = CreateStoreController;
 			sourceTree = "<group>";
 		};
 		B7EF012F1834AB4700C1A523 /* StoreHeaderView */ = {
@@ -1100,6 +1113,7 @@
 				B73043C118350AF1007CDEE5 /* StoreHeaderView.m in Sources */,
 				B7C85D2D1859458C00C81806 /* MMDrawerVisualState.m in Sources */,
 				B7F8B23D182CCAA500C7668A /* BCAppDelegate.m in Sources */,
+				B7E6673B18B3138A001EF502 /* CreateStoreController.m in Sources */,
 				B74B3AB4184C74D400256515 /* SignUpController.m in Sources */,
 				396C37CE18ABBCFE00CBAF23 /* NSDictionary+Helper.m in Sources */,
 				B70C2F901830B147003A72AF /* MMTableViewCell.m in Sources */,
@@ -1218,7 +1232,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = /Users/edison7500/Workspace/MobileCommerce/;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				ONLY_ACTIVE_ARCH = YES;
@@ -1255,7 +1269,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = /Users/edison7500/Workspace/MobileCommerce/;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				SDKROOT = iphoneos;
