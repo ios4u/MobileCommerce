@@ -54,6 +54,7 @@
 - (void)gotoUserProfileView:(id)sender
 {
     DLOG(@"go to");
+    [[OpenCenterController sharedOpenCenterController] openUserProfileController];
 }
 
 @end

@@ -35,6 +35,15 @@ DEFINE_SINGLETON_FOR_CLASS(OpenCenterController);
     [self.controller presentViewController:nav animated:YES completion:nil];
 }
 
+- (void)openUserProfileController
+{
+    Class userProfileClass = NSClassFromString(kUserProfileController);
+    UIViewController * controller = [[userProfileClass alloc] init];
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self.controller presentViewController:nav animated:YES completion:nil];
+}
+
+
 - (void)openAddItemController
 {
 //    AddEntityController * controller = [[AddEntityController alloc] init];

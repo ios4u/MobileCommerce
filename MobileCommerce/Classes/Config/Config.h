@@ -49,10 +49,12 @@ return shared##className; \
 
 
 #define kUserCenterController @"UserCenterViewController"
+#define kUserProfileController @"UserProfileController"
 #define kSignInController @"SignInController"
 #define kSignUpController @"SignUpController"
 #define kAddItemController @"AddEntityController"
 #define kCreateStoreController @"CreateStoreController"
+
 
 //static BOOL OSVersionIsAtLeastiOS7() {
 //    return (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1);

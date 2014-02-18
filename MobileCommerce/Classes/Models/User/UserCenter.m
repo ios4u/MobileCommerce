@@ -35,6 +35,11 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     return [SSKeychain passwordForService:kAppleID account:@"username"];
 }
 
+- (NSString *)mobile
+{
+    return [SSKeychain passwordForService:kAppleID account:@"mobile"];
+}
+
 - (void)addTheObserverWithObject:(id)obj
 {
     [self addObserver:obj forKeyPath:@"isSigningIn" options:NSKeyValueObservingOptionNew context:nil];
@@ -97,8 +102,7 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
         if (error) {
             [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         } else {
-            [SSKeychain deletePasswordForService:kAppleID account:@"username"];
-            [SSKeychain deletePasswordForService:kAppleID  account:@"auth"];
+            [self remove];
         }
         [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSignOut"];
     }];
@@ -130,7 +134,15 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     NSLog(@"username %@", _user.username);
     [self saveCookies];
     [SSKeychain setPassword:_user.username forService:kAppleID account:@"username"];
+    [SSKeychain setPassword:_user.mobile forService:kAppleID account:@"mobile"];
     [SSKeychain setPassword:[NSString stringWithFormat:@"%d", _user.auth]forService:kAppleID account:@"auth"];
+}
+
+- (void)remove
+{
+    [SSKeychain deletePasswordForService:kAppleID account:@"username"];
+    [SSKeychain deletePasswordForService:kAppleID account:@"mobile"];
+    [SSKeychain deletePasswordForService:kAppleID  account:@"auth"];
 }
 
 - (BOOL)isSeller
