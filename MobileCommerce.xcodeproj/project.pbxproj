@@ -17,6 +17,8 @@
 		392C3CDB18ADCC9800F50411 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CD018ADCC9800F50411 /* AFURLRequestSerialization.m */; };
 		392C3CDC18ADCC9800F50411 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CD218ADCC9800F50411 /* AFURLResponseSerialization.m */; };
 		392C3CDD18ADCC9800F50411 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CD418ADCC9800F50411 /* AFURLSessionManager.m */; };
+		394BE74F18B48C69007A4E98 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 394BE74E18B48C69007A4E98 /* LocationManager.m */; };
+		394BE75118B48CA5007A4E98 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394BE75018B48CA5007A4E98 /* MapKit.framework */; };
 		396C37CE18ABBCFE00CBAF23 /* NSDictionary+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 396C37CD18ABBCFE00CBAF23 /* NSDictionary+Helper.m */; };
 		39F4BA6218336C0600312B7E /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F4BA5C18336C0600312B7E /* libzbar.a */; };
 		39F4BA6318336C0600312B7E /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 39F4BA5E18336C0600312B7E /* zbar-back.png */; };
@@ -134,6 +136,9 @@
 		392C3CD218ADCC9800F50411 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		392C3CD318ADCC9800F50411 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		392C3CD418ADCC9800F50411 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		394BE74D18B48C69007A4E98 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationManager.h; path = Classes/Manager/LocationManager/LocationManager.h; sourceTree = "<group>"; };
+		394BE74E18B48C69007A4E98 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationManager.m; path = Classes/Manager/LocationManager/LocationManager.m; sourceTree = "<group>"; };
+		394BE75018B48CA5007A4E98 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		396C37CC18ABBCFE00CBAF23 /* NSDictionary+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Helper.h"; path = "Classes/Utils/NSDictionary+/NSDictionary+Helper.h"; sourceTree = "<group>"; };
 		396C37CD18ABBCFE00CBAF23 /* NSDictionary+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Helper.m"; path = "Classes/Utils/NSDictionary+/NSDictionary+Helper.m"; sourceTree = "<group>"; };
 		39F4BA4818336C0600312B7E /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
@@ -316,6 +321,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				394BE75118B48CA5007A4E98 /* MapKit.framework in Frameworks */,
 				B79105E818448757000C558F /* CoreLocation.framework in Frameworks */,
 				B7F922281834621300A39D97 /* libsqlite3.dylib in Frameworks */,
 				B7F8B2AE182CCCFC00C7668A /* SystemConfiguration.framework in Frameworks */,
@@ -366,6 +372,23 @@
 			);
 			name = AFNetworking;
 			path = Vendor/AFNetworking;
+			sourceTree = "<group>";
+		};
+		394BE74B18B48C31007A4E98 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				394BE74C18B48C40007A4E98 /* LocationManager */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		394BE74C18B48C40007A4E98 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				394BE74D18B48C69007A4E98 /* LocationManager.h */,
+				394BE74E18B48C69007A4E98 /* LocationManager.m */,
+			);
+			name = LocationManager;
 			sourceTree = "<group>";
 		};
 		3968742518584D9700697138 /* Utils */ = {
@@ -834,6 +857,7 @@
 		B7F8B22B182CCAA500C7668A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				394BE75018B48CA5007A4E98 /* MapKit.framework */,
 				B79105E718448757000C558F /* CoreLocation.framework */,
 				B7F922271834621300A39D97 /* libsqlite3.dylib */,
 				B7F8B2AD182CCCFC00C7668A /* SystemConfiguration.framework */,
@@ -893,6 +917,7 @@
 		B7F8B25B182CCAFF00C7668A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				394BE74B18B48C31007A4E98 /* Manager */,
 				3968742718584E1B00697138 /* Networking Extensions */,
 				3968742518584D9700697138 /* Utils */,
 				B7F8B328182CD22A00C7668A /* Config */,
@@ -1034,6 +1059,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "谢家欣";
 				TargetAttributes = {
+					B7F8B228182CCAA500C7668A = {
+						DevelopmentTeam = 4W26QSGX3M;
+					};
 					B7F8B243182CCAA500C7668A = {
 						TestTargetID = B7F8B228182CCAA500C7668A;
 					};
@@ -1137,6 +1165,7 @@
 				B731C18C1835B7A5009EDE95 /* MCImageView.m in Sources */,
 				B70C2F8F1830B147003A72AF /* MMSideDrawerTableViewCell.m in Sources */,
 				B7C85D1D1859448900C81806 /* UIImage+GIF.m in Sources */,
+				394BE74F18B48C69007A4E98 /* LocationManager.m in Sources */,
 				B70C2F8A1830ADE8003A72AF /* MyStoreController.m in Sources */,
 				B7CF0FA2182D229E00A796E5 /* MenuController.m in Sources */,
 				B7E6673718B2F576001EF502 /* StoreEntityList.m in Sources */,
@@ -1298,6 +1327,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileCommerce/MobileCommerce-Prefix.pch";
 				INFOPLIST_FILE = "MobileCommerce/MobileCommerce-Info.plist";
@@ -1311,6 +1341,7 @@
 					/Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1322,6 +1353,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileCommerce/MobileCommerce-Prefix.pch";
 				INFOPLIST_FILE = "MobileCommerce/MobileCommerce-Info.plist";
@@ -1331,6 +1363,7 @@
 					/Users/edison/Workspace/MobileCommerce/MobileCommerce/ZBarSDK,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

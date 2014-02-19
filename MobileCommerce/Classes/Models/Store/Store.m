@@ -48,6 +48,10 @@
 
 - (void)createWithName:(NSString *)name Address:(NSString *)address
 {
+    NSMutableDictionary *paramters = [NSMutableDictionary dictionaryWithCapacity:0];
+    [paramters setValue:name forKey:@"store_name"];
+    [paramters setValue:address forKey:@"address"];
+    
     [HttpRequest postDataWithParamters:nil URL:@"store/create" Block:^(id res, NSError *error) {
         if (!error) {
             [self setAttributes:res];
