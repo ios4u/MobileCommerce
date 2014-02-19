@@ -15,6 +15,8 @@
     BOOL isSigningIn;
     BOOL isSigningUp;
     BOOL isSignOut;
+    BOOL isSendingSMS;
+    BOOL isVerifyCode;
 }
 
 @property (strong, nonatomic) NSError * error;
@@ -32,7 +34,7 @@ DEFINE_SINGLETON_FOR_HEADER(UserCenter);
 - (void)signInWithUsername:(NSString *)username Passwd:(NSString *)passwd;
 - (void)signout;
 - (void)sendSMSWithPhone:(NSString *)phone;
-
+- (void)verifyCode:(NSString *)code;
 
 - (BOOL)isSeller;
 - (BOOL)isLogin;

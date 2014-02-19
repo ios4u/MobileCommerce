@@ -25,6 +25,8 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
         [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSigningIn"];
         [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSigningUp"];
         [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSignOut"];
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSendingSMS"];
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isVerifyCode"];
     }
     
     return self;
@@ -45,6 +47,8 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     [self addObserver:obj forKeyPath:@"isSigningIn" options:NSKeyValueObservingOptionNew context:nil];
     [self addObserver:obj forKeyPath:@"isSigningUp" options:NSKeyValueObservingOptionNew context:nil];
     [self addObserver:obj forKeyPath:@"isSignOut" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:obj forKeyPath:@"isSendingSMS" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:obj forKeyPath:@"isVerifyCode" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)removeTheObserverWithObject:(id)obj
@@ -52,6 +56,8 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     [self removeObserver:obj forKeyPath:@"isSigningIn"];
     [self removeObserver:obj forKeyPath:@"isSigningUp"];
     [self removeObserver:obj forKeyPath:@"isSignOut"];
+    [self removeObserver:obj forKeyPath:@"isSendingSMS"];
+    [self removeObserver:obj forKeyPath:@"isVerifyCode"];
 }
 
 - (void)saveCookies
@@ -99,6 +105,13 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 - (BOOL)isLogin
 {
     if ([SSKeychain passwordForService:kAppleID account:@"auth"])
+        return YES;
+    return NO;
+}
+
+- (BOOL)isAuth
+{
+    if ([[SSKeychain passwordForService:kAppleID account:@"auth"] integerValue])
         return YES;
     return NO;
 }
@@ -157,6 +170,7 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 - (void)sendSMSWithPhone:(NSString *)phone
 {
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isSendingSMS"];
     NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:1];
     [paramters setValue:phone forKey:@"mobile"];
     
@@ -164,9 +178,26 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
         if (error) {
             [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         } else {
-            
+            DLOG(@"%@", res);
         }
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSendingSMS"];
     }];
 }
+
+- (void)verifyCode:(NSString *)code
+{
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isVerifyCode"];
+    NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:1];
+    [paramters setValue:code forKey:@"code"];
+    [HttpRequest postDataWithParamters:paramters URL:@"checker" Block:^(id res, NSError *error) {
+        if (error) {
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        } else {
+        
+        }
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isVerifyCode"];
+    }];
+}
+
 
 @end

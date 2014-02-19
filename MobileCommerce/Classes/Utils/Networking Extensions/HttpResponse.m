@@ -30,11 +30,7 @@
     switch (rt) {
         case SUCCESS:
             _dict = [obj valueForKeyPath:RET_DATA];
-//        case ERROR:
-            
-//            _error = [NSError errorWithDomain:UserErrorDomain code:<#(NSInteger)#> userInfo:<#(NSDictionary *)#>]
             break;
-            
         default:
         {
             NSString * errorMsg = [obj valueForKeyPath:@"error"];

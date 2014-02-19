@@ -31,7 +31,10 @@
         
         _sendSMSBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_sendSMSBtn setTitle:NSLocalizedStringFromTable(@"send code", kLocalization, nil) forState:UIControlStateNormal];
+        [_sendSMSBtn setTitle:@"已经发送" forState:UIControlStateDisabled];
         [_sendSMSBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [_sendSMSBtn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+        [_sendSMSBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
         [_sendSMSBtn addTarget:self action:@selector(sendSMSBtnAction:) forControlEvents:UIControlEventTouchUpInside];
         
         _codeTF = [[UITextField alloc] initWithFrame:CGRectZero];
@@ -46,10 +49,11 @@
 //        _codeTF.layer.borderWidth = 0.5;
 //        _codeTF.layer.borderColor = [UIColor lightGrayColor].;
         
-        
         _verfiedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_verfiedBtn setTitle:NSLocalizedStringFromTable(@"verify", kLocalization, nil) forState:UIControlStateNormal];
+        
         [_verfiedBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [_verfiedBtn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
         [_verfiedBtn addTarget:self action:@selector(verfiedBtnAction:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:_phoneL];

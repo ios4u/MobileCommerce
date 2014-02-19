@@ -26,6 +26,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [[UserCenter sharedUserCenter] removeTheObserverWithObject:self];
+}
+
 - (void)loadView
 {
 //    [super loadView];
@@ -36,11 +41,13 @@
     self.title = NSLocalizedStringFromTable(@"verify", kLocalization, nil);
     
     self.view = _verifiedView;
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[UserCenter sharedUserCenter] addTheObserverWithObject:self];
 	// Do any additional setup after loading the view.
 }
 
@@ -54,12 +61,36 @@
 - (void)TapCodeVerifiedWithCode:(NSString *)code
 {
     DLOG(@"verified %@", code);
+    [SVProgressHUD show];
+    [[UserCenter sharedUserCenter] verifyCode:code];
 }
 
 - (void)TapSendSMSWithPhone:(NSString *)phone
 {
     DLOG(@"send message %@", phone);
+    [SVProgressHUD show];
     [[UserCenter sharedUserCenter] sendSMSWithPhone:phone];
+}
+
+#pragma mark - handel kvo 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    DLOG(@"keypath %@", keyPath);
+    if ([keyPath isEqualToString:@"isSendingSMS"])
+    {
+        if( ![[change valueForKeyPath:@"new"] integerValue])
+        {
+            [SVProgressHUD showSuccessWithStatus:NSLocalizedStringFromTable(@"done", kLocalization, nil)];
+            _verifiedView.sendSMSBtn.enabled = NO;
+        }
+    }
+    if ([keyPath isEqualToString:@"isVerifyCode"]) {
+        if (![[change valueForKeyPath:@"new"]  integerValue]) {
+//            _verifiedView.verfiedBtn.enabled = NO;
+            [SVProgressHUD showSuccessWithStatus:NSLocalizedStringFromTable(@"done", kLocalization, nil)];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
 }
 
 @end
