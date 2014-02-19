@@ -161,7 +161,7 @@
 {
     Menu * menu = [_data objectAtIndex:indexPath.row];
     
-    NSLog(@"menu %@", menu.klass);
+    DLOG(@"menu %@", menu.klass);
     if (!menu.klass) {
         [[UserCenter sharedUserCenter] signout];
         return;
@@ -206,16 +206,11 @@
             [_tableView reloadData];
 //            if（[_]）
             Menu * menu = [_data objectAtIndex:0];
-            if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"entity", kLocalization, nil)])
-            {
-                [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-            } else {
-            
-                Class centerClass = NSClassFromString(menu.klass);
-                UIViewController * controller = [[centerClass alloc] init];
-                UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:controller];
-                [self.mm_drawerController setCenterViewController:nav withFullCloseAnimation:YES completion:nil];
-            }
+            DLOG(@"menu title %@", menu.title);
+            Class centerClass = NSClassFromString(menu.klass);
+            UIViewController * controller = [[centerClass alloc] init];
+            UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:controller];
+            [self.mm_drawerController setCenterViewController:nav withFullCloseAnimation:YES completion:nil];
         }
     }
 }

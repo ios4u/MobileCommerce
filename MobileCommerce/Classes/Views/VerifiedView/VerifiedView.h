@@ -10,6 +10,7 @@
 
 @protocol VerifiedViewDelegate <NSObject>
 
+@optional
 - (void)TapSendSMSWithPhone:(NSString *)phone;
 - (void)TapCodeVerifiedWithCode:(NSString *)code;
 

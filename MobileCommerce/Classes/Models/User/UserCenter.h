@@ -38,6 +38,7 @@ DEFINE_SINGLETON_FOR_HEADER(UserCenter);
 
 - (BOOL)isSeller;
 - (BOOL)isLogin;
+- (BOOL)isAuth;
 
 - (void)loadCookies;
 

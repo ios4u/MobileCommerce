@@ -111,6 +111,7 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
 
 - (BOOL)isAuth
 {
+    DLOG(@"auth %@", [SSKeychain passwordForService:kAppleID account:@"auth"]);
     if ([[SSKeychain passwordForService:kAppleID account:@"auth"] integerValue])
         return YES;
     return NO;

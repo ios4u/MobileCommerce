@@ -51,9 +51,10 @@
         
         _verfiedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_verfiedBtn setTitle:NSLocalizedStringFromTable(@"verify", kLocalization, nil) forState:UIControlStateNormal];
-        
+        [_verfiedBtn setTitle:@"已验证" forState:UIControlStateDisabled];
         [_verfiedBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [_verfiedBtn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+        [_verfiedBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
         [_verfiedBtn addTarget:self action:@selector(verfiedBtnAction:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:_phoneL];
@@ -75,13 +76,22 @@
 {
     [super layoutSubviews];
     
-    _phoneL.text = _mobile;
     
+    _phoneL.text = _mobile;
     _phoneL.frame = CGRectMake(20., 108., 140, 44);
-    _sendSMSBtn.frame = CGRectMake(200., 108., 80., 44);
-    _codeTF.frame = CGRectMake(20., 162., 160, 44);
-    _verfiedBtn.frame = CGRectMake(200, 162, 60, 44);
+    
+    if (![[UserCenter sharedUserCenter] isAuth])
+    {
+        _sendSMSBtn.frame = CGRectMake(200., 108., 80., 44);
+        _codeTF.frame = CGRectMake(20., 162., 160, 44);
+        _verfiedBtn.frame = CGRectMake(200, 162, 60, 44);
+    } else {
+//        _sendSMSBtn.enabled = NO;
+        _verfiedBtn.frame = CGRectMake(200, 108, 60, 44);
+        _verfiedBtn.enabled = NO;
+    }
 }
+
 
 #pragma mark - button action
 - (void)verfiedBtnAction:(id)sender

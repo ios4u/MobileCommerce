@@ -22,22 +22,6 @@
     return self;
 }
 
-
-
-//- (void)load
-//{
-//    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isLoading"];
-////    NSArray * array;
-//
-//    
-//    for (NSDictionary * attributes in _array) {
-//        Menu * _menu = [[Menu alloc] initWithAttributes:attributes];
-//        [self.dataList addObject:_menu];
-//    }
-//    
-//    [self setValue:[NSNumber numberWithBool:NO] forKey:@"isLoading"];
-//}
-
 - (void)refresh
 {
     [self.dataList removeAllObjects];
@@ -56,7 +40,7 @@
         Menu * _menu = [[Menu alloc] initWithAttributes:attributes];
         [self.dataList addObject:_menu];
     }
-    NSLog(@"menu data %@", _array);
+//    NSLog(@"menu data %@", _array);
 }
 
 
