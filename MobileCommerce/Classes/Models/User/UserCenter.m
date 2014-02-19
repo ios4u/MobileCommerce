@@ -54,60 +54,6 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     [self removeObserver:obj forKeyPath:@"isSignOut"];
 }
 
-
-
-- (void)signUpWithUsername:(NSString *)username Passwd:(NSString *)passwd Phone:(NSString *)phone
-{
-    NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:2];
-    [paramters setValue:username forKey:@"username"];
-    [paramters setValue:passwd forKey:@"password"];
-    [paramters setValue:phone forKey:@"mobile"];
-//    NSLog(@"%@", paramters);
-    [HttpRequest postDataWithParamters:paramters URL:@"signup" Block:^(id res, NSError *error) {
-        if (error) {
-//            NSLog(@"%@", error);
-            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-        } else {
-            _user = [[User alloc] initWithAttributes:res];
-            [self save];
-        }
-    }];
-}
-
-- (void)signInWithUsername:(NSString *)username Passwd:(NSString *)passwd
-{
-//    DLOG(@"login login");
-    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isSigningIn"];
-    _error = nil;
-    NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:2];
-    [paramters setValue:username forKey:@"username"];
-    [paramters setValue:passwd forKey:@"password"];
-    
-    [HttpRequest postDataWithParamters:paramters URL:@"signin" Block:^(id res, NSError *error) {
-        if (error) {
-            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-        } else {
-            _user = [[User alloc] initWithAttributes:res];
-            [self save];
-        }
-        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSigningIn"];
-    }];
-    
-}
-
-- (void)signout
-{
-    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isSignOut"];
-    [HttpRequest postDataWithParamters:nil URL:@"signout" Block:^(id res, NSError *error) {
-        if (error) {
-            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-        } else {
-            [self remove];
-        }
-        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSignOut"];
-    }];
-}
-
 - (void)saveCookies
 {
     NSLog(@"cookies %@", [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]);
@@ -155,6 +101,72 @@ DEFINE_SINGLETON_FOR_CLASS(UserCenter);
     if ([SSKeychain passwordForService:kAppleID account:@"auth"])
         return YES;
     return NO;
+}
+
+- (void)signUpWithUsername:(NSString *)username Passwd:(NSString *)passwd Phone:(NSString *)phone
+{
+    NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:2];
+    [paramters setValue:username forKey:@"username"];
+    [paramters setValue:passwd forKey:@"password"];
+    [paramters setValue:phone forKey:@"mobile"];
+    //    NSLog(@"%@", paramters);
+    [HttpRequest postDataWithParamters:paramters URL:@"signup" Block:^(id res, NSError *error) {
+        if (error) {
+            //            NSLog(@"%@", error);
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        } else {
+            _user = [[User alloc] initWithAttributes:res];
+            [self save];
+        }
+    }];
+}
+
+- (void)signInWithUsername:(NSString *)username Passwd:(NSString *)passwd
+{
+    //    DLOG(@"login login");
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isSigningIn"];
+    _error = nil;
+    NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:2];
+    [paramters setValue:username forKey:@"username"];
+    [paramters setValue:passwd forKey:@"password"];
+    
+    [HttpRequest postDataWithParamters:paramters URL:@"signin" Block:^(id res, NSError *error) {
+        if (error) {
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        } else {
+            _user = [[User alloc] initWithAttributes:res];
+            [self save];
+        }
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSigningIn"];
+    }];
+    
+}
+
+- (void)signout
+{
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isSignOut"];
+    [HttpRequest postDataWithParamters:nil URL:@"signout" Block:^(id res, NSError *error) {
+        if (error) {
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        } else {
+            [self remove];
+        }
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isSignOut"];
+    }];
+}
+
+- (void)sendSMSWithPhone:(NSString *)phone
+{
+    NSMutableDictionary * paramters = [NSMutableDictionary dictionaryWithCapacity:1];
+    [paramters setValue:phone forKey:@"mobile"];
+    
+    [HttpRequest postDataWithParamters:paramters URL:@"sms_send" Block:^(id res, NSError *error) {
+        if (error) {
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        } else {
+            
+        }
+    }];
 }
 
 @end

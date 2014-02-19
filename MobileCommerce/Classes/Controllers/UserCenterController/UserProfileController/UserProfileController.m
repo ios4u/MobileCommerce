@@ -7,6 +7,7 @@
 //
 
 #import "UserProfileController.h"
+#import "CodeVerifiedController.h"
 
 @interface UserProfileController ()
 
@@ -29,6 +30,7 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     self.view = _tableView;
+    
 }
 
 - (void)viewDidLoad
@@ -36,6 +38,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = [[UserCenter sharedUserCenter] username];
+
+    UIBarButtonItem * cancelBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelBarBtnAction:)];
+    self.navigationItem.leftBarButtonItem = cancelBarBtn;
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,7 +94,19 @@
 #pragma mark - tableview delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == 1)
+    {
+        CodeVerifiedController * controller = [[CodeVerifiedController alloc] init];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - barbtn action
+
+- (void)cancelBarBtnAction:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

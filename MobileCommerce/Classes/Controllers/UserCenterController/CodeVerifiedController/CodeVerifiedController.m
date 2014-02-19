@@ -30,6 +30,7 @@
 {
 //    [super loadView];
     _verifiedView = [[VerifiedView alloc] initWithFrame:CGRectMake(0., 0., WIDTH, HEIGHT)];
+    _verifiedView.mobile = [[UserCenter sharedUserCenter] mobile];
     _verifiedView.delegate = self;
     
     self.title = NSLocalizedStringFromTable(@"verify", kLocalization, nil);
@@ -53,6 +54,12 @@
 - (void)TapCodeVerifiedWithCode:(NSString *)code
 {
     DLOG(@"verified %@", code);
+}
+
+- (void)TapSendSMSWithPhone:(NSString *)phone
+{
+    DLOG(@"send message %@", phone);
+    [[UserCenter sharedUserCenter] sendSMSWithPhone:phone];
 }
 
 @end

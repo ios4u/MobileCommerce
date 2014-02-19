@@ -11,6 +11,9 @@
 @implementation VerifiedView
 
 @synthesize delegate = _delegate;
+@synthesize mobile = _mobile;
+@synthesize phoneL = _phoneL;
+@synthesize sendSMSBtn = _sendSMSBtn;
 @synthesize codeTF = _codeTF;
 @synthesize verfiedBtn = _verfiedBtn;
 
@@ -22,23 +25,35 @@
 //        self.backgroundColor =
         self.backgroundColor = kDefaultBackgroundColor;
         
+        
+        _phoneL = [[UILabel alloc] initWithFrame:CGRectZero];
+        _phoneL.textAlignment = NSTextAlignmentLeft;
+        
+        _sendSMSBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_sendSMSBtn setTitle:NSLocalizedStringFromTable(@"send code", kLocalization, nil) forState:UIControlStateNormal];
+        [_sendSMSBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [_sendSMSBtn addTarget:self action:@selector(sendSMSBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        
         _codeTF = [[UITextField alloc] initWithFrame:CGRectZero];
+//        _codeTF.
         _codeTF.keyboardType = UIKeyboardTypeNumberPad;
         _codeTF.returnKeyType = UIReturnKeyGo;
         _codeTF.autocorrectionType = UITextAutocorrectionTypeNo;
         _codeTF.autocapitalizationType = UITextAutocapitalizationTypeNone;
         _codeTF.backgroundColor = [UIColor whiteColor];
         _codeTF.clearButtonMode = UITextFieldViewModeWhileEditing;
-        _codeTF.borderStyle = UITextBorderStyleLine;
-        _codeTF.layer.borderWidth = 0.5;
+        _codeTF.borderStyle = UITextBorderStyleRoundedRect;
+//        _codeTF.layer.borderWidth = 0.5;
+//        _codeTF.layer.borderColor = [UIColor lightGrayColor].;
         
         
         _verfiedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_verfiedBtn setTitle:NSLocalizedStringFromTable(@"verify", kLocalization, nil) forState:UIControlStateNormal];
-        [_verfiedBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_verfiedBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [_verfiedBtn addTarget:self action:@selector(verfiedBtnAction:) forControlEvents:UIControlEventTouchUpInside];
         
-        
+        [self addSubview:_phoneL];
+        [self addSubview:_sendSMSBtn];
         [self addSubview:_codeTF];
         [self addSubview:_verfiedBtn];
         
@@ -46,20 +61,37 @@
     return self;
 }
 
+- (void)setMobile:(NSString *)mobile
+{
+    _mobile = mobile;
+    [self setNeedsLayout];
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
-    _codeTF.frame = CGRectMake(20., 108., 280, 44);
+    _phoneL.text = _mobile;
     
-    _verfiedBtn.frame = CGRectMake(20, 160., 280., 44);
+    _phoneL.frame = CGRectMake(20., 108., 140, 44);
+    _sendSMSBtn.frame = CGRectMake(200., 108., 80., 44);
+    _codeTF.frame = CGRectMake(20., 162., 160, 44);
+    _verfiedBtn.frame = CGRectMake(200, 162, 60, 44);
 }
 
-
+#pragma mark - button action
 - (void)verfiedBtnAction:(id)sender
 {
     if (_delegate && [_delegate respondsToSelector:@selector(TapCodeVerifiedWithCode:)]) {
         [_delegate TapCodeVerifiedWithCode:_codeTF.text];
+    }
+}
+
+- (void)sendSMSBtnAction:(id)sender
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(TapSendSMSWithPhone:)])
+    {
+        [_delegate TapSendSMSWithPhone:_mobile];
     }
 }
 

@@ -18,6 +18,7 @@
 "signup"="注册";
 "signout"="注销";
 "verify"="验证";
+"send code"="发送验证";
 "submit" = "提交";
 "done"="完成";
 

@@ -10,6 +10,7 @@
 
 @protocol VerifiedViewDelegate <NSObject>
 
+- (void)TapSendSMSWithPhone:(NSString *)phone;
 - (void)TapCodeVerifiedWithCode:(NSString *)code;
 
 @end
@@ -17,6 +18,10 @@
 @interface VerifiedView : UIView
 
 @property (weak, nonatomic) id <VerifiedViewDelegate> delegate;
+
+@property (strong, nonatomic) NSString * mobile;
+@property (strong, nonatomic) UILabel * phoneL;
+@property (strong, nonatomic) UIButton * sendSMSBtn;
 @property (strong, nonatomic) UITextField * codeTF;
 @property (strong, nonatomic) UIButton * verfiedBtn;
 
