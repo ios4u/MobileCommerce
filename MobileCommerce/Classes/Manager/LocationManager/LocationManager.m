@@ -8,6 +8,15 @@
 
 #import "LocationManager.h"
 
+@interface LocationManager ()
+
+@property (nonatomic, strong) LocationBlock locationBlock;
+@property (nonatomic, strong) NSStringBlock cityBlock;
+@property (nonatomic, strong) NSStringBlock addressBlock;
+@property (nonatomic, strong) LocationErrorBlock errorBlock;
+
+@end
+
 @implementation LocationManager
 
 @synthesize mapView = _mapView;
@@ -45,6 +54,12 @@
     return self;
 }
 
+- (void) getLocationCoordinate:(LocationBlock) locaiontBlock
+{
+    self.locationBlock = [locaiontBlock copy];
+    [self startLocation];
+}
+
 
 - (void)startLocation
 {
@@ -67,11 +82,28 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    
+    CLLocation * newLocation = userLocation.location;
+    _lastCoordinate = userLocation.location.coordinate;
+//    DLOG(@"location %@", newLocation);
+    CLGeocoder *clGeoCoder = [[CLGeocoder alloc] init];
+    CLGeocodeCompletionHandler handle = ^(NSArray *placemarks,NSError *error) {
+//
+        for (CLPlacemark * placeMark in placemarks){
+            DLOG(@"address %@", placeMark);
+            [self stopLocation];
+        }
+//
+        if (_locationBlock) {
+            _locationBlock(_lastCoordinate);
+            _locationBlock = nil;
+        }
+    };
+    [clGeoCoder reverseGeocodeLocation:newLocation completionHandler:handle];
 }
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
 {
+    DLOG(@"ERROR: %@", error);
     [self stopLocation];
 }
 

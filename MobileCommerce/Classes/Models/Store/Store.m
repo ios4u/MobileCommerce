@@ -8,6 +8,7 @@
 
 #import "Store.h"
 #import "HttpRequest.h"
+#import "LocationManager.h"
 
 @implementation Store
 {
@@ -15,6 +16,7 @@
     NSString * _image_urlString;
 }
 
+@synthesize error = _error;
 @synthesize store_id = _store_id;
 @synthesize store_name = _store_name;
 @synthesize address = _address;
@@ -25,10 +27,23 @@
 {
     self = [super init];
     if (self) {
+        
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isCreating"];
         [self setAttributes:attributes];
+        
     }
     
     return self;
+}
+
+- (void)addTheObserverWithObj:(id)obj
+{
+    [self addObserver:obj forKeyPath:@"isCreating" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)removeTheObserverWithObj:(id)obj
+{
+    [self removeObserver:obj forKeyPath:@"isCreating"];
 }
 
 - (void)setAttributes:(NSDictionary *)attributes
@@ -48,16 +63,23 @@
 
 - (void)createWithName:(NSString *)name Address:(NSString *)address
 {
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isCreating"];
     NSMutableDictionary *paramters = [NSMutableDictionary dictionaryWithCapacity:0];
     [paramters setValue:name forKey:@"store_name"];
     [paramters setValue:address forKey:@"address"];
     
-    [HttpRequest postDataWithParamters:nil URL:@"store/create" Block:^(id res, NSError *error) {
-        if (!error) {
-            [self setAttributes:res];
-        } else {
-            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-        }
+    [[LocationManager shareLocation] getLocationCoordinate:^(CLLocationCoordinate2D locationCorrrdinate) {
+        DLOG(@"location %f, %f", locationCorrrdinate.latitude,locationCorrrdinate.longitude);
+        [paramters setValue:[NSString stringWithFormat:@"%f,%f", locationCorrrdinate.latitude, locationCorrrdinate.longitude] forKey:@"gps"];
+        [HttpRequest postDataWithParamters:paramters URL:@"store/create" Block:^(id res, NSError *error) {
+            if (!error) {
+                [self setAttributes:res];
+            } else {
+                _error = error;
+                [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+            }
+            [self setValue:[NSNumber numberWithBool:NO] forKey:@"isCreating"];
+        }];
     }];
 }
 

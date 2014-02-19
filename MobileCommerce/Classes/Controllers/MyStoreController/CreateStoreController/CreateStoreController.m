@@ -32,6 +32,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [_store removeTheObserverWithObj:self];
+}
+
 - (void)loadView
 {
     self.title = @"创建一个新的店铺";
@@ -45,6 +50,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [_store addTheObserverWithObj:self];
+    
+    UIBarButtonItem * cancelBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelBarBtnAction:)];
+    self.navigationItem.leftBarButtonItem = cancelBarBtn;
 }
 
 - (void)didReceiveMemoryWarning
@@ -108,6 +117,7 @@
     } else {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.textLabel.text = NSLocalizedStringFromTable(@"done", kLocalization, nil);
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
     }
     
     return cell;
@@ -122,6 +132,29 @@
         [_store createWithName:_storenameTF.text Address:_addressTF.text];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - button action 
+
+- (void)cancelBarBtnAction:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - handle kvo
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"isCreating"]) {
+//        if ([change ])
+        if( ![[change valueForKeyPath:@"new"] integerValue])
+        {
+            if (!_store.error) {
+                [SVProgressHUD showSuccessWithStatus:NSLocalizedStringFromTable(@"done", kLocalization, nil)];
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+        }
+    }
 }
 
 @end

@@ -31,4 +31,6 @@ typedef void (^NSStringBlock)(NSString *addressString);
 
 + (LocationManager *)shareLocation;
 
+- (void)getLocationCoordinate:(LocationBlock) locaiontBlock ;
+
 @end
