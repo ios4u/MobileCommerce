@@ -8,10 +8,12 @@
 
 #import "DataList.h"
 
+
 @implementation DataList
 
 @synthesize index = _index;
 @synthesize dataList = _dataList;
+@synthesize error = _error;
 
 - (id)init
 {

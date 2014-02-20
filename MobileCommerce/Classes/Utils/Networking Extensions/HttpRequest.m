@@ -21,7 +21,7 @@
         [[UserCenter sharedUserCenter] loadCookies];
     }
     [[AppDotComAPIClient sharedClinet] GET:url parameters:paramters success:^(NSURLSessionDataTask *task, id JSON) {
-        NSLog(@"get res %@", JSON);
+//        DLOG(@"get res %@", JSON);
         HttpResponse * res = [[HttpResponse alloc] init];
         [res processObj:JSON];
         if (block) {
@@ -35,7 +35,7 @@
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         if (block) {
             block(nil, error);
-//            NSLog(@"get error %@", error);
+//            DLOG(@"get error %@", error);
         }
     }];
 }

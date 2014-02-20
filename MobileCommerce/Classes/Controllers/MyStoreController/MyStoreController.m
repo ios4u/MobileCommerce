@@ -7,8 +7,11 @@
 //
 
 #import "MyStoreController.h"
-#import "StoreEntityList.h"
+//#import "StoreEntityList.h"
+#import "StoreList.h"
 #import "StoreHeaderView.h"
+#import "StoreController.h"
+
 //#import "AddEntityController.h"
 
 @interface MyStoreController ()
@@ -17,7 +20,7 @@
 
 @implementation MyStoreController
 
-@synthesize entities = _entities;
+@synthesize stores = _stores;
 @synthesize headerView = _headerView;
 @synthesize rightBarBtn = _rightBarBtn;
 
@@ -26,14 +29,14 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _entities = [[StoreEntityList alloc] init];
+        _stores = [[StoreList alloc] init];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [_entities removeTheObserverWithObject:self];
+    [_stores removeTheObserverWithObject:self];
 }
 
 - (void)loadView
@@ -53,8 +56,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = NSLocalizedStringFromTable(@"my store", @"MC", nil);
-    [_entities addTheObserverWithObject:self];
-    [_entities load];
+    [_stores addTheObserverWithObject:self];
+    [_stores load];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,10 +72,46 @@
     [[OpenCenterController sharedOpenCenterController] openCreateStoreController];
 }
 
+#pragma mark - tableview datasource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [_stores count];
+}
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString * CellIdentifer = @"StoreCell";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifer];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    }
+    Store * _store = [_stores objectAtIndex:indexPath.row];
+    cell.textLabel.text = _store.store_name;
+    cell.detailTextLabel.text = _store.address;
+    [cell.imageView setImageWithURL:_store.image_url];
+    return cell;
+}
+
+#pragma mark - tableview delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Store * _store = [_stores objectAtIndex:indexPath.row];
+    StoreController * _controller = [[StoreController alloc] init];
+    _controller.store = _store;
+    [self.navigationController pushViewController:_controller animated:YES];
+}
+
+#pragma mark - handle kvo
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    NSLog(@"key %@", keyPath);
+//    NSLog(@"key %@", keyPath);
+    if ([keyPath isEqualToString:@"isLoading"]) {
+        if( ![[change valueForKeyPath:@"new"] integerValue])
+        {
+            [self.tableview reloadData];
+        }
+    }
 }
 
 @end

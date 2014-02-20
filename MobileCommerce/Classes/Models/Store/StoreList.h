@@ -7,6 +7,7 @@
 //
 
 #import "DataList.h"
+#import "Store.h"
 
 @interface StoreList : DataList
 

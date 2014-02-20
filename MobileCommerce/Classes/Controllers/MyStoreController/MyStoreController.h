@@ -9,13 +9,12 @@
 //#import <UIKit/UIKit.h>
 #import "ListController.h"
 
-@class StoreEntityList;
+@class StoreList;
 @class StoreHeaderView;
 
 @interface MyStoreController : ListController
 
-@property (strong, nonatomic) StoreEntityList * entities;
-
+@property (strong, nonatomic) StoreList * stores;
 @property (strong, nonatomic) StoreHeaderView * headerView;
 @property (strong, nonatomic) UIBarButtonItem * rightBarBtn;
 

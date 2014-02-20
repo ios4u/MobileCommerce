@@ -61,6 +61,18 @@
     return [NSURL URLWithString:_image_urlString];
 }
 
+//- (void)loadStore
+//{
+//    [HttpRequest getDataWithParamters:nil URL:@"store" Block:^(id res, NSError *error) {
+//        if (!error) {
+//            DLOG(@"store %@", res);
+//        } else {
+//            _error = error;
+//            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+//        }
+//    }];
+//}
+
 - (void)createWithName:(NSString *)name Address:(NSString *)address
 {
     [self setValue:[NSNumber numberWithBool:YES] forKey:@"isCreating"];

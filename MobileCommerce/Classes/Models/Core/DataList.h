@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface DataList : NSObject {
     BOOL isLoading;
     BOOL isRefreshing;
@@ -15,6 +16,8 @@
 
 @property (readwrite) NSInteger index;
 @property (strong, nonatomic) NSMutableArray * dataList;
+@property (strong, nonatomic) NSError * error;
+
 
 - (NSInteger)count;
 - (void)load;

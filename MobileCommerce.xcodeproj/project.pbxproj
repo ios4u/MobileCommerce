@@ -19,6 +19,7 @@
 		392C3CDD18ADCC9800F50411 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CD418ADCC9800F50411 /* AFURLSessionManager.m */; };
 		394BE74F18B48C69007A4E98 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 394BE74E18B48C69007A4E98 /* LocationManager.m */; };
 		394BE75118B48CA5007A4E98 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394BE75018B48CA5007A4E98 /* MapKit.framework */; };
+		395E5D4818B648D50089EB72 /* StoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 395E5D4718B648D50089EB72 /* StoreController.m */; };
 		396C37CE18ABBCFE00CBAF23 /* NSDictionary+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 396C37CD18ABBCFE00CBAF23 /* NSDictionary+Helper.m */; };
 		39F4BA6218336C0600312B7E /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F4BA5C18336C0600312B7E /* libzbar.a */; };
 		39F4BA6318336C0600312B7E /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 39F4BA5E18336C0600312B7E /* zbar-back.png */; };
@@ -139,6 +140,8 @@
 		394BE74D18B48C69007A4E98 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationManager.h; path = Classes/Manager/LocationManager/LocationManager.h; sourceTree = "<group>"; };
 		394BE74E18B48C69007A4E98 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationManager.m; path = Classes/Manager/LocationManager/LocationManager.m; sourceTree = "<group>"; };
 		394BE75018B48CA5007A4E98 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		395E5D4618B648D50089EB72 /* StoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreController.h; path = Classes/Controllers/MyStoreController/StoreController.h; sourceTree = "<group>"; };
+		395E5D4718B648D50089EB72 /* StoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreController.m; path = Classes/Controllers/MyStoreController/StoreController.m; sourceTree = "<group>"; };
 		396C37CC18ABBCFE00CBAF23 /* NSDictionary+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Helper.h"; path = "Classes/Utils/NSDictionary+/NSDictionary+Helper.h"; sourceTree = "<group>"; };
 		396C37CD18ABBCFE00CBAF23 /* NSDictionary+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Helper.m"; path = "Classes/Utils/NSDictionary+/NSDictionary+Helper.m"; sourceTree = "<group>"; };
 		39F4BA4818336C0600312B7E /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
@@ -556,6 +559,8 @@
 				B7F9222918348E4700A39D97 /* AddEntityController */,
 				B70C2F881830ADE8003A72AF /* MyStoreController.h */,
 				B70C2F891830ADE8003A72AF /* MyStoreController.m */,
+				395E5D4618B648D50089EB72 /* StoreController.h */,
+				395E5D4718B648D50089EB72 /* StoreController.m */,
 			);
 			name = MyStoreController;
 			sourceTree = "<group>";
@@ -1118,6 +1123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B77F41741830D385009A9A57 /* User.m in Sources */,
+				395E5D4818B648D50089EB72 /* StoreController.m in Sources */,
 				B7EF012D1834A55D00C1A523 /* AddItemView.m in Sources */,
 				B7C85D1F1859448900C81806 /* UIImage+WebP.m in Sources */,
 				B70C2F75183097F8003A72AF /* Entity.m in Sources */,

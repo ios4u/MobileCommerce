@@ -26,6 +26,9 @@
 - (void)addTheObserverWithObj:(id)obj;
 - (void)removeTheObserverWithObj:(id)obj;
 
+
+//- (void)loadStore;
+
 - (void)createWithName:(NSString *)name Address:(NSString *)address;
 
 @end

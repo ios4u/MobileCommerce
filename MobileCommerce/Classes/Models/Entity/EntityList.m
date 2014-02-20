@@ -25,17 +25,17 @@
 
 - (void)load
 {
-//    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isLoading"];
-//    
-//    [HttpRequest getDataWithParamters:nil URL:@"store/item/" Block:^(id res, NSError *error) {
-//        if (!error) {
-////            NSLog(@"error %@", error.localizedDescription);
-//            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-//        } else {
-//        
-//        }
-//        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isLoading"];
-//    }];
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isLoading"];
+    
+    [HttpRequest getDataWithParamters:nil URL:@"store/item/" Block:^(id res, NSError *error) {
+        if (!error) {
+            DLOG(@"error %@", error);
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        } else {
+        
+        }
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"isLoading"];
+    }];
 }
 
 @end
