@@ -9,6 +9,7 @@
 #import "StoreController.h"
 #import "Store.h"
 #import "EntityList.h"
+//#import "AddEntityController.h"
 
 @interface StoreController ()
 
@@ -32,7 +33,7 @@
 
 - (void)dealloc
 {
-    
+    [_entities removeTheObserverWithObject:self];
 }
 
 - (void)loadView
@@ -49,6 +50,9 @@
 	// Do any additional setup after loading the view.
     self.title = _store.store_name;
     
+    UIBarButtonItem * addBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addBarBtnAction:)];
+    self.navigationItem.rightBarButtonItem = addBarBtn;
+    [_entities addTheObserverWithObject:self];
     [_entities load];
 }
 
@@ -83,6 +87,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
+}
+
+#pragma mark - button action
+- (void)addBarBtnAction:(id)sender
+{
+    [[OpenCenterController sharedOpenCenterController] openAddItemController];
 }
 
 #pragma mark - handle kvo 

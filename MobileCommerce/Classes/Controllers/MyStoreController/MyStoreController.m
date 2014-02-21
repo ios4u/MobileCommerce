@@ -100,6 +100,7 @@
     StoreController * _controller = [[StoreController alloc] init];
     _controller.store = _store;
     [self.navigationController pushViewController:_controller animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - handle kvo

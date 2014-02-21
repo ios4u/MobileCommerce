@@ -7,6 +7,7 @@
 //
 
 #import "CreateStoreController.h"
+#import "CreateStoreHeaderController.h"
 #import "Store.h"
 
 
@@ -44,6 +45,11 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     self.view = _tableView;
+    
+    
+    CreateStoreHeaderController * headerController = [[CreateStoreHeaderController alloc] init];
+    
+    _tableView.tableHeaderView = headerController.view;
 }
 
 - (void)viewDidLoad

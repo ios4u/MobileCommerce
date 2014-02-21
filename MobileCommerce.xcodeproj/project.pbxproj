@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3911E29718B6E0AB007060C2 /* CreateStoreHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3911E29618B6E0AB007060C2 /* CreateStoreHeaderController.m */; };
 		392C3CA318ADC17800F50411 /* HttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CA218ADC17800F50411 /* HttpResponse.m */; };
 		392C3CD518ADCC9800F50411 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CC318ADCC9800F50411 /* AFHTTPRequestOperation.m */; };
 		392C3CD618ADCC9800F50411 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CC518ADCC9800F50411 /* AFHTTPRequestOperationManager.m */; };
@@ -116,6 +117,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3911E29518B6E0AB007060C2 /* CreateStoreHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateStoreHeaderController.h; path = Classes/Controllers/MyStoreController/CreateStoreController/CreateStoreHeaderController.h; sourceTree = "<group>"; };
+		3911E29618B6E0AB007060C2 /* CreateStoreHeaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateStoreHeaderController.m; path = Classes/Controllers/MyStoreController/CreateStoreController/CreateStoreHeaderController.m; sourceTree = "<group>"; };
 		392C3CA118ADC17800F50411 /* HttpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpResponse.h; path = "Classes/Utils/Networking Extensions/HttpResponse.h"; sourceTree = "<group>"; };
 		392C3CA218ADC17800F50411 /* HttpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpResponse.m; path = "Classes/Utils/Networking Extensions/HttpResponse.m"; sourceTree = "<group>"; };
 		392C3CC218ADCC9800F50411 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -818,6 +821,8 @@
 			children = (
 				B7E6673918B3138A001EF502 /* CreateStoreController.h */,
 				B7E6673A18B3138A001EF502 /* CreateStoreController.m */,
+				3911E29518B6E0AB007060C2 /* CreateStoreHeaderController.h */,
+				3911E29618B6E0AB007060C2 /* CreateStoreHeaderController.m */,
 			);
 			name = CreateStoreController;
 			sourceTree = "<group>";
@@ -1132,6 +1137,7 @@
 				B70C2F9B1830B8A9003A72AF /* Store.m in Sources */,
 				B70C2FA21830BC90003A72AF /* StoreList.m in Sources */,
 				B70C2F821830A5E9003A72AF /* MMSideDrawerSectionHeaderView.m in Sources */,
+				3911E29718B6E0AB007060C2 /* CreateStoreHeaderController.m in Sources */,
 				392C3CD718ADCC9800F50411 /* AFHTTPSessionManager.m in Sources */,
 				392C3CD818ADCC9800F50411 /* AFNetworkReachabilityManager.m in Sources */,
 				B7861DC518325D9600A04002 /* MenuHeaderView.m in Sources */,
