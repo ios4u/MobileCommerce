@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class Store;
-@class EntityList;
+@class StoreEntityList;
 
 @interface StoreController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) Store * store;
-@property (strong, nonatomic) EntityList * entities;
+@property (strong, nonatomic) StoreEntityList * entities;
 @property (strong, nonatomic) UITableView * tableview;
 
 @end

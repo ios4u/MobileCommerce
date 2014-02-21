@@ -13,6 +13,7 @@
 - (NSString *)base4String
 {
     NSData * data = [UIImagePNGRepresentation(self) base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
+//    DLOG(@"image data %@", data);
     return [NSString stringWithUTF8String:[data bytes]];
 }
 

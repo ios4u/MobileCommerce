@@ -53,7 +53,7 @@
     
     [self.view addSubview:_dropList.view];
     [_entities addTheObserverWithObject:self];
-    [_entities load];
+//    [_entities load];
 	// Do any additional setup after loading the view.
 }
 

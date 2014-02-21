@@ -8,7 +8,7 @@
 
 #import "StoreController.h"
 #import "Store.h"
-#import "EntityList.h"
+#import "StoreEntityList.h"
 //#import "AddEntityController.h"
 
 @interface StoreController ()
@@ -26,7 +26,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _entities = [[EntityList alloc] init];
+        _entities = [[StoreEntityList alloc] init];
     }
     return self;
 }
@@ -53,7 +53,7 @@
     UIBarButtonItem * addBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addBarBtnAction:)];
     self.navigationItem.rightBarButtonItem = addBarBtn;
     [_entities addTheObserverWithObject:self];
-    [_entities load];
+    [_entities loadWithStoreId:_store.store_id];
 }
 
 - (void)didReceiveMemoryWarning

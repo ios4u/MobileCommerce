@@ -15,6 +15,6 @@
 
 //@property (readwrite) NSInteger index;
 //@property (strong, nonatomic) NSMutableArray * list;
-
+//- (void)loadWithStoreId:(NSInteger)store_id;
 
 @end

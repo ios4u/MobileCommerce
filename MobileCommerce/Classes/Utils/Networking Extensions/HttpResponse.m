@@ -24,7 +24,7 @@
 
 - (void)processObj:(id)obj
 {
-//    NSLog(@"json %@", obj);
+    NSLog(@"json %@", obj);
     NSInteger rt = [[obj valueForKeyPath:RET_CODE] integerValue];
     
     switch (rt) {

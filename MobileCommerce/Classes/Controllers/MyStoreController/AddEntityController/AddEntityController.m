@@ -24,6 +24,9 @@
 @synthesize tableView = _tableView;
 @synthesize imagePicker = _imagePicker;
 @synthesize actionSheet = _actionSheet;
+@synthesize itemnameTF = _itemnameTF;
+@synthesize priceTF = _priceTF;
+@synthesize descTF = _descTF;
 @synthesize entities = _entities;
 
 
@@ -32,7 +35,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-
+        _entities = [[StoreEntityList alloc] init];
     }
     return self;
 }
@@ -74,9 +77,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _imagePicker = [[UIImagePickerController alloc] init];
-    _imagePicker.delegate = self;
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -143,10 +143,10 @@
             break;
         case 2:
         {
-            cell.textLabel.text = NSLocalizedStringFromTable(@"stock", kLocalization, nil);
+            cell.textLabel.text = NSLocalizedStringFromTable(@"desc", kLocalization, nil);
 //            tf.secureTextEntry = YES;
             tf.keyboardType = UIKeyboardTypeAlphabet;
-            tf.placeholder = NSLocalizedStringFromTable(@"stock", kLocalization, nil);
+            tf.placeholder = NSLocalizedStringFromTable(@"desc", kLocalization, nil);
             tf.returnKeyType = UIReturnKeyGo;
         }
             break;
@@ -164,8 +164,9 @@
 #pragma mark - button action
 - (void)doneBarBtnAction:(id)sender
 {
-//    [HttpRequest postDataWithParamters:<#(NSDictionary *)#> URL:<#(NSString *)#> Block:<#^(id res, NSError *error)block#>]
-//    [self dismissViewControllerAnimated:YES completion:nil];
+    [SVProgressHUD show];
+//    DLOG(@"%@",  _itemImageV.image);
+    [_entities createWithImage:_itemImageV.image Title:_itemnameTF.text Price:_priceTF.text Desc:_descTF.text];
     
 }
 
@@ -180,6 +181,8 @@
 #pragma mark - action sheet delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    _imagePicker = [[UIImagePickerController alloc] init];
+    _imagePicker.delegate = self;
     
     switch (buttonIndex) {
         case 0:

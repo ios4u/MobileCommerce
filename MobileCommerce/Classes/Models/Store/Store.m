@@ -49,7 +49,7 @@
 
 - (void)setAttributes:(NSDictionary *)attributes
 {
-    _store_id = [[attributes valueForKeyPath:@"store_id"] integerValue];
+    _store_id = [[attributes valueForKeyPath:@"id"] integerValue];
     _store_name = [attributes valueForKeyPath:@"store_name"];
     _address = [attributes valueForKeyPath:@"address"];
     _tel = [attributes valueForKeyPath:@"tel"];

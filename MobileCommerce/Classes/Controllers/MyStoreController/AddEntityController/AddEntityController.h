@@ -18,5 +18,8 @@
 @property (strong, nonatomic) UITableView * tableView;
 @property (strong, nonatomic) UIActionSheet * actionSheet;
 @property (strong, nonatomic) UIImagePickerController * imagePicker;
+@property (strong, nonatomic) UITextField * itemnameTF;
+@property (strong, nonatomic) UITextField * priceTF;
+@property (strong, nonatomic) UITextField * descTF;
 @property (strong, nonatomic) StoreEntityList * entities;
 @end
