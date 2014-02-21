@@ -10,7 +10,7 @@
 
 @interface StoreEntityList : DataList
 {
-
+    BOOL isCreating;
 }
 
 - (void)loadWithStoreId:(NSInteger)store_id;
