@@ -10,6 +10,7 @@
 
 @interface UIImage (Helper)
 
+- (UIImage*)scaleToSize:(CGSize)size;
 - (NSString *)base4String;
 
 @end

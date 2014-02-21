@@ -39,7 +39,9 @@
     [paramters setValue:price forKey:@"price"];
     [paramters setValue:desc forKey:@"desc"];
 //    [paramters setValue:<#(id)#> forKey:<#(NSString *)#>]
-    [paramters setValue:[image base4String] forKey:@"image"];
+    UIImage * item_image = [image scaleToSize:CGSizeMake(310., 310.)];
+    
+    [paramters setValue:[item_image base4String] forKey:@"image"];
     
     DLOG(@"paramters %@", paramters);
     [HttpRequest postDataWithParamters:paramters URL:@"store/item/create" Block:^(id res, NSError *error) {

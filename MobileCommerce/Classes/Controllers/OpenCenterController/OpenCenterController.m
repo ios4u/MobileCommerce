@@ -7,6 +7,7 @@
 //
 
 #import "OpenCenterController.h"
+#import "CreateStoreController.h"
 //#import "AddEntityController.h"
 //#import "LoginController.h"
 
@@ -54,10 +55,12 @@ DEFINE_SINGLETON_FOR_CLASS(OpenCenterController);
 
 }
 
-- (void)openCreateStoreController
+- (void)openCreateStoreControllerWithStores:(id)stores
 {
-    Class CreateStoreClass = NSClassFromString(kCreateStoreController);
-    UIViewController * controller = [[CreateStoreClass alloc] init];
+//    Class CreateStoreClass = NSClassFromString(kCreateStoreController);
+//    UIViewController * controller = [[CreateStoreClass alloc] init];
+    CreateStoreController * controller = [[CreateStoreController alloc] init];
+    controller.stores = stores;
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:controller];
     [self.controller presentViewController:nav animated:YES completion:nil];
 }

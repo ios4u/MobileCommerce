@@ -69,7 +69,7 @@
 - (void)rightBarBtnAction:(id)sender
 {
 //    [[OpenCenterController sharedOpenCenterController] openAddItemController];
-    [[OpenCenterController sharedOpenCenterController] openCreateStoreController];
+    [[OpenCenterController sharedOpenCenterController] openCreateStoreControllerWithStores:_stores];
 }
 
 #pragma mark - tableview datasource
@@ -96,7 +96,7 @@
     Store * _store = [_stores objectAtIndex:indexPath.row];
     cell.textLabel.text = _store.store_name;
     cell.detailTextLabel.text = _store.address;
-    DLOG(@"image url %d", indexPath.row);
+//    DLOG(@"image url %d", indexPath.row);
     [cell.imageView setImageWithURL:_store.image_url];
 
     return cell;
@@ -119,6 +119,11 @@
     if ([keyPath isEqualToString:@"isLoading"]) {
         if( ![[change valueForKeyPath:@"new"] integerValue])
         {
+            [self.tableview reloadData];
+        }
+    }
+    if ([keyPath isEqualToString:@"isCreating"]) {
+        if (![[change valueForKeyPath:@"new"] integerValue]) {
             [self.tableview reloadData];
         }
     }

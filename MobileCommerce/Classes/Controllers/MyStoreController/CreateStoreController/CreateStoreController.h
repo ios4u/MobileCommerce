@@ -11,10 +11,12 @@
 #import "CreatePhotoView.h"
 
 @class Store;
+@class StoreList;
 
 @interface CreateStoreController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UITableViewDelegate, UITableViewDataSource, CreatePhotoViewDelegate>
 
 @property (strong, nonatomic) Store * store;
+@property (strong, nonatomic) StoreList * stores;
 
 @property (strong, nonatomic) UITableView * tableView;
 @property (strong, nonatomic) UIImagePickerController * imagePicker;

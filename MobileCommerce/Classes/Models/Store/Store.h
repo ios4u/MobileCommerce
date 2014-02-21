@@ -9,11 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Store : NSObject
-{
-    BOOL isCreating;
-}
 
-@property (strong, nonatomic) NSError * error;
+//@property (strong, nonatomic) NSError * error;
 @property (readonly) NSUInteger store_id;
 @property (strong, nonatomic) NSString * store_name;
 @property (strong, nonatomic) NSString * address;
@@ -23,13 +20,7 @@
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 
-- (void)addTheObserverWithObj:(id)obj;
-- (void)removeTheObserverWithObj:(id)obj;
 
 
-//- (void)loadStore;
-
-//- (void)createWithName:(NSString *)name Address:(NSString *)address;
-- (void)createWithName:(NSString *)name Address:(NSString *)address Image:(UIImage *)image;
 
 @end

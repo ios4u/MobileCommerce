@@ -8,6 +8,7 @@
 
 #import "CreateStoreController.h"
 #import "Store.h"
+#import "StoreList.h"
 
 
 @interface CreateStoreController ()
@@ -17,6 +18,7 @@
 @implementation CreateStoreController
 
 @synthesize store = _store;
+@synthesize stores = _stores;
 @synthesize storenameTF = _storenameTF;
 @synthesize addressTF = _addressTF;
 
@@ -30,14 +32,15 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _store = [[Store alloc] init];
+//        _store = [[Store alloc] init];
+//        _stores = [[StoreList alloc] ini]
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [_store removeTheObserverWithObj:self];
+    [_stores removeTheObserverWithObject:self];
 }
 
 - (void)loadView
@@ -60,10 +63,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [_store addTheObserverWithObj:self];
+//    [_store addTheObserverWithObj:self];
     
     UIBarButtonItem * cancelBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelBarBtnAction:)];
     self.navigationItem.leftBarButtonItem = cancelBarBtn;
+}
+
+- (void)setStores:(StoreList *)stores
+{
+    _stores = stores;
+    [_stores addTheObserverWithObject:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -139,7 +148,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1) {
-        [_store createWithName:_storenameTF.text Address:_addressTF.text Image:[_photoView PhotoImage]];
+//        [_store createWithName:_storenameTF.text Address:_addressTF.text Image:[_photoView PhotoImage]];
+        [SVProgressHUD show];
+        [_stores createWithName:_storenameTF.text Address:_addressTF.text Image:[_photoView PhotoImage]];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -207,7 +218,7 @@
 //        if ([change ])
         if( ![[change valueForKeyPath:@"new"] integerValue])
         {
-            if (!_store.error) {
+            if (!_stores.error) {
                 [SVProgressHUD showSuccessWithStatus:NSLocalizedStringFromTable(@"done", kLocalization, nil)];
                 
                 [self dismissViewControllerAnimated:YES completion:nil];
