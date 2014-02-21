@@ -44,6 +44,11 @@
     _photoView.image = image;
 }
 
+- (UIImage *)PhotoImage
+{
+    return _photoView.image;
+}
+
 
 #pragma mark - ImageView Delegate
 

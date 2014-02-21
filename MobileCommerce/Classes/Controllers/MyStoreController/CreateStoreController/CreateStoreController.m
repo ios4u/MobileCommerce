@@ -139,7 +139,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1) {
-        [_store createWithName:_storenameTF.text Address:_addressTF.text];
+        [_store createWithName:_storenameTF.text Address:_addressTF.text Image:[_photoView PhotoImage]];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -194,7 +194,6 @@
 #pragma mark UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-//    DLOG(@"%@", info);
     [_photoView setPhotoWithImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
     
     [picker dismissViewControllerAnimated:YES completion:nil];

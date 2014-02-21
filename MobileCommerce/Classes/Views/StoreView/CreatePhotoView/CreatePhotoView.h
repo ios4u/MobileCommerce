@@ -21,4 +21,5 @@
 @property (nonatomic, strong) MCImageView * photoView;
 
 - (void)setPhotoWithImage:(UIImage *)image;
+- (UIImage *)PhotoImage;
 @end

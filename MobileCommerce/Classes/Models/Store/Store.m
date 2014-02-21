@@ -9,6 +9,7 @@
 #import "Store.h"
 #import "HttpRequest.h"
 #import "LocationManager.h"
+#import "UIImage+Helper.h"
 
 @implementation Store
 {
@@ -58,7 +59,8 @@
 
 - (NSURL *)image_url
 {
-    return [NSURL URLWithString:_image_urlString];
+    
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",APIBase, _image_urlString]];
 }
 
 //- (void)loadStore
@@ -73,12 +75,13 @@
 //    }];
 //}
 
-- (void)createWithName:(NSString *)name Address:(NSString *)address
+- (void)createWithName:(NSString *)name Address:(NSString *)address Image:(UIImage *)image
 {
     [self setValue:[NSNumber numberWithBool:YES] forKey:@"isCreating"];
     NSMutableDictionary *paramters = [NSMutableDictionary dictionaryWithCapacity:0];
     [paramters setValue:name forKey:@"store_name"];
     [paramters setValue:address forKey:@"address"];
+    [paramters setValue:[image base4String] forKey:@"image"];
     
     [[LocationManager shareLocation] getLocationCoordinate:^(CLLocationCoordinate2D locationCorrrdinate) {
         DLOG(@"location %f, %f", locationCorrrdinate.latitude,locationCorrrdinate.longitude);

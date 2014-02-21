@@ -75,21 +75,30 @@
 #pragma mark - tableview datasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return [_stores count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * CellIdentifer = @"StoreCell";
+    static NSString * CellIdentifer = @"UserStoreCell";
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifer];
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+
     }
+    
     Store * _store = [_stores objectAtIndex:indexPath.row];
     cell.textLabel.text = _store.store_name;
     cell.detailTextLabel.text = _store.address;
+    DLOG(@"image url %d", indexPath.row);
     [cell.imageView setImageWithURL:_store.image_url];
+
     return cell;
 }
 

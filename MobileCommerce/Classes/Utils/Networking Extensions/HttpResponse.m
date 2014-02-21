@@ -30,7 +30,7 @@
     switch (rt) {
         case SUCCESS:
             _dict = [obj valueForKeyPath:RET_DATA];
-            DLOG(@"data %@", _dict);
+//            DLOG(@"data %@", _dict);
             break;
         default:
         {

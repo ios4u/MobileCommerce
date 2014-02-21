@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3920F86818B6E4AF00751B10 /* CreatePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3920F86718B6E4AF00751B10 /* CreatePhotoView.m */; };
+		3920F86C18B70D0700751B10 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3920F86B18B70D0700751B10 /* UIImage+Helper.m */; };
 		392C3CA318ADC17800F50411 /* HttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CA218ADC17800F50411 /* HttpResponse.m */; };
 		392C3CD518ADCC9800F50411 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CC318ADCC9800F50411 /* AFHTTPRequestOperation.m */; };
 		392C3CD618ADCC9800F50411 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CC518ADCC9800F50411 /* AFHTTPRequestOperationManager.m */; };
@@ -119,6 +120,8 @@
 /* Begin PBXFileReference section */
 		3920F86618B6E4AF00751B10 /* CreatePhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreatePhotoView.h; path = Classes/Views/StoreView/CreatePhotoView/CreatePhotoView.h; sourceTree = "<group>"; };
 		3920F86718B6E4AF00751B10 /* CreatePhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreatePhotoView.m; path = Classes/Views/StoreView/CreatePhotoView/CreatePhotoView.m; sourceTree = "<group>"; };
+		3920F86A18B70D0700751B10 /* UIImage+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Helper.h"; path = "Classes/Utils/UIImage+/UIImage+Helper.h"; sourceTree = "<group>"; };
+		3920F86B18B70D0700751B10 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Helper.m"; path = "Classes/Utils/UIImage+/UIImage+Helper.m"; sourceTree = "<group>"; };
 		392C3CA118ADC17800F50411 /* HttpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpResponse.h; path = "Classes/Utils/Networking Extensions/HttpResponse.h"; sourceTree = "<group>"; };
 		392C3CA218ADC17800F50411 /* HttpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpResponse.m; path = "Classes/Utils/Networking Extensions/HttpResponse.m"; sourceTree = "<group>"; };
 		392C3CC218ADCC9800F50411 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -362,6 +365,15 @@
 			name = CreatePhotoView;
 			sourceTree = "<group>";
 		};
+		3920F86918B70CC900751B10 /* UIImage+ */ = {
+			isa = PBXGroup;
+			children = (
+				3920F86A18B70D0700751B10 /* UIImage+Helper.h */,
+				3920F86B18B70D0700751B10 /* UIImage+Helper.m */,
+			);
+			name = "UIImage+";
+			sourceTree = "<group>";
+		};
 		392C3CC118ADCC9800F50411 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +421,7 @@
 		3968742518584D9700697138 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3920F86918B70CC900751B10 /* UIImage+ */,
 				3968742618584D9D00697138 /* NSDictionary+ */,
 			);
 			name = Utils;
@@ -1153,6 +1166,7 @@
 				392C3CD518ADCC9800F50411 /* AFHTTPRequestOperation.m in Sources */,
 				B7C85D2C1859458C00C81806 /* MMDrawerController.m in Sources */,
 				392C3CD618ADCC9800F50411 /* AFHTTPRequestOperationManager.m in Sources */,
+				3920F86C18B70D0700751B10 /* UIImage+Helper.m in Sources */,
 				B7172BE618B3577F003CE6A2 /* UserProfileController.m in Sources */,
 				392C3CDD18ADCC9800F50411 /* AFURLSessionManager.m in Sources */,
 				B7F8B239182CCAA500C7668A /* main.m in Sources */,

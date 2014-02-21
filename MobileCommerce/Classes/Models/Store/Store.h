@@ -29,6 +29,7 @@
 
 //- (void)loadStore;
 
-- (void)createWithName:(NSString *)name Address:(NSString *)address;
+//- (void)createWithName:(NSString *)name Address:(NSString *)address;
+- (void)createWithName:(NSString *)name Address:(NSString *)address Image:(UIImage *)image;
 
 @end
