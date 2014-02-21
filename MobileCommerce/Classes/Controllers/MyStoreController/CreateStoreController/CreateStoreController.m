@@ -7,7 +7,6 @@
 //
 
 #import "CreateStoreController.h"
-#import "CreateStoreHeaderController.h"
 #import "Store.h"
 
 
@@ -22,6 +21,9 @@
 @synthesize addressTF = _addressTF;
 
 @synthesize tableView = _tableView;
+@synthesize imagePicker = _imagePicker;
+@synthesize actionSheet = _actionSheet;
+@synthesize photoView = _photoView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,10 +48,12 @@
     _tableView.dataSource = self;
     self.view = _tableView;
     
+    _photoView = [[CreatePhotoView alloc] initWithFrame:CGRectMake(0., 0., 200, 160.)];
+    _photoView.delegate = self;
+    _tableView.tableHeaderView = _photoView;
     
-    CreateStoreHeaderController * headerController = [[CreateStoreHeaderController alloc] init];
+    _actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"cancel", kLocalization, nil) destructiveButtonTitle:nil otherButtonTitles:NSLocalizedStringFromTable(@"take photo", kLocalization, nil), NSLocalizedStringFromTable(@"choose", kLocalization, nil), nil];
     
-    _tableView.tableHeaderView = headerController.view;
 }
 
 - (void)viewDidLoad
@@ -145,6 +149,56 @@
 - (void)cancelBarBtnAction:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Action Sheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    _imagePicker = [[UIImagePickerController alloc] init];
+    _imagePicker.delegate = self;
+    switch (buttonIndex) {
+        case 0:
+        {
+            
+            if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+            {
+                [_imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+            }
+            //            imagePicker.delegate = self;
+            [self presentViewController:_imagePicker animated:YES completion:nil];
+        }
+            break;
+        case 1:
+        {
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+            {
+                [_imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+            }
+            //            imagePicker.delegate = self;
+            [self presentViewController:_imagePicker animated:YES completion:nil];
+        }
+            break;
+        default:
+            //            return;
+            break;
+    }
+    
+}
+
+#pragma mark - Create Photo View Delegate
+- (void)TapPhotoView:(id)sender
+{
+    [_actionSheet showInView:self.view];
+}
+
+#pragma mark UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    DLOG(@"%@", info);
+    [_photoView setPhotoView:[info objectForKey:UIImagePickerControllerOriginalImage]];
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 #pragma mark - handle kvo

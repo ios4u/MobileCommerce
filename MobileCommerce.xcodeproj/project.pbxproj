@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3911E29718B6E0AB007060C2 /* CreateStoreHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3911E29618B6E0AB007060C2 /* CreateStoreHeaderController.m */; };
+		3920F86818B6E4AF00751B10 /* CreatePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3920F86718B6E4AF00751B10 /* CreatePhotoView.m */; };
 		392C3CA318ADC17800F50411 /* HttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CA218ADC17800F50411 /* HttpResponse.m */; };
 		392C3CD518ADCC9800F50411 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CC318ADCC9800F50411 /* AFHTTPRequestOperation.m */; };
 		392C3CD618ADCC9800F50411 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CC518ADCC9800F50411 /* AFHTTPRequestOperationManager.m */; };
@@ -117,8 +117,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3911E29518B6E0AB007060C2 /* CreateStoreHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateStoreHeaderController.h; path = Classes/Controllers/MyStoreController/CreateStoreController/CreateStoreHeaderController.h; sourceTree = "<group>"; };
-		3911E29618B6E0AB007060C2 /* CreateStoreHeaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateStoreHeaderController.m; path = Classes/Controllers/MyStoreController/CreateStoreController/CreateStoreHeaderController.m; sourceTree = "<group>"; };
+		3920F86618B6E4AF00751B10 /* CreatePhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreatePhotoView.h; path = Classes/Views/StoreView/CreatePhotoView/CreatePhotoView.h; sourceTree = "<group>"; };
+		3920F86718B6E4AF00751B10 /* CreatePhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreatePhotoView.m; path = Classes/Views/StoreView/CreatePhotoView/CreatePhotoView.m; sourceTree = "<group>"; };
 		392C3CA118ADC17800F50411 /* HttpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpResponse.h; path = "Classes/Utils/Networking Extensions/HttpResponse.h"; sourceTree = "<group>"; };
 		392C3CA218ADC17800F50411 /* HttpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpResponse.m; path = "Classes/Utils/Networking Extensions/HttpResponse.m"; sourceTree = "<group>"; };
 		392C3CC218ADCC9800F50411 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -353,6 +353,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3920F86518B6E47B00751B10 /* CreatePhotoView */ = {
+			isa = PBXGroup;
+			children = (
+				3920F86618B6E4AF00751B10 /* CreatePhotoView.h */,
+				3920F86718B6E4AF00751B10 /* CreatePhotoView.m */,
+			);
+			name = CreatePhotoView;
+			sourceTree = "<group>";
+		};
 		392C3CC118ADCC9800F50411 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +580,7 @@
 		B70C2F911830B62D003A72AF /* StoreView */ = {
 			isa = PBXGroup;
 			children = (
+				3920F86518B6E47B00751B10 /* CreatePhotoView */,
 				B7EF01301834AB5B00C1A523 /* AddItemView */,
 				B7EF012F1834AB4700C1A523 /* StoreHeaderView */,
 			);
@@ -821,8 +831,6 @@
 			children = (
 				B7E6673918B3138A001EF502 /* CreateStoreController.h */,
 				B7E6673A18B3138A001EF502 /* CreateStoreController.m */,
-				3911E29518B6E0AB007060C2 /* CreateStoreHeaderController.h */,
-				3911E29618B6E0AB007060C2 /* CreateStoreHeaderController.m */,
 			);
 			name = CreateStoreController;
 			sourceTree = "<group>";
@@ -1137,7 +1145,6 @@
 				B70C2F9B1830B8A9003A72AF /* Store.m in Sources */,
 				B70C2FA21830BC90003A72AF /* StoreList.m in Sources */,
 				B70C2F821830A5E9003A72AF /* MMSideDrawerSectionHeaderView.m in Sources */,
-				3911E29718B6E0AB007060C2 /* CreateStoreHeaderController.m in Sources */,
 				392C3CD718ADCC9800F50411 /* AFHTTPSessionManager.m in Sources */,
 				392C3CD818ADCC9800F50411 /* AFNetworkReachabilityManager.m in Sources */,
 				B7861DC518325D9600A04002 /* MenuHeaderView.m in Sources */,
@@ -1187,6 +1194,7 @@
 				B7C85D2E1859458C00C81806 /* UIViewController+MMDrawerController.m in Sources */,
 				B77D462C18307F370051DCB4 /* Menu.m in Sources */,
 				392C3CDB18ADCC9800F50411 /* AFURLRequestSerialization.m in Sources */,
+				3920F86818B6E4AF00751B10 /* CreatePhotoView.m in Sources */,
 				B70C2F6C183092B5003A72AF /* EntityController.m in Sources */,
 				B7C85D1E1859448900C81806 /* UIImage+MultiFormat.m in Sources */,
 				B70C2F861830AC8A003A72AF /* EntityDetailController.m in Sources */,
