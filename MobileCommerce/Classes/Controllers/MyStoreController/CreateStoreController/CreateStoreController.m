@@ -194,8 +194,8 @@
 #pragma mark UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    DLOG(@"%@", info);
-    [_photoView setPhotoView:[info objectForKey:UIImagePickerControllerOriginalImage]];
+//    DLOG(@"%@", info);
+    [_photoView setPhotoWithImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
     

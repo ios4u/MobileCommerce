@@ -20,4 +20,5 @@
 @property (weak, nonatomic) id <CreatePhotoViewDelegate> delegate;
 @property (nonatomic, strong) MCImageView * photoView;
 
+- (void)setPhotoWithImage:(UIImage *)image;
 @end
