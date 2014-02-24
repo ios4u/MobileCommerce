@@ -17,7 +17,10 @@ DEFINE_SINGLETON_FOR_HEADER(OpenCenterController);
 
 - (void)openLoginController;
 - (void)openUserProfileController;
-- (void)openAddItemController;
+//- (void)openAddItemController;
 //- (void)openCreateStoreController;
+//- (void)openAddItemControllerWithStore:(id)store;
+//- (void)openAddItemControllerWithStore:(id)store;
+- (void)openAddItemControllerWithStore:(id)store Entities:(id)entites;
 - (void)openCreateStoreControllerWithStores:(id)stores;
 @end

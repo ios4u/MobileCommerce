@@ -17,7 +17,8 @@
 @synthesize entity_id = _entity_id;
 @synthesize store_id = _store_id;
 //@synthesize image_url = _image_url;
-@synthesize title = _title;
+//@synthesize title = _title;
+@synthesize name = _name;
 @synthesize desc = _desc;
 @synthesize store_name = _store_name;
 @synthesize price = _price;
@@ -31,7 +32,7 @@
         _entity_id = [[attributes valueForKeyPath:@"entity_id"] integerValue];
         _store_id = [[attributes valueForKeyPath:@"store_id"] integerValue];
         _image_urlString = [attributes valueForKeyPath:@"image_url"];
-        _title = [attributes valueForKeyPath:@"title"];
+        _name = [attributes valueForKeyPath:@"name"];
         _desc = [attributes valueForKeyPath:@"desc"];
         _store_name = [attributes valueForKeyPath:@"store_name"];
         _price = [[attributes valueForKeyPath:@"price"] floatValue];
@@ -42,7 +43,7 @@
 
 - (NSURL *)image_url
 {
-    return [NSURL URLWithString:_image_urlString];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",APIBase ,_image_urlString]];
 }
 
 @end

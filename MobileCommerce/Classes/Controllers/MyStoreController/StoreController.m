@@ -70,7 +70,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [_entities count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,6 +80,12 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
     }
+    Entity * entity = [_entities objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = entity.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", entity.price];
+    [cell.imageView setImageWithURL:entity.image_url];
+    
     return cell;
 }
 
@@ -92,13 +98,25 @@
 #pragma mark - button action
 - (void)addBarBtnAction:(id)sender
 {
-    [[OpenCenterController sharedOpenCenterController] openAddItemController];
+    [[OpenCenterController sharedOpenCenterController] openAddItemControllerWithStore:_store Entities:_entities];
 }
 
 #pragma mark - handle kvo 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-
+    if([keyPath isEqualToString:@"isLoading"]) {
+        if( ![[change valueForKeyPath:@"new"] integerValue])
+        {
+            [_tableview reloadData];
+        }
+    }
+    if ([keyPath isEqualToString:@"isCreating"]) {
+//        DLOG(@"create create OKOKOKO");
+        if ( ![[change valueForKeyPath:@"new"] integerValue] ) {
+//            DLOG(@"add ok add ok");
+            [_tableview reloadData];
+        }
+    }
 }
 
 @end

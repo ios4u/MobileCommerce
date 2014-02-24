@@ -8,6 +8,7 @@
 
 #import "OpenCenterController.h"
 #import "CreateStoreController.h"
+#import "AddEntityController.h"
 //#import "AddEntityController.h"
 //#import "LoginController.h"
 
@@ -45,11 +46,11 @@ DEFINE_SINGLETON_FOR_CLASS(OpenCenterController);
 }
 
 
-- (void)openAddItemController
+- (void)openAddItemControllerWithStore:(id)store Entities:(id)entites
 {
-//    AddEntityController * controller = [[AddEntityController alloc] init];
-    Class addItemClass = NSClassFromString(kAddItemController);
-    UIViewController * controller = [[addItemClass alloc] init];
+    AddEntityController * controller = [[AddEntityController alloc] init];
+    controller.stroe = store;
+    controller.entities = entites;
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:controller];
     [self.controller presentViewController:nav animated:YES completion:nil];
 
@@ -57,8 +58,6 @@ DEFINE_SINGLETON_FOR_CLASS(OpenCenterController);
 
 - (void)openCreateStoreControllerWithStores:(id)stores
 {
-//    Class CreateStoreClass = NSClassFromString(kCreateStoreController);
-//    UIViewController * controller = [[CreateStoreClass alloc] init];
     CreateStoreController * controller = [[CreateStoreController alloc] init];
     controller.stores = stores;
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:controller];

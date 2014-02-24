@@ -8,6 +8,7 @@
 
 #import "AddEntityController.h"
 #import "StoreEntityList.h"
+#import "Store.h"
 //#import "HttpRequest.h"
 
 @interface AddEntityController ()
@@ -27,15 +28,16 @@
 @synthesize itemnameTF = _itemnameTF;
 @synthesize priceTF = _priceTF;
 @synthesize descTF = _descTF;
-@synthesize entities = _entities;
 
+@synthesize entities = _entities;
+@synthesize stroe = _stroe;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _entities = [[StoreEntityList alloc] init];
+//        _entities = [[StoreEntityList alloc] init];
     }
     return self;
 }
@@ -48,7 +50,7 @@
 - (void)setEntities:(StoreEntityList *)entities
 {
     _entities = entities;
-    [_entities addTheObserverWithObject:self];
+    
 }
 
 - (void)loadView
@@ -76,7 +78,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [_entities addTheObserverWithObject:self];
 	// Do any additional setup after loading the view.
+}
+
+- (void)setStroe:(Store *)stroe
+{
+    _stroe = stroe;
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,6 +136,7 @@
             cell.textLabel.text = NSLocalizedStringFromTable(@"item name", kLocalization, nil);
             tf.keyboardType = UIKeyboardTypeAlphabet;
             tf.placeholder = NSLocalizedStringFromTable(@"item name", kLocalization, nil);
+            _itemnameTF = tf;
 //            _usernameTF = tf;
         }
             break;
@@ -139,6 +148,7 @@
             tf.placeholder = NSLocalizedStringFromTable(@"price", kLocalization, nil);
             tf.returnKeyType = UIReturnKeyGo;
 //            _passwdTF = tf;
+            _priceTF = tf;
         }
             break;
         case 2:
@@ -148,6 +158,7 @@
             tf.keyboardType = UIKeyboardTypeAlphabet;
             tf.placeholder = NSLocalizedStringFromTable(@"desc", kLocalization, nil);
             tf.returnKeyType = UIReturnKeyGo;
+            _descTF = tf;
         }
             break;
         default:
@@ -165,8 +176,8 @@
 - (void)doneBarBtnAction:(id)sender
 {
     [SVProgressHUD show];
-//    DLOG(@"%@",  _itemImageV.image);
-    [_entities createWithImage:_itemImageV.image Title:_itemnameTF.text Price:_priceTF.text Desc:_descTF.text];
+    DLOG(@"name %@", _itemnameTF.text);
+    [_entities createEntityWithStoreID:_stroe.store_id Image:_itemImageV.image Title:_itemnameTF.text Price:_priceTF.text Desc:_descTF.text];
     
 }
 
@@ -217,7 +228,7 @@
 #pragma mark UIImagePickerControllerDelegate 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    DLOG(@"%@", info);
+//    DLOG(@"%@", info);
     _itemImageV.image = [info objectForKey:UIImagePickerControllerOriginalImage];
 
     [picker dismissViewControllerAnimated:YES completion:nil];
@@ -226,7 +237,14 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-
+    if ([keyPath isEqualToString:@"isCreating"]) {
+        if( ![[change valueForKeyPath:@"new"] integerValue] ) {
+            if (!_entities.error) {
+                [SVProgressHUD showSuccessWithStatus:NSLocalizedStringFromTable(@"done", kLocalization, nil)];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+        }
+    }
 
 }
 

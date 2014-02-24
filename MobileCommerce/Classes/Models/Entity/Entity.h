@@ -13,7 +13,7 @@
 @property (readonly) NSUInteger entity_id;
 @property (readonly) NSUInteger store_id;
 @property (unsafe_unretained, nonatomic) NSURL * image_url;
-@property (readonly, nonatomic) NSString * title;
+@property (readonly, nonatomic) NSString * name;
 @property (strong, nonatomic) NSString * desc;
 @property (strong, nonatomic) NSString * store_name;
 @property (readwrite) float price;

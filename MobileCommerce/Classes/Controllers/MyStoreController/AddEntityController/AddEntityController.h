@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "AddItemView.h"
 
+@class Store;
 @class StoreEntityList;
+
+
 @interface AddEntityController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate,UITableViewDataSource, UITableViewDelegate, AddItemViewDelegate>
 
 
@@ -21,5 +24,7 @@
 @property (strong, nonatomic) UITextField * itemnameTF;
 @property (strong, nonatomic) UITextField * priceTF;
 @property (strong, nonatomic) UITextField * descTF;
+
 @property (strong, nonatomic) StoreEntityList * entities;
+@property (strong, nonatomic) Store * stroe;
 @end

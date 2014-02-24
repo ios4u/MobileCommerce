@@ -53,7 +53,6 @@
     [[AppDotComAPIClient sharedClinet] POST:url parameters:paramter success:^(NSURLSessionDataTask *task, id JSON) {
         HttpResponse * res = [[HttpResponse alloc] init];
         
-        DLOG(@"res json %@", JSON);
         [res processObj:JSON];
         if (block) {
             if (res.error) {

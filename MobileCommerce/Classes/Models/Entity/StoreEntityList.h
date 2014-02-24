@@ -7,6 +7,7 @@
 //
 
 #import "DataList.h"
+#import "Entity.h"
 
 @interface StoreEntityList : DataList
 {
@@ -14,7 +15,7 @@
 }
 
 - (void)loadWithStoreId:(NSInteger)store_id;
-- (void)createWithImage:(UIImage *)image Title:(NSString *)title Price:(NSString *)price Desc:(NSString *)desc;
-
+//- (void)createWithImage:(UIImage *)image Title:(NSString *)title Price:(NSString *)price Desc:(NSString *)desc;
+- (void)createEntityWithStoreID:(NSInteger)store_id Image:(UIImage *)image Title:(NSString *)title Price:(NSString *)price Desc:(NSString *)desc;
 
 @end
