@@ -29,3 +29,5 @@
 "item name"="Item Name";
 "price"="Price";
 "stock"="Stock";
+"category"="Category";
+"desc"="Desc";

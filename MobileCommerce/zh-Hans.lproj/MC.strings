@@ -31,3 +31,5 @@
 "item name"="商品名称";
 "price"="价格";
 "stock"="库存";
+"category"="分类";
+"desc"="描述";

@@ -101,7 +101,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -161,6 +161,11 @@
             _descTF = tf;
         }
             break;
+        case 3:
+            {
+                cell.textLabel.text = NSLocalizedStringFromTable(@"rate", kLocalization, nil);
+            }
+            break;
         default:
             break;
     }
@@ -169,8 +174,8 @@
 //    tf.delegate = self;
     
     return cell;
-    
 }
+
 
 #pragma mark - button action
 - (void)doneBarBtnAction:(id)sender

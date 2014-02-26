@@ -23,6 +23,7 @@
 		394BE75118B48CA5007A4E98 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394BE75018B48CA5007A4E98 /* MapKit.framework */; };
 		395E5D4818B648D50089EB72 /* StoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 395E5D4718B648D50089EB72 /* StoreController.m */; };
 		395F7B5418BD982B000E4460 /* EntityDetialHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 395F7B5318BD982B000E4460 /* EntityDetialHeaderController.m */; };
+		395F7B5918BDCA4E000E4460 /* UIPickerActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 395F7B5818BDCA4E000E4460 /* UIPickerActionSheet.m */; };
 		396C37CE18ABBCFE00CBAF23 /* NSDictionary+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 396C37CD18ABBCFE00CBAF23 /* NSDictionary+Helper.m */; };
 		39F4BA6218336C0600312B7E /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F4BA5C18336C0600312B7E /* libzbar.a */; };
 		39F4BA6318336C0600312B7E /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 39F4BA5E18336C0600312B7E /* zbar-back.png */; };
@@ -151,6 +152,8 @@
 		395E5D4718B648D50089EB72 /* StoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreController.m; path = Classes/Controllers/MyStoreController/StoreController.m; sourceTree = "<group>"; };
 		395F7B5218BD982B000E4460 /* EntityDetialHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityDetialHeaderController.h; path = Classes/Controllers/EntityDetailController/EntityDetailHeaderController/EntityDetialHeaderController.h; sourceTree = "<group>"; };
 		395F7B5318BD982B000E4460 /* EntityDetialHeaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntityDetialHeaderController.m; path = Classes/Controllers/EntityDetailController/EntityDetailHeaderController/EntityDetialHeaderController.m; sourceTree = "<group>"; };
+		395F7B5718BDCA4E000E4460 /* UIPickerActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIPickerActionSheet.h; path = Classes/Component/UIPickerActionSheet/UIPickerActionSheet.h; sourceTree = "<group>"; };
+		395F7B5818BDCA4E000E4460 /* UIPickerActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIPickerActionSheet.m; path = Classes/Component/UIPickerActionSheet/UIPickerActionSheet.m; sourceTree = "<group>"; };
 		396C37CC18ABBCFE00CBAF23 /* NSDictionary+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Helper.h"; path = "Classes/Utils/NSDictionary+/NSDictionary+Helper.h"; sourceTree = "<group>"; };
 		396C37CD18ABBCFE00CBAF23 /* NSDictionary+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Helper.m"; path = "Classes/Utils/NSDictionary+/NSDictionary+Helper.m"; sourceTree = "<group>"; };
 		39F4BA4818336C0600312B7E /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
@@ -428,6 +431,23 @@
 				395F7B5318BD982B000E4460 /* EntityDetialHeaderController.m */,
 			);
 			name = EntityDetailHeaderController;
+			sourceTree = "<group>";
+		};
+		395F7B5518BDC9D4000E4460 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				395F7B5618BDCA05000E4460 /* UIPickerActionSheet */,
+			);
+			name = Component;
+			sourceTree = "<group>";
+		};
+		395F7B5618BDCA05000E4460 /* UIPickerActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				395F7B5718BDCA4E000E4460 /* UIPickerActionSheet.h */,
+				395F7B5818BDCA4E000E4460 /* UIPickerActionSheet.m */,
+			);
+			name = UIPickerActionSheet;
 			sourceTree = "<group>";
 		};
 		3968742518584D9700697138 /* Utils */ = {
@@ -961,6 +981,7 @@
 		B7F8B25B182CCAFF00C7668A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				395F7B5518BDC9D4000E4460 /* Component */,
 				394BE74B18B48C31007A4E98 /* Manager */,
 				3968742718584E1B00697138 /* Networking Extensions */,
 				3968742518584D9700697138 /* Utils */,
@@ -1217,6 +1238,7 @@
 				B7CF0FA2182D229E00A796E5 /* MenuController.m in Sources */,
 				B7E6673718B2F576001EF502 /* StoreEntityList.m in Sources */,
 				B7CF0F9E182D226400A796E5 /* ListController.m in Sources */,
+				395F7B5918BDCA4E000E4460 /* UIPickerActionSheet.m in Sources */,
 				B7C85D321859498700C81806 /* CodeVerifiedController.m in Sources */,
 				392C3CA318ADC17800F50411 /* HttpResponse.m in Sources */,
 				B7C85D2E1859458C00C81806 /* UIViewController+MMDrawerController.m in Sources */,
