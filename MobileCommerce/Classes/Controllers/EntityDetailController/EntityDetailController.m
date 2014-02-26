@@ -7,6 +7,7 @@
 //
 
 #import "EntityDetailController.h"
+#import "Entity.h"
 
 @interface EntityDetailController ()
 
@@ -19,6 +20,7 @@
 - (void)setEntity:(Entity *)entity
 {
     _entity = entity;
+    DLOG(@"entity %@", _entity);
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,6 +44,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.title = _entity.name;
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,5 +75,11 @@
     }
     
     return cell;
+}
+
+#pragma mark - tableview delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
 }
 @end

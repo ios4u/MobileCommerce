@@ -22,6 +22,7 @@
 		394BE74F18B48C69007A4E98 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 394BE74E18B48C69007A4E98 /* LocationManager.m */; };
 		394BE75118B48CA5007A4E98 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394BE75018B48CA5007A4E98 /* MapKit.framework */; };
 		395E5D4818B648D50089EB72 /* StoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 395E5D4718B648D50089EB72 /* StoreController.m */; };
+		395F7B5418BD982B000E4460 /* EntityDetialHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 395F7B5318BD982B000E4460 /* EntityDetialHeaderController.m */; };
 		396C37CE18ABBCFE00CBAF23 /* NSDictionary+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 396C37CD18ABBCFE00CBAF23 /* NSDictionary+Helper.m */; };
 		39F4BA6218336C0600312B7E /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F4BA5C18336C0600312B7E /* libzbar.a */; };
 		39F4BA6318336C0600312B7E /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 39F4BA5E18336C0600312B7E /* zbar-back.png */; };
@@ -148,6 +149,8 @@
 		394BE75018B48CA5007A4E98 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		395E5D4618B648D50089EB72 /* StoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreController.h; path = Classes/Controllers/MyStoreController/StoreController.h; sourceTree = "<group>"; };
 		395E5D4718B648D50089EB72 /* StoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreController.m; path = Classes/Controllers/MyStoreController/StoreController.m; sourceTree = "<group>"; };
+		395F7B5218BD982B000E4460 /* EntityDetialHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityDetialHeaderController.h; path = Classes/Controllers/EntityDetailController/EntityDetailHeaderController/EntityDetialHeaderController.h; sourceTree = "<group>"; };
+		395F7B5318BD982B000E4460 /* EntityDetialHeaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntityDetialHeaderController.m; path = Classes/Controllers/EntityDetailController/EntityDetailHeaderController/EntityDetialHeaderController.m; sourceTree = "<group>"; };
 		396C37CC18ABBCFE00CBAF23 /* NSDictionary+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Helper.h"; path = "Classes/Utils/NSDictionary+/NSDictionary+Helper.h"; sourceTree = "<group>"; };
 		396C37CD18ABBCFE00CBAF23 /* NSDictionary+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Helper.m"; path = "Classes/Utils/NSDictionary+/NSDictionary+Helper.m"; sourceTree = "<group>"; };
 		39F4BA4818336C0600312B7E /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
@@ -418,6 +421,15 @@
 			name = LocationManager;
 			sourceTree = "<group>";
 		};
+		395F7B5118BD97F0000E4460 /* EntityDetailHeaderController */ = {
+			isa = PBXGroup;
+			children = (
+				395F7B5218BD982B000E4460 /* EntityDetialHeaderController.h */,
+				395F7B5318BD982B000E4460 /* EntityDetialHeaderController.m */,
+			);
+			name = EntityDetailHeaderController;
+			sourceTree = "<group>";
+		};
 		3968742518584D9700697138 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +583,7 @@
 		B70C2F831830AC65003A72AF /* EntityDetailController */ = {
 			isa = PBXGroup;
 			children = (
+				395F7B5118BD97F0000E4460 /* EntityDetailHeaderController */,
 				B70C2F841830AC8A003A72AF /* EntityDetailController.h */,
 				B70C2F851830AC8A003A72AF /* EntityDetailController.m */,
 			);
@@ -1162,6 +1175,7 @@
 				392C3CD818ADCC9800F50411 /* AFNetworkReachabilityManager.m in Sources */,
 				B7861DC518325D9600A04002 /* MenuHeaderView.m in Sources */,
 				B79E79EA184659120080957B /* DropListController.m in Sources */,
+				395F7B5418BD982B000E4460 /* EntityDetialHeaderController.m in Sources */,
 				B7C85D1C1859448900C81806 /* UIButton+WebCache.m in Sources */,
 				392C3CD518ADCC9800F50411 /* AFHTTPRequestOperation.m in Sources */,
 				B7C85D2C1859458C00C81806 /* MMDrawerController.m in Sources */,
