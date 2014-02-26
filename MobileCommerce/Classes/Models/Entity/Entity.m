@@ -36,6 +36,7 @@
         _desc = [attributes valueForKeyPath:@"desc"];
         _store_name = [attributes valueForKeyPath:@"store_name"];
         _price = [[attributes valueForKeyPath:@"price"] floatValue];
+//        DLOG(@"price %f", _price);
     }
     
     return self;

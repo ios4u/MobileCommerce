@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EntityDetailController : UIViewController
+@class Entity;
+
+@interface EntityDetailController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) Entity * entity;
+@property (strong, nonatomic) UITableView * tableView;
 
 @end

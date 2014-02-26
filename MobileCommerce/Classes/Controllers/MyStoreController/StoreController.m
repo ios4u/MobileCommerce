@@ -9,6 +9,7 @@
 #import "StoreController.h"
 #import "Store.h"
 #import "StoreEntityList.h"
+#import "EntityDetailController.h"
 //#import "AddEntityController.h"
 
 @interface StoreController ()
@@ -78,7 +79,7 @@
     static NSString * CellIdentifer = @"EntityCell";
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifer];
     }
     Entity * entity = [_entities objectAtIndex:indexPath.row];
     
@@ -92,7 +93,10 @@
 #pragma mark - tabelview delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    Entity * _entity = [_entities objectAtIndex:indexPath.row];
+    EntityDetailController * controller = [[EntityDetailController alloc] init];
+    controller.entity = _entity;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark - button action

@@ -14,6 +14,13 @@
 
 @implementation EntityDetailController
 
+@synthesize entity = _entity;
+
+- (void)setEntity:(Entity *)entity
+{
+    _entity = entity;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -21,6 +28,14 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)loadView
+{
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0., 0., WIDTH, HEIGHT) style:UITableViewStylePlain];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    self.view = _tableView;
 }
 
 - (void)viewDidLoad
@@ -35,4 +50,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - tableview datasource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString * CellIdentifer = @"EntityDetailCell";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+    }
+    
+    return cell;
+}
 @end
