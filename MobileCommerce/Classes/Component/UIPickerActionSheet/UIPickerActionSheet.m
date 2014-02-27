@@ -10,6 +10,7 @@
 
 @implementation UIPickerActionSheet
 
+@synthesize delegate = _delegate;
 @synthesize containerView = _containerView;
 @synthesize sheet = _sheet;
 @synthesize picker = _picker;
@@ -89,6 +90,16 @@
 }
 
 #pragma mark - picker delegate
+- (NSString*)pickerView:(UIPickerView*)aPickerView titleForRow:(NSInteger)aRow forComponent:(NSInteger)aComponent
+{
+    id item = [_items objectAtIndex:aRow];
+    return [item description];
+}
+
+- (void)pickerView:(UIPickerView*)aPickerView didSelectRow:(NSInteger)aRow inComponent:(NSInteger)aComponent
+{
+    self.selectedItem = [self.items objectAtIndex:aRow];
+}
 
 #pragma mark - button action
 - (void)pickerSheetCancel:(id)sender

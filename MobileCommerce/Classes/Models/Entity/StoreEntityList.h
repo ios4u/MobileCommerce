@@ -16,6 +16,6 @@
 
 - (void)loadWithStoreId:(NSInteger)store_id;
 //- (void)createWithImage:(UIImage *)image Title:(NSString *)title Price:(NSString *)price Desc:(NSString *)desc;
-- (void)createEntityWithStoreID:(NSInteger)store_id Image:(UIImage *)image Title:(NSString *)title Price:(NSString *)price Desc:(NSString *)desc;
+- (void)createEntityWithStoreID:(NSInteger)store_id Image:(UIImage *)image Title:(NSString *)title Price:(NSString *)price Desc:(NSString *)desc Rate:(NSString *)rate;
 
 @end

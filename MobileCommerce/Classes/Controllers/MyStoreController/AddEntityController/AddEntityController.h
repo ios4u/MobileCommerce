@@ -14,7 +14,7 @@
 
 
 @interface AddEntityController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate,
-    UITableViewDataSource, UITableViewDelegate, AddItemViewDelegate>
+    UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, AddItemViewDelegate>
 
 
 
@@ -25,6 +25,7 @@
 @property (strong, nonatomic) UITextField * itemnameTF;
 @property (strong, nonatomic) UITextField * priceTF;
 @property (strong, nonatomic) UITextField * descTF;
+@property (strong, nonatomic) UITextField * rateTF;
 
 
 @property (strong, nonatomic) StoreEntityList * entities;

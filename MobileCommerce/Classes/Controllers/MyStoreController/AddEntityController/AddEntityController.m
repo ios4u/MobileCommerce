@@ -28,6 +28,7 @@
 @synthesize itemnameTF = _itemnameTF;
 @synthesize priceTF = _priceTF;
 @synthesize descTF = _descTF;
+@synthesize rateTF = _rateTF;
 
 @synthesize entities = _entities;
 @synthesize stroe = _stroe;
@@ -125,6 +126,7 @@
         tf.autocapitalizationType = UITextAutocapitalizationTypeNone;
         tf.adjustsFontSizeToFitWidth = YES;
         tf.clearButtonMode = UITextFieldViewModeWhileEditing;
+        tf.delegate = self;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         [cell.contentView addSubview:tf];
@@ -146,7 +148,7 @@
 //            tf.secureTextEntry = YES;
             tf.keyboardType = UIKeyboardTypeAlphabet;
             tf.placeholder = NSLocalizedStringFromTable(@"price", kLocalization, nil);
-            tf.returnKeyType = UIReturnKeyGo;
+            tf.returnKeyType = UIReturnKeyNext;
 //            _passwdTF = tf;
             _priceTF = tf;
         }
@@ -157,14 +159,18 @@
 //            tf.secureTextEntry = YES;
             tf.keyboardType = UIKeyboardTypeAlphabet;
             tf.placeholder = NSLocalizedStringFromTable(@"desc", kLocalization, nil);
-            tf.returnKeyType = UIReturnKeyGo;
+            tf.returnKeyType = UIReturnKeyNext;
             _descTF = tf;
         }
             break;
         case 3:
-            {
-                cell.textLabel.text = NSLocalizedStringFromTable(@"rate", kLocalization, nil);
-            }
+        {
+            cell.textLabel.text = NSLocalizedStringFromTable(@"rate", kLocalization, nil);
+            tf.keyboardType = UIKeyboardTypeAlphabet;
+            tf.placeholder = @"0.0";
+            tf.returnKeyType = UIReturnKeyGo;
+            _rateTF = tf;
+        }
             break;
         default:
             break;
@@ -176,14 +182,24 @@
     return cell;
 }
 
+#pragma mark - textfield delegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+//    DLOG(@"text %@", [textField c]);
+    if (textField == _itemnameTF) {
+//        DLOG(@"okokoko");
+//        [UIView an]
+        [_tableView setContentOffset:CGPointMake(0., 20.) animated:YES];
+    }
+}
 
 #pragma mark - button action
 - (void)doneBarBtnAction:(id)sender
 {
+    [_tableView setContentOffset:CGPointMake(0., 0.) animated:YES];
     [SVProgressHUD show];
-    DLOG(@"name %@", _itemnameTF.text);
-    [_entities createEntityWithStoreID:_stroe.store_id Image:_itemImageV.image Title:_itemnameTF.text Price:_priceTF.text Desc:_descTF.text];
-    
+//    DLOG(@"name %@", _itemnameTF.text);
+    [_entities createEntityWithStoreID:_stroe.store_id Image:_itemImageV.image Title:_itemnameTF.text Price:_priceTF.text Desc:_descTF.text Rate:_rateTF.text];
 }
 
 #pragma mark - add item view action
@@ -226,7 +242,6 @@
 //            return;
             break;
     }
-
 }
 
 
@@ -240,6 +255,8 @@
     
 }
 
+
+#pragma mark - handle kvo
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"isCreating"]) {

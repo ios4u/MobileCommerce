@@ -8,12 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol UIPickerActionSheetDelegate;
+
+
 @interface UIPickerActionSheet : NSObject <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (nonatomic, strong) UIView *containerView;
+@property (weak, nonatomic) id<UIPickerActionSheetDelegate> delegate;
+@property (strong, nonatomic) UIView *containerView;
 @property (strong, nonatomic) UIActionSheet *sheet;
 @property (strong, nonatomic) UIPickerView * picker;
-@property (nonatomic, strong) NSArray *items;
-@property (nonatomic, strong) id selectedItem;
+@property (strong, nonatomic) NSArray *items;
+@property (strong, nonatomic) id selectedItem;
 
+@end
+
+@protocol UIPickerActionSheetDelegate <NSObject>
+@optional
+- (void)pickerActionSheet:(UIPickerActionSheet*)aPickerActionSheet didSelectItem:(id)aItem;
+- (void)pickerActionSheetDidCancel:(UIPickerActionSheet*)aPickerActionSheet;
 @end
