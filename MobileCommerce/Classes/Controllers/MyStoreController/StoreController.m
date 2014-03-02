@@ -10,6 +10,7 @@
 #import "Store.h"
 #import "StoreEntityList.h"
 #import "EntityDetailController.h"
+#import "EntityCell.h"
 //#import "AddEntityController.h"
 
 @interface StoreController ()
@@ -43,6 +44,7 @@
     _tableview.dataSource = self;
     _tableview.delegate = self;
     self.view = _tableview;
+    _tableview.rowHeight = 80.;
 }
 
 - (void)viewDidLoad
@@ -77,15 +79,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString * CellIdentifer = @"EntityCell";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    EntityCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifer];
+        cell = [[EntityCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifer];
     }
     Entity * entity = [_entities objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = entity.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", entity.price];
-    [cell.imageView setImageWithURL:entity.image_url];
+    cell.entity = entity;
+//    cell.textLabel.text = entity.name;
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", entity.price];
+//    [cell.imageView setImageWithURL:entity.image_url];
     
     return cell;
 }
@@ -97,6 +99,7 @@
     EntityDetailController * controller = [[EntityDetailController alloc] init];
     controller.entity = _entity;
     [self.navigationController pushViewController:controller animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 #pragma mark - button action

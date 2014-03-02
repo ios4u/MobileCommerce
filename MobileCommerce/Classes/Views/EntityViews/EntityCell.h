@@ -13,5 +13,8 @@
 @interface EntityCell : UITableViewCell
 
 @property (strong, nonatomic) Entity * entity;
+//@property (strong, nonatomic) UILabel * titleLabel;
+//@property (strong, nonatomic) UILabel * priceLabel;
 
+@property (strong, nonatomic) UIImageView * entityImageView;
 @end

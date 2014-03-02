@@ -68,13 +68,15 @@
 
 - (void)addTheObserverWithObject:(id)obj
 {
-    [self addObserver:obj forKeyPath:@"isLoading" options:NSKeyValueObservingOptionNew context:nil];
+//    [self addObserver:obj forKeyPath:@"isLoading" options:NSKeyValueObservingOptionNew context:nil];
+    [super addTheObserverWithObject:obj];
     [self addObserver:obj forKeyPath:@"isCreating" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)removeTheObserverWithObject:(id)obj
 {
-    [self removeObserver:obj forKeyPath:@"isLoading"];
+    [self removeTheObserverWithObject:obj];
+//    [self removeObserver:obj forKeyPath:@"isLoading"];
     [self removeObserver:obj forKeyPath:@"isCreating"];
 }
 
