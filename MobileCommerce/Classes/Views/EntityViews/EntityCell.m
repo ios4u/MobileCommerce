@@ -22,7 +22,7 @@
         // Initialization code
         
         _entityImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        _entityImageView.backgroundColor = [UIColor redColor];
+//        _entityImageView.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:_entityImageView];
     }
     return self;

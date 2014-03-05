@@ -75,7 +75,7 @@
 
 - (void)removeTheObserverWithObject:(id)obj
 {
-    [self removeTheObserverWithObject:obj];
+    [super removeTheObserverWithObject:obj];
 //    [self removeObserver:obj forKeyPath:@"isLoading"];
     [self removeObserver:obj forKeyPath:@"isCreating"];
 }

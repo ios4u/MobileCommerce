@@ -11,6 +11,7 @@
 #import "StoreEntityList.h"
 #import "EntityDetailController.h"
 #import "EntityCell.h"
+#import "StoreHeaderView.h"
 //#import "AddEntityController.h"
 
 @interface StoreController ()
@@ -22,6 +23,7 @@
 @synthesize store = _store;
 @synthesize entities = _entities;
 @synthesize tableview = _tableview;
+@synthesize headerView = _headerView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,6 +47,11 @@
     _tableview.delegate = self;
     self.view = _tableview;
     _tableview.rowHeight = 80.;
+    
+    _headerView = [[StoreHeaderView alloc] initWithFrame:CGRectMake(0., 0., WIDTH, 200.)];
+    _headerView.store = _store;
+    _tableview.tableHeaderView = _headerView;
+    
 }
 
 - (void)viewDidLoad
@@ -84,11 +91,7 @@
         cell = [[EntityCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifer];
     }
     Entity * entity = [_entities objectAtIndex:indexPath.row];
-    cell.entity = entity;
-//    cell.textLabel.text = entity.name;
-//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", entity.price];
-//    [cell.imageView setImageWithURL:entity.image_url];
-    
+    cell.entity = entity;    
     return cell;
 }
 

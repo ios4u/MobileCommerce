@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3904407D18C3826A00CCFAD6 /* StoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3904407C18C3826A00CCFAD6 /* StoreCell.m */; };
 		3920F86818B6E4AF00751B10 /* CreatePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3920F86718B6E4AF00751B10 /* CreatePhotoView.m */; };
 		3920F86C18B70D0700751B10 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3920F86B18B70D0700751B10 /* UIImage+Helper.m */; };
 		392C3CA318ADC17800F50411 /* HttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C3CA218ADC17800F50411 /* HttpResponse.m */; };
@@ -120,6 +121,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3904407B18C3826A00CCFAD6 /* StoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreCell.h; path = Classes/Views/StoreView/StoreCell/StoreCell.h; sourceTree = "<group>"; };
+		3904407C18C3826A00CCFAD6 /* StoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreCell.m; path = Classes/Views/StoreView/StoreCell/StoreCell.m; sourceTree = "<group>"; };
 		3920F86618B6E4AF00751B10 /* CreatePhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreatePhotoView.h; path = Classes/Views/StoreView/CreatePhotoView/CreatePhotoView.h; sourceTree = "<group>"; };
 		3920F86718B6E4AF00751B10 /* CreatePhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreatePhotoView.m; path = Classes/Views/StoreView/CreatePhotoView/CreatePhotoView.m; sourceTree = "<group>"; };
 		3920F86A18B70D0700751B10 /* UIImage+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Helper.h"; path = "Classes/Utils/UIImage+/UIImage+Helper.h"; sourceTree = "<group>"; };
@@ -362,6 +365,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3904407A18C3824900CCFAD6 /* StoreCell */ = {
+			isa = PBXGroup;
+			children = (
+				3904407B18C3826A00CCFAD6 /* StoreCell.h */,
+				3904407C18C3826A00CCFAD6 /* StoreCell.m */,
+			);
+			name = StoreCell;
+			sourceTree = "<group>";
+		};
 		3920F86518B6E47B00751B10 /* CreatePhotoView */ = {
 			isa = PBXGroup;
 			children = (
@@ -626,6 +638,7 @@
 		B70C2F911830B62D003A72AF /* StoreView */ = {
 			isa = PBXGroup;
 			children = (
+				3904407A18C3824900CCFAD6 /* StoreCell */,
 				3920F86518B6E47B00751B10 /* CreatePhotoView */,
 				B7EF01301834AB5B00C1A523 /* AddItemView */,
 				B7EF012F1834AB4700C1A523 /* StoreHeaderView */,
@@ -1245,6 +1258,7 @@
 				B77D462C18307F370051DCB4 /* Menu.m in Sources */,
 				392C3CDB18ADCC9800F50411 /* AFURLRequestSerialization.m in Sources */,
 				3920F86818B6E4AF00751B10 /* CreatePhotoView.m in Sources */,
+				3904407D18C3826A00CCFAD6 /* StoreCell.m in Sources */,
 				B70C2F6C183092B5003A72AF /* EntityController.m in Sources */,
 				B7C85D1E1859448900C81806 /* UIImage+MultiFormat.m in Sources */,
 				B70C2F861830AC8A003A72AF /* EntityDetailController.m in Sources */,

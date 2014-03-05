@@ -10,11 +10,12 @@
 
 @class Store;
 @class StoreEntityList;
+@class StoreHeaderView;
 
 @interface StoreController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) Store * store;
 @property (strong, nonatomic) StoreEntityList * entities;
 @property (strong, nonatomic) UITableView * tableview;
-
+@property (strong, nonatomic) StoreHeaderView * headerView;
 @end

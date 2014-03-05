@@ -9,7 +9,8 @@
 #import "MyStoreController.h"
 //#import "StoreEntityList.h"
 #import "StoreList.h"
-#import "StoreHeaderView.h"
+//#import "StoreHeaderView.h"
+#import "StoreCell.h"
 #import "StoreController.h"
 
 //#import "AddEntityController.h"
@@ -21,7 +22,7 @@
 @implementation MyStoreController
 
 @synthesize stores = _stores;
-@synthesize headerView = _headerView;
+//@synthesize headerView = _headerView;
 @synthesize rightBarBtn = _rightBarBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -43,9 +44,10 @@
 {
     [super loadView];
     
-    _headerView = [[StoreHeaderView alloc] initWithFrame:CGRectMake(0.0, 0., WIDTH, 200)];
+//    _headerView = [[StoreHeaderView alloc] initWithFrame:CGRectMake(0.0, 0., WIDTH, 200)];
     
-    self.tableview.tableHeaderView = _headerView;
+//    self.tableview.tableHeaderView = _headerView;
+    self.tableview.rowHeight = 80.;
     
     _rightBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightBarBtnAction:)];
     self.navigationItem.rightBarButtonItem = _rightBarBtn;
@@ -86,18 +88,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString * CellIdentifer = @"UserStoreCell";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    StoreCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifer];
+        cell = [[StoreCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifer];
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 
     }
     
     Store * _store = [_stores objectAtIndex:indexPath.row];
-    cell.textLabel.text = _store.store_name;
-    cell.detailTextLabel.text = _store.address;
-//    DLOG(@"image url %d", indexPath.row);
-    [cell.imageView setImageWithURL:_store.image_url];
+    cell.store = _store;
 
     return cell;
 }

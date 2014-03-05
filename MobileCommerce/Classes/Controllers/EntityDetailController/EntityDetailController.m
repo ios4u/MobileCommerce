@@ -63,7 +63,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,6 +72,19 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+    }
+    switch (indexPath.row) {
+        case 0:
+            cell.textLabel.text = _entity.name;
+            break;
+        case 1:
+            cell.textLabel.text = [NSString stringWithFormat:@"%.2f", _entity.price];
+            break;
+        case 2:
+            cell.textLabel.text = _entity.desc;
+            break;
+        default:
+            break;
     }
     
     return cell;
