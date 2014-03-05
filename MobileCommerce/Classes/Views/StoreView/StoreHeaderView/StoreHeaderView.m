@@ -7,6 +7,7 @@
 //
 
 #import "StoreHeaderView.h"
+#import "UIImageView+WebCache.h"
 
 @implementation StoreHeaderView
 
@@ -23,7 +24,7 @@
     if (self) {
         // Initialization code
         self.backgroundColor = kDefaultBackgroundColor;
-        _storeImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _storeImageView = [[UIImageView alloc] initWithFrame:frame];
 //        [_storeImageView seth]
 //        _storeImageView.backgroundColor = [UIColor blueColor];
         _storeImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -57,9 +58,10 @@
 {
     _store = store;
     
-    _storeNameL.text = _store.store_name;
-    [_storeAddressBtn setTitle:_store.address forState:UIControlStateNormal];
-    [_storePhoneBtn setTitle:_store.tel forState:UIControlStateNormal];
+//    _storeNameL.text = _store.store_name;
+//    [_storeAddressBtn setTitle:_store.address forState:UIControlStateNormal];
+//    [_storePhoneBtn setTitle:_store.tel forState:UIControlStateNormal];
+    [_storeImageView setImageWithURL:_store.image_url];
     
     [self setNeedsLayout];
 }
@@ -67,8 +69,8 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    _storeImageView.frame = CGRectMake(20., 20., 80, 80);
-    _storeNameL.frame = CGRectMake(120., 40., 180, 20);
+//    _storeImageView.frame = CGRectMake(20., 20., 80, 80);
+//    _storeNameL.frame = CGRectMake(120., 40., 180, 20);
     
 }
 
