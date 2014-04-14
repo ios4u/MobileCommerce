@@ -1138,7 +1138,7 @@
 				ORGANIZATIONNAME = "谢家欣";
 				TargetAttributes = {
 					B7F8B228182CCAA500C7668A = {
-						DevelopmentTeam = 4W26QSGX3M;
+						DevelopmentTeam = VA3E45867G;
 					};
 					B7F8B243182CCAA500C7668A = {
 						TestTargetID = B7F8B228182CCAA500C7668A;
@@ -1362,7 +1362,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = /Users/edison7500/Workspace/MobileCommerce/;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 			};
@@ -1399,6 +1399,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = /Users/edison7500/Workspace/MobileCommerce/;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s";

@@ -138,7 +138,9 @@
             cell.textLabel.text = NSLocalizedStringFromTable(@"item name", kLocalization, nil);
             tf.keyboardType = UIKeyboardTypeAlphabet;
             tf.placeholder = NSLocalizedStringFromTable(@"item name", kLocalization, nil);
+            tf.returnKeyType = UIReturnKeyNext;
             _itemnameTF = tf;
+            
 //            _usernameTF = tf;
         }
             break;
@@ -186,11 +188,25 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
 //    DLOG(@"text %@", [textField c]);
-    if (textField == _itemnameTF) {
+//    if (textField == _itemnameTF) {
 //        DLOG(@"okokoko");
 //        [UIView an]
         [_tableView setContentOffset:CGPointMake(0., 20.) animated:YES];
+//    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == _rateTF) {
+        [self doneBarBtnAction:nil];
+    } else if (textField == _itemnameTF) {
+        [_priceTF becomeFirstResponder];
+    } else if (textField == _priceTF) {
+        [_descTF becomeFirstResponder];
+    } else {
+        [_rateTF becomeFirstResponder];
     }
+    return YES;
 }
 
 #pragma mark - button action

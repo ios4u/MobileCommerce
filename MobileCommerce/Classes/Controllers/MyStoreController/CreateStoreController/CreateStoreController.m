@@ -148,7 +148,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1) {
-//        [_store createWithName:_storenameTF.text Address:_addressTF.text Image:[_photoView PhotoImage]];
         [SVProgressHUD show];
         [_stores createWithName:_storenameTF.text Address:_addressTF.text Image:[_photoView PhotoImage]];
     }
